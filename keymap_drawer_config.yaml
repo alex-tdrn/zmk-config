@@ -22,7 +22,7 @@ draw_config:
     }
     /* font and background color specifications */
     svg.keymap {
-        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-family: JetBrainsMono NFM;
         font-size: 14px;
         font-kerning: normal;
         text-rendering: optimizeLegibility;
