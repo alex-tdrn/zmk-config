@@ -1,0 +1,27 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+//    ┌───┬───┬───┬───┬───┐           ┌───┬─────┬───┬───┬───┐
+//    │ Q │ W │ F │ P │ B │           │ J │  L  │ U │ Y │ ' │
+//    ├───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┤
+//    │ A │ R │ S │ T │ G │           │ M │  N  │ E │ I │ ; │
+//    ├───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┤
+//    │ Z │ X │ C │ V │ B │           │ N │  M  │ , │ . │ / │
+//    └───┴───┴───┼───┼───┼───┐   ┌───┼───┼─────┼───┴───┴───┘
+//                │ 󰹿 │ 󰭜 │ 󰌑 │   │ ⭾ │ 󱁐 │ Esc │            
+//                └───┴───┴───┘   └───┴───┴─────┘            
+  &kp Q   &kp W   &kp F   &kp P     &kp B                              &kp J       &kp L     &kp U       &kp Y     &kp SQT 
+  &kp A   &kp R   &kp S   &kp T     &kp G                              &kp M       &kp N     &kp E       &kp I     &kp SEMI
+  &kp Z   &kp X   &kp C   &kp V     &kp B                              &kp N       &kp M     &kp COMMA   &kp DOT   &kp FSLH
+                          &kp DEL   &kp BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                 
+            >;
+        };
+    };
+};
