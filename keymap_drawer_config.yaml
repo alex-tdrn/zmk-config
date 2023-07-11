@@ -51,6 +51,8 @@ draw_config:
     text {
         text-anchor: middle;
         dominant-baseline: middle;
+        font-weight: bold;
+        fill: #1F1F28;
     }
 
     /* styling for layer labels */
@@ -71,6 +73,7 @@ draw_config:
     text.hold {
         text-anchor: middle;
         dominant-baseline: auto;
+        fill: #C34043;
     }
 
     text.shifted {
@@ -168,3 +171,11 @@ parse_config:
     RET: '⏎'
     SPACE: '‿'
     TAB: '⭾'
+    LSHIFT: 'Shift'
+    RSHIFT: 'Shift'
+    LALT: 'Alt'
+    RALT: 'Alt'
+    LCTRL: 'Ctrl'
+    RCTRL: 'Ctrl'
+    LMETA: 'Meta'
+    RMETA: 'Meta'
