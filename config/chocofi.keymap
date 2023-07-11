@@ -2,23 +2,45 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define BASE 0
+#define NUM 1
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
         BASE_layer {
             bindings = <
-//    ┌─────────┬────────┬─────────┬──────────┬───┐           ┌───┬──────────┬─────────┬────────┬─────────┐
-//    │    Q    │   W    │    F    │    P     │ B │           │ J │    L     │    U    │   Y    │    '    │
-//    ├─────────┼────────┼─────────┼──────────┼───┤           ├───┼──────────┼─────────┼────────┼─────────┤
-//    │ LMETA A │ LALT R │ LCTRL S │ LSHIFT T │ G │           │ M │ RSHIFT N │ RCTRL E │ RALT I │ RMETA O │
-//    ├─────────┼────────┼─────────┼──────────┼───┤           ├───┼──────────┼─────────┼────────┼─────────┤
-//    │    Z    │   X    │    C    │    D     │ V │           │ K │    H     │    ,    │   .    │    /    │
-//    └─────────┴────────┴─────────┼──────────┼───┼───┐   ┌───┼───┼──────────┼─────────┴────────┴─────────┘
-//                                 │    ⌦     │ ⌫ │ ⏎ │   │ ⭾ │ ‿ │   Esc    │                             
-//                                 └──────────┴───┴───┘   └───┴───┴──────────┘                             
-  &kp Q         &kp W        &kp F         &kp P          &kp B                              &kp J       &kp L          &kp U         &kp Y        &kp SQT    
-  &mt LMETA A   &mt LALT R   &mt LCTRL S   &mt LSHIFT T   &kp G                              &kp M       &mt RSHIFT N   &mt RCTRL E   &mt RALT I   &mt RMETA O
-  &kp Z         &kp X        &kp C         &kp D          &kp V                              &kp K       &kp H          &kp COMMA     &kp DOT      &kp FSLH   
+//    ┌─────────┬────────┬─────────┬──────────┬──────────────┐           ┌───┬──────────┬─────────┬────────┬─────────┐
+//    │    Q    │   W    │    F    │    P     │      B       │           │ J │    L     │    U    │   Y    │    '    │
+//    ├─────────┼────────┼─────────┼──────────┼──────────────┤           ├───┼──────────┼─────────┼────────┼─────────┤
+//    │ LMETA A │ LALT R │ LCTRL S │ LSHIFT T │      G       │           │ M │ RSHIFT N │ RCTRL E │ RALT I │ RMETA O │
+//    ├─────────┼────────┼─────────┼──────────┼──────────────┤           ├───┼──────────┼─────────┼────────┼─────────┤
+//    │    Z    │   X    │    C    │    D     │      V       │           │ K │    H     │    ,    │   .    │    /    │
+//    └─────────┴────────┴─────────┼──────────┼──────────────┼───┐   ┌───┼───┼──────────┼─────────┴────────┴─────────┘
+//                                 │    ⌦     │ &lt NUM BSPC │ ⏎ │   │ ⭾ │ ‿ │   Esc    │                             
+//                                 └──────────┴──────────────┴───┘   └───┴───┴──────────┘                             
+  &kp Q         &kp W        &kp F         &kp P          &kp B                                  &kp J       &kp L          &kp U         &kp Y        &kp SQT    
+  &mt LMETA A   &mt LALT R   &mt LCTRL S   &mt LSHIFT T   &kp G                                  &kp M       &mt RSHIFT N   &mt RCTRL E   &mt RALT I   &mt RMETA O
+  &kp Z         &kp X        &kp C         &kp D          &kp V                                  &kp K       &kp H          &kp COMMA     &kp DOT      &kp FSLH   
+                                           &kp DEL        &lt NUM BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                              
+            >;
+        };
+
+        NUM_layer {
+            bindings = <
+//    ┌─────────┬────────┬─────────┬──────────┬───┐           ┌───────┬──────────┬─────────┬────────┬─────────┐
+//    │    Q    │   W    │    F    │    P     │ B │           │   J   │  &kp 7   │  &kp 8  │ &kp 9  │    '    │
+//    ├─────────┼────────┼─────────┼──────────┼───┤           ├───────┼──────────┼─────────┼────────┼─────────┤
+//    │ LMETA A │ LALT R │ LCTRL S │ LSHIFT T │ G │           │   M   │ RSHIFT 4 │ RCTRL 5 │ RALT 6 │ RMETA O │
+//    ├─────────┼────────┼─────────┼──────────┼───┤           ├───────┼──────────┼─────────┼────────┼─────────┤
+//    │    Z    │   X    │    C    │    D     │ V │           │ &kp 0 │  &kp 1   │  &kp 2  │ &kp 3  │    /    │
+//    └─────────┴────────┴─────────┼──────────┼───┼───┐   ┌───┼───────┼──────────┼─────────┴────────┴─────────┘
+//                                 │    ⌦     │ ⌫ │ ⏎ │   │ ⭾ │   ‿   │   Esc    │                             
+//                                 └──────────┴───┴───┘   └───┴───────┴──────────┘                             
+  &kp Q         &kp W        &kp F         &kp P          &kp B                              &kp J       &kp 7          &kp 8         &kp 9        &kp SQT    
+  &mt LMETA A   &mt LALT R   &mt LCTRL S   &mt LSHIFT T   &kp G                              &kp M       &mt RSHIFT 4   &mt RCTRL 5   &mt RALT 6   &mt RMETA O
+  &kp Z         &kp X        &kp C         &kp D          &kp V                              &kp 0       &kp 1          &kp 2         &kp 3        &kp FSLH   
                                            &kp DEL        &kp BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                              
             >;
         };
