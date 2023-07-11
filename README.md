@@ -1,7 +1,7 @@
 My personal zmk config for the [chocofi](https://github.com/pashutk/chocofi)
 
 
-![keymap](./chocofi_keymap_diagram.svg)
+![keymap](./chocofi.svg)
 
 ## Acknowledgements
 

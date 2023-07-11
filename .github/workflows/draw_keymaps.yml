@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer_config.yaml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer_config.yaml"
+      output_folder: "."
