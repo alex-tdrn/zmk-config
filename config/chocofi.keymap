@@ -5,7 +5,7 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-        Base_layer {
+        BASE_layer {
             bindings = <
 //    ┌─────────┬────────┬─────────┬──────────┬───┐           ┌───┬──────────┬─────────┬────────┬─────────┐
 //    │    Q    │   W    │    F    │    P     │ B │           │ J │    L     │    U    │   Y    │    '    │
