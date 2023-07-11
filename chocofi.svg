@@ -76,8 +76,8 @@ path.combo {
     fill: none;
 }
 </style>
-<g class="layer-Base">
-<text x="30.0" y="28.0" class="label">Base</text>
+<g class="layer-BASE">
+<text x="30.0" y="28.0" class="label">BASE</text>
 <rect rx="6.0" ry="6.0" x="31.999999999999996" y="121.53999999999999" width="59.54" height="56.0" class="key"/>
 <text x="61.769999999999996" y="149.54" class="tap">Q</text>
 <rect rx="6.0" ry="6.0" x="95.53999999999999" y="79.18" width="59.54" height="56.0" class="key"/>
