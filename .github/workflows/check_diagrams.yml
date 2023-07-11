@@ -1,0 +1,14 @@
+on: [push]
+jobs:
+  check_diagrams:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting keymap-drawer
+        run: pip install keymap-drawer
+      - uses: actions/checkout@v3
+      - name: Parse ZMK keymap
+        run: keymap --config ./keymap_drawer_config.yaml parse --zmk-keymap ./config/chocofi.keymap > new_chocofi_keymap_diagram.yaml
+      - name: Draw diagram
+        run: keymap --config ./keymap_drawer_config.yaml draw new_chocofi_keymap_diagram.yaml > new_chocofi_keymap_diagram.svg
+      - name: Check if new diagram is different from old one
+        run: cmp --silent chocofi_keymap_diagram.svg new_chocofi_keymap_diagram.svg
