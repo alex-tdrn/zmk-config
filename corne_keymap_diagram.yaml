@@ -1,0 +1,45 @@
+layout: {qmk_keyboard: crkbd/rev1, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  default:
+  - {t: ▽, type: trans}
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - A
+  - R
+  - S
+  - T
+  - G
+  - M
+  - N
+  - E
+  - I
+  - O
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - {t: ▽, type: trans}
+  - DEL
+  - BSPC
+  - RET
+  - TAB
+  - SPACE
+  - ESC
