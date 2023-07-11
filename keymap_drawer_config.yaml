@@ -1,6 +1,6 @@
 draw_config:
   key_w: 60.0
-  key_h: 60.0
+  key_h: 64.0
   split_gap: 30.0
   combo_w: 28.0
   combo_h: 26.0
@@ -28,6 +28,7 @@ draw_config:
         font-family: JetBrainsMono NFM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
         font-size: 14px;
         font-kerning: normal;
+        font-weight: bold;
         text-rendering: optimizeLegibility;
         fill: #1F1F28;
     }
@@ -86,8 +87,8 @@ draw_config:
 
     /* styling for combo dendrons */
     path.combo {
-        stroke-width: 1;
-        stroke: gray;
+        stroke-width: 2;
+        stroke: #7FB4CA;
         fill: none;
     }
 
