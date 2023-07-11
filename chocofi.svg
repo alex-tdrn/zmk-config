@@ -97,24 +97,32 @@ path.combo {
 <text x="841.77" y="149.54" class="tap">&#x27;</text>
 <rect rx="6.0" ry="6.0" x="31.999999999999996" y="181.54000000000002" width="59.54" height="56.0" class="key"/>
 <text x="61.769999999999996" y="209.54000000000002" class="tap">A</text>
+<text x="61.769999999999996" y="232.54000000000002" class="hold">LMETA</text>
 <rect rx="6.0" ry="6.0" x="95.53999999999999" y="139.18" width="59.54" height="56.0" class="key"/>
 <text x="125.30999999999999" y="167.18" class="tap">R</text>
+<text x="125.30999999999999" y="190.18" class="hold">LALT</text>
 <rect rx="6.0" ry="6.0" x="159.07999999999998" y="118.0" width="59.54" height="56.0" class="key"/>
 <text x="188.85" y="146.0" class="tap">S</text>
+<text x="188.85" y="169.0" class="hold">LCTRL</text>
 <rect rx="6.0" ry="6.0" x="222.62" y="141.34" width="59.54" height="56.0" class="key"/>
 <text x="252.39000000000001" y="169.34" class="tap">T</text>
+<text x="252.39000000000001" y="192.34" class="hold">LSHIFT</text>
 <rect rx="6.0" ry="6.0" x="286.15999999999997" y="149.74" width="59.54" height="56.0" class="key"/>
 <text x="315.92999999999995" y="177.74" class="tap">G</text>
 <rect rx="6.0" ry="6.0" x="557.84" y="149.74" width="59.54" height="56.0" class="key"/>
 <text x="587.61" y="177.74" class="tap">M</text>
 <rect rx="6.0" ry="6.0" x="621.3800000000001" y="141.34" width="59.54" height="56.0" class="key"/>
 <text x="651.1500000000001" y="169.34" class="tap">N</text>
+<text x="651.1500000000001" y="192.34" class="hold">RSHIFT</text>
 <rect rx="6.0" ry="6.0" x="684.9200000000001" y="118.0" width="59.54" height="56.0" class="key"/>
 <text x="714.69" y="146.0" class="tap">E</text>
+<text x="714.69" y="169.0" class="hold">RCTRL</text>
 <rect rx="6.0" ry="6.0" x="748.46" y="139.18" width="59.54" height="56.0" class="key"/>
 <text x="778.23" y="167.18" class="tap">I</text>
+<text x="778.23" y="190.18" class="hold">RALT</text>
 <rect rx="6.0" ry="6.0" x="812.0" y="181.54000000000002" width="59.54" height="56.0" class="key"/>
 <text x="841.77" y="209.54000000000002" class="tap">O</text>
+<text x="841.77" y="232.54000000000002" class="hold">RMETA</text>
 <rect rx="6.0" ry="6.0" x="31.999999999999996" y="241.54000000000002" width="59.54" height="56.0" class="key"/>
 <text x="61.769999999999996" y="269.54" class="tap">Z</text>
 <rect rx="6.0" ry="6.0" x="95.53999999999999" y="199.18" width="59.54" height="56.0" class="key"/>
