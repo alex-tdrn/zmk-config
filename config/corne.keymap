@@ -13,13 +13,13 @@
 //    ├───┼───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┼───┤
 //    │   │ A │ R │ S │ T │ G │           │ M │  N  │ E │ I │ O │   │
 //    ├───┼───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┼───┤
-//    │   │ Z │ X │ C │ D │ V │           │ K │  M  │ , │ . │ / │   │
+//    │   │ Z │ X │ C │ D │ V │           │ K │  H  │ , │ . │ / │   │
 //    └───┴───┴───┴───┼───┼───┼───┐   ┌───┼───┼─────┼───┴───┴───┴───┘
 //                    │ 󰹿 │ 󰭜 │ 󰌑 │   │ ⭾ │ 󱁐 │ Esc │                
 //                    └───┴───┴───┘   └───┴───┴─────┘                
   &trans   &kp Q   &kp W   &kp F   &kp P     &kp B                              &kp J       &kp L     &kp U       &kp Y     &kp SQT    &trans
   &trans   &kp A   &kp R   &kp S   &kp T     &kp G                              &kp M       &kp N     &kp E       &kp I     &kp O      &trans
-  &trans   &kp Z   &kp X   &kp C   &kp D     &kp V                              &kp K       &kp M     &kp COMMA   &kp DOT   &kp FSLH   &trans
+  &trans   &kp Z   &kp X   &kp C   &kp D     &kp V                              &kp K       &kp H     &kp COMMA   &kp DOT   &kp FSLH   &trans
                                    &kp DEL   &kp BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                          
             >;
         };
