@@ -11,15 +11,15 @@
 //    ┌───┬───┬───┬───┬───┐           ┌───┬─────┬───┬───┬───┐
 //    │ Q │ W │ F │ P │ B │           │ J │  L  │ U │ Y │ ' │
 //    ├───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┤
-//    │ A │ R │ S │ T │ G │           │ M │  N  │ E │ I │ ; │
+//    │ A │ R │ S │ T │ G │           │ M │  N  │ E │ I │ O │
 //    ├───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┤
-//    │ Z │ X │ C │ V │ B │           │ N │  M  │ , │ . │ / │
+//    │ Z │ X │ C │ D │ V │           │ K │  M  │ , │ . │ / │
 //    └───┴───┴───┼───┼───┼───┐   ┌───┼───┼─────┼───┴───┴───┘
 //                │ 󰹿 │ 󰭜 │ 󰌑 │   │ ⭾ │ 󱁐 │ Esc │            
 //                └───┴───┴───┘   └───┴───┴─────┘            
   &kp Q   &kp W   &kp F   &kp P     &kp B                              &kp J       &kp L     &kp U       &kp Y     &kp SQT 
-  &kp A   &kp R   &kp S   &kp T     &kp G                              &kp M       &kp N     &kp E       &kp I     &kp SEMI
-  &kp Z   &kp X   &kp C   &kp V     &kp B                              &kp N       &kp M     &kp COMMA   &kp DOT   &kp FSLH
+  &kp A   &kp R   &kp S   &kp T     &kp G                              &kp M       &kp N     &kp E       &kp I     &kp O   
+  &kp Z   &kp X   &kp C   &kp D     &kp V                              &kp K       &kp M     &kp COMMA   &kp DOT   &kp FSLH
                           &kp DEL   &kp BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                 
             >;
         };
