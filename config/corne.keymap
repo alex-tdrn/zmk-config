@@ -8,19 +8,19 @@
 
         default_layer {
             bindings = <
-//    ┌───┬───┬───┬───┬───┐           ┌───┬─────┬───┬───┬───┐
-//    │ Q │ W │ F │ P │ B │           │ J │  L  │ U │ Y │ ' │
-//    ├───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┤
-//    │ A │ R │ S │ T │ G │           │ M │  N  │ E │ I │ O │
-//    ├───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┤
-//    │ Z │ X │ C │ D │ V │           │ K │  M  │ , │ . │ / │
-//    └───┴───┴───┼───┼───┼───┐   ┌───┼───┼─────┼───┴───┴───┘
-//                │ 󰹿 │ 󰭜 │ 󰌑 │   │ ⭾ │ 󱁐 │ Esc │            
-//                └───┴───┴───┘   └───┴───┴─────┘            
-  &kp Q   &kp W   &kp F   &kp P     &kp B                              &kp J       &kp L     &kp U       &kp Y     &kp SQT 
-  &kp A   &kp R   &kp S   &kp T     &kp G                              &kp M       &kp N     &kp E       &kp I     &kp O   
-  &kp Z   &kp X   &kp C   &kp D     &kp V                              &kp K       &kp M     &kp COMMA   &kp DOT   &kp FSLH
-                          &kp DEL   &kp BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                 
+//    ┌───┬───┬───┬───┬───┬───┐           ┌───┬─────┬───┬───┬───┬───┐
+//    │   │ Q │ W │ F │ P │ B │           │ J │  L  │ U │ Y │ ' │   │
+//    ├───┼───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┼───┤
+//    │   │ A │ R │ S │ T │ G │           │ M │  N  │ E │ I │ O │   │
+//    ├───┼───┼───┼───┼───┼───┤           ├───┼─────┼───┼───┼───┼───┤
+//    │   │ Z │ X │ C │ D │ V │           │ K │  M  │ , │ . │ / │   │
+//    └───┴───┴───┴───┼───┼───┼───┐   ┌───┼───┼─────┼───┴───┴───┴───┘
+//                    │ 󰹿 │ 󰭜 │ 󰌑 │   │ ⭾ │ 󱁐 │ Esc │                
+//                    └───┴───┴───┘   └───┴───┴─────┘                
+  &trans   &kp Q   &kp W   &kp F   &kp P     &kp B                              &kp J       &kp L     &kp U       &kp Y     &kp SQT    &trans
+  &trans   &kp A   &kp R   &kp S   &kp T     &kp G                              &kp M       &kp N     &kp E       &kp I     &kp O      &trans
+  &trans   &kp Z   &kp X   &kp C   &kp D     &kp V                              &kp K       &kp M     &kp COMMA   &kp DOT   &kp FSLH   &trans
+                                   &kp DEL   &kp BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                          
             >;
         };
     };
