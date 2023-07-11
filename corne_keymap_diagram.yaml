@@ -1,7 +1,6 @@
-layout: {qmk_keyboard: crkbd/rev1, qmk_layout: LAYOUT_split_3x6_3}
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
   default:
-  - {t: ▽, type: trans}
   - Q
   - W
   - F
@@ -12,8 +11,6 @@ layers:
   - U
   - Y
   - ''''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - A
   - R
   - S
@@ -24,8 +21,6 @@ layers:
   - E
   - I
   - O
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - Z
   - X
   - C
@@ -36,7 +31,6 @@ layers:
   - ','
   - .
   - /
-  - {t: ▽, type: trans}
   - DEL
   - BSPC
   - RET
