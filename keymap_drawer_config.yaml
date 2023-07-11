@@ -1,6 +1,6 @@
 draw_config:
   key_w: 60.0
-  key_h: 64.0
+  key_h: 60.0
   split_gap: 30.0
   combo_w: 28.0
   combo_h: 26.0
@@ -26,10 +26,8 @@ draw_config:
     /* font and background color specifications */
     svg.keymap {
         font-family: JetBrainsMono NFM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-        font-size: 14px;
-        font-kerning: normal;
+        font-size: 16px;
         font-weight: bold;
-        text-rendering: optimizeLegibility;
         fill: #1F1F28;
     }
 
@@ -91,29 +89,6 @@ draw_config:
         stroke: #7FB4CA;
         fill: none;
     }
-
-    /* Start Tabler Icons Cleanup */
-    /* cannot use height/width with glyphs */
-    .icon-tabler > path {
-        fill: inherit;
-        stroke: inherit;
-    }
-    /* hide tabler's default box */
-    .icon-tabler > path[stroke="none"][fill="none"] {
-        visibility: collapse;
-    }
-    /* End Tabler Icons Cleanup */
-  shrink_wide_legends: 7
-  glyph_tap_size: 14
-  glyph_hold_size: 12
-  glyph_shifted_size: 10
-  glyphs: {}
-  glyph_urls:
-    tabler: https://tabler-icons.io/static/tabler-icons/icons/{}.svg
-    mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
-    mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
-    material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
-  use_local_cache: true
 parse_config:
   preprocess: true
   skip_binding_parsing: false
@@ -123,6 +98,7 @@ parse_config:
     t: ▽
     type: trans
   zmk_keycode_map:
+    # For true 'bold', prefer JetBrainsMono natively supported glyphs: https://www.jetbrains.com/lp/mono/
     EXCLAMATION: '!'
     EXCL: '!'
     AT_SIGN: '@'
@@ -187,8 +163,8 @@ parse_config:
     NON_US_HASH: '#'
     NUHS: '#'
     TILDE2: '~'
-    DEL: '$$mdi:backspace-reverse-outline$$'
-    BSPC: '$$mdi:backspace-outline$$'
-    RET: '$$mdi:keyboard-return$$'
-    SPACE: '$$mdi:keyboard-space$$'
+    DEL: '⌦'
+    BSPC: '⌫'
+    RET: '⏎'
+    SPACE: '‿'
     TAB: '⭾'
