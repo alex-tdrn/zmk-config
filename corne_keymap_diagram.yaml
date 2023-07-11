@@ -31,9 +31,9 @@ layers:
   - ','
   - .
   - /
-  - DEL
-  - BSPC
-  - RET
-  - TAB
-  - SPACE
+  - $$mdi:backspace-reverse-outline$$
+  - $$mdi:backspace-outline$$
+  - $$mdi:keyboard-return$$
+  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-space$$
   - ESC

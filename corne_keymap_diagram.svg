@@ -1,4 +1,21 @@
 <svg width="840.0" height="406.27114317029975" viewBox="0 0 840.0 406.27114317029975" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>/* start glyphs */
+<svg id="mdi:keyboard-tab">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-tab" viewBox="0 0 24 24"><path d="M20,18H22V6H20M11.59,7.41L15.17,11H1V13H15.17L11.59,16.58L13,18L19,12L13,6L11.59,7.41Z" /></svg>
+</svg>
+<svg id="mdi:backspace-reverse-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-backspace-reverse-outline" viewBox="0 0 24 24"><path d="M5,15.59L6.41,17L10,13.41L13.59,17L15,15.59L11.41,12L15,8.41L13.59,7L10,10.59L6.41,7L5,8.41L8.59,12L5,15.59M2,3A2,2 0 0,0 0,5V19A2,2 0 0,0 2,21H17C17.69,21 18.23,20.64 18.59,20.11L24,12L18.59,3.88C18.23,3.35 17.69,3 17,3H2M2,5H17L21.72,12L17,19H2V5Z" /></svg>
+</svg>
+<svg id="mdi:backspace-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-backspace-outline" viewBox="0 0 24 24"><path d="M19,15.59L17.59,17L14,13.41L10.41,17L9,15.59L12.59,12L9,8.41L10.41,7L14,10.59L17.59,7L19,8.41L15.41,12L19,15.59M22,3A2,2 0 0,1 24,5V19A2,2 0 0,1 22,21H7C6.31,21 5.77,20.64 5.41,20.11L0,12L5.41,3.88C5.77,3.35 6.31,3 7,3H22M22,5H7L2.28,12L7,19H22V5Z" /></svg>
+</svg>
+<svg id="mdi:keyboard-space">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-space" viewBox="0 0 24 24"><path d="M3 15H5V19H19V15H21V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15Z" /></svg>
+</svg>
+<svg id="mdi:keyboard-return">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-return" viewBox="0 0 24 24"><path d="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z" /></svg>
+</svg>
+</defs>/* end glyphs */
 <style>/* inherit to force styles through use tags*/
 svg path {
     fill: inherit;
@@ -43,8 +60,8 @@ text {
 text.label {
     font-weight: bold;
     text-anchor: start;
-    stroke: white;
-    stroke-width: 2;
+    stroke: #DCD7BA;
+    stroke-width: 5;
     paint-order: stroke;
 }
 
@@ -155,22 +172,22 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="752.0" y="200.5" width="56.0" height="56.0" class="key"/>
 <text x="780.0" y="228.5" class="tap">/</text>
 <rect rx="6.0" ry="6.0" x="182.0" y="247.48000000000002" width="56.0" height="56.0" class="key"/>
-<text x="210.0" y="275.48" class="tap">DEL</text>
+<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="203.0" y="268.48" height="14" width="14.0" class="tap glyph mdi:backspace-reverse-outline"/>
 <g transform="rotate(15.0, 276.0, 284.3)">
 <rect rx="6.0" ry="6.0" x="248.0" y="256.3" width="56.0" height="56.0" class="key"/>
-<text x="276.0" y="284.3" class="tap">BSPC</text>
+<use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="269.0" y="277.3" height="14" width="14.0" class="tap glyph mdi:backspace-outline"/>
 </g>
 <g transform="rotate(30.0, 346.2, 296.29999999999995)">
 <rect rx="6.0" ry="6.0" x="318.2" y="253.29999999999995" width="56.0" height="86.0" class="key"/>
-<text x="346.2" y="296.29999999999995" class="tap">RET</text>
+<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="339.2" y="289.29999999999995" height="14" width="14.0" class="tap glyph mdi:keyboard-return"/>
 </g>
 <g transform="rotate(-30.0, 493.8, 296.29999999999995)">
 <rect rx="6.0" ry="6.0" x="465.8" y="253.29999999999995" width="56.0" height="86.0" class="key"/>
-<text x="493.8" y="296.29999999999995" class="tap">TAB</text>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="486.8" y="289.29999999999995" height="14" width="14.0" class="tap glyph mdi:keyboard-tab"/>
 </g>
 <g transform="rotate(-15.0, 564.0, 284.3)">
 <rect rx="6.0" ry="6.0" x="536.0" y="256.3" width="56.0" height="56.0" class="key"/>
-<text x="564.0" y="284.3" class="tap">SPACE</text>
+<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="557.0" y="277.3" height="14" width="14.0" class="tap glyph mdi:keyboard-space"/>
 </g>
 <rect rx="6.0" ry="6.0" x="602.0" y="247.48000000000002" width="56.0" height="56.0" class="key"/>
 <text x="630.0" y="275.48" class="tap">ESC</text>
