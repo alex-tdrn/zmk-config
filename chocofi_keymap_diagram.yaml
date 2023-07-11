@@ -1,39 +1,4 @@
 layout: {qmk_keyboard: chocofi}
 layers:
-  default:
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ''''
-  - A
-  - R
-  - S
-  - T
-  - G
-  - M
-  - N
-  - E
-  - I
-  - O
-  - Z
-  - X
-  - C
-  - D
-  - V
-  - K
-  - H
-  - ','
-  - .
-  - /
-  - $$mdi:backspace-reverse-outline$$
-  - $$mdi:backspace-outline$$
-  - $$mdi:keyboard-return$$
-  - $$mdi:keyboard-tab$$
-  - $$mdi:keyboard-space$$
-  - ESC
+  default: [Q, W, F, P, B, J, L, U, Y, '''', A, R, S, T, G, M, N, E, I, O, Z, X, C, D, V, K, H, ',', ., /, '$$mdi:backspace-reverse-outline$$', '$$mdi:backspace-outline$$',
+    '$$mdi:keyboard-return$$', '$$mdi:keyboard-tab$$', '$$mdi:keyboard-space$$', ESC]
