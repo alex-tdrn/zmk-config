@@ -2,6 +2,19 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+/ {
+    behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPAACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }
+    };
+};
+
+
 #define BASE 0
 #define NUM 1
 
@@ -42,19 +55,19 @@
         compatible = "zmk,keymap";
         BASE_layer {
             bindings = <
-//    ┌─────────┬────────┬─────────┬──────────┬──────────────┐           ┌───┬──────────┬─────────┬────────┬─────────┐
-//    │    Q    │   W    │    F    │    P     │      B       │           │ J │    L     │    U    │   Y    │    '    │
-//    ├─────────┼────────┼─────────┼──────────┼──────────────┤           ├───┼──────────┼─────────┼────────┼─────────┤
-//    │ LMETA A │ LALT R │ LCTRL S │ LSHIFT T │      G       │           │ M │ RSHIFT N │ RCTRL E │ RALT I │ RMETA O │
-//    ├─────────┼────────┼─────────┼──────────┼──────────────┤           ├───┼──────────┼─────────┼────────┼─────────┤
-//    │    Z    │   X    │    C    │    D     │      V       │           │ K │    H     │    ,    │   .    │    /    │
-//    └─────────┴────────┴─────────┼──────────┼──────────────┼───┐   ┌───┼───┼──────────┼─────────┴────────┴─────────┘
-//                                 │    ⌦     │ &lt NUM BSPC │ ⏎ │   │ ⭾ │ ‿ │   Esc    │                             
-//                                 └──────────┴──────────────┴───┘   └───┴───┴──────────┘                             
+//    ┌─────────┬────────┬─────────┬───────────┬──────────────┐           ┌───┬──────────┬─────────┬────────┬─────────┐
+//    │    Q    │   W    │    F    │     P     │      B       │           │ J │    L     │    U    │   Y    │    '    │
+//    ├─────────┼────────┼─────────┼───────────┼──────────────┤           ├───┼──────────┼─────────┼────────┼─────────┤
+//    │ LMETA A │ LALT R │ LCTRL S │ LSHIFT T  │      G       │           │ M │ RSHIFT N │ RCTRL E │ RALT I │ RMETA O │
+//    ├─────────┼────────┼─────────┼───────────┼──────────────┤           ├───┼──────────┼─────────┼────────┼─────────┤
+//    │    Z    │   X    │    C    │     D     │      V       │           │ K │    H     │    ,    │   .    │    /    │
+//    └─────────┴────────┴─────────┼───────────┼──────────────┼───┐   ┌───┼───┼──────────┼─────────┴────────┴─────────┘
+//                                 │ &bspc_del │ &lt NUM BSPC │ ⏎ │   │ ⭾ │ ‿ │   Esc    │                             
+//                                 └───────────┴──────────────┴───┘   └───┴───┴──────────┘                             
   &kp Q         &kp W        &kp F         &kp P          &kp B                                  &kp J       &kp L          &kp U         &kp Y        &kp SQT    
   &mt LMETA A   &mt LALT R   &mt LCTRL S   &mt LSHIFT T   &kp G                                  &kp M       &mt RSHIFT N   &mt RCTRL E   &mt RALT I   &mt RMETA O
   &kp Z         &kp X        &kp C         &kp D          &kp V                                  &kp K       &kp H          &kp COMMA     &kp DOT      &kp FSLH   
-                                           &kp DEL        &lt NUM BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                              
+                                           &bspc_del      &lt NUM BSPC   &kp RET       &kp TAB   &kp SPACE   &kp ESC                                              
             >;
         };
 
