@@ -1,95 +1,83 @@
 draw_config:
-  key_w: 60.0
-  key_h: 60.0
-  split_gap: 30.0
-  combo_w: 28.0
-  combo_h: 26.0
+  key_h: 70.0
+  combo_w: 25.0
+  combo_h: 60.0
   key_rx: 6.0
   key_ry: 6.0
-  inner_pad_w: 2.0
-  inner_pad_h: 2.0
+  inner_pad_w: 5.0
+  inner_pad_h: 5.0
   outer_pad_w: 30.0
   outer_pad_h: 56.0
   line_spacing: 1.2
   arc_radius: 10.0
   arc_scale: 1.0
   append_colon_to_layer_header: false
-  small_pad: 5.0
+  small_pad: 7.0
   svg_style: |
+    /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
+    :root {
+        --background-color: #1F1F28;
+        --foreground-color: #E6C384;
+        --held-color: #98BB6C;
+        --shifted-color: #DCD7BA;
+        --layer-color: #C34043;
+        --combo-color: #938AA9;
+        --keycap-color: #727169;
+    }
+
     svg {
-        background-color: #181A1B;
-    }
-    /* inherit to force styles through use tags*/
-    svg path {
-        fill: inherit;
-    }
-    /* font and background color specifications */
-    svg.keymap {
-        font-family: JetBrainsMono NFM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-        font-size: 16px;
-        font-weight: bold;
-        fill: #1F1F28;
+        background-color: var(--background-color);
     }
 
-    /* default key styling */
-    rect.key {
-        fill: #DCD7BA;
-        stroke: #1F1F28;
-        stroke-width: 0;
+    rect {
+        fill: var(--background-color);
+        stroke: var(--keycap-color);
+        stroke-width: 2;
     }
 
-    /* color accent for combo boxes */
     rect.combo {
-        fill: #7FB4CA;
+        stroke: var(--combo-color);
     }
 
-    /* color accent for held keys */
-    rect.held, rect.combo.held {
-        fill: #76946A;
+    .held, .hold {
+        fill: var(--held-color);
     }
 
     text {
+        font-family: JetBrainsMono NFM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-size: 14px;
+        font-weight: bold;
         text-anchor: middle;
         dominant-baseline: middle;
         font-weight: bold;
-        fill: #1F1F28;
+        fill: var(--foreground-color);
     }
 
-    /* styling for layer labels */
     text.label {
-        font-weight: bold;
         font-size: 24px;
         text-anchor: start;
-        stroke: #938AA9;
-        stroke-width: 4;
+        fill: var(--layer-color);
         paint-order: stroke;
     }
 
-    /* styling for combo tap, and key hold/shifted label text */
-    text.combo, text.hold, text.shifted {
-        font-size: 11px;
+    text.hold, text.shifted {
+        font-size: 12px;
     }
 
     text.hold {
         text-anchor: middle;
         dominant-baseline: auto;
-        fill: #C34043;
     }
 
     text.shifted {
         text-anchor: middle;
         dominant-baseline: hanging;
+        fill: var(--shifted-color);
     }
 
-    /* styling for hold/shifted label text in combo box */
-    text.combo.hold, text.combo.shifted {
-        font-size: 8px;
-    }
-
-    /* styling for combo dendrons */
     path.combo {
         stroke-width: 2;
-        stroke: #7FB4CA;
+        stroke: var(--combo-color);
         fill: none;
     }
 parse_config:
