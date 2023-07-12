@@ -177,14 +177,11 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="286.15999999999997" y="465.42745023629067" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="557.84" y="465.42745023629067" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="621.3800000000001" y="457.02745023629063" width="59.54" height="56.0" class="key"/>
-<text x="651.1500000000001" y="485.02745023629063" class="tap">
-<tspan x="651.1500000000001" dy="-0.6em">KP</tspan><tspan x="651.1500000000001" dy="1.2em">7</tspan></text>
+<text x="651.1500000000001" y="485.02745023629063" class="tap">7</text>
 <rect rx="6.0" ry="6.0" x="684.9200000000001" y="433.68745023629066" width="59.54" height="56.0" class="key"/>
-<text x="714.69" y="461.68745023629066" class="tap">
-<tspan x="714.69" dy="-0.6em">KP</tspan><tspan x="714.69" dy="1.2em">8</tspan></text>
+<text x="714.69" y="461.68745023629066" class="tap">8</text>
 <rect rx="6.0" ry="6.0" x="748.46" y="454.86745023629067" width="59.54" height="56.0" class="key"/>
-<text x="778.23" y="482.86745023629067" class="tap">
-<tspan x="778.23" dy="-0.6em">KP</tspan><tspan x="778.23" dy="1.2em">9</tspan></text>
+<text x="778.23" y="482.86745023629067" class="tap">9</text>
 <rect rx="6.0" ry="6.0" x="812.0" y="497.2274502362907" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="31.999999999999996" y="557.2274502362907" width="59.54" height="56.0" class="key"/>
 <text x="61.769999999999996" y="585.2274502362907" class="tap">Meta</text>
@@ -196,17 +193,13 @@ path.combo {
 <text x="252.39000000000001" y="545.0274502362906" class="tap">Shift</text>
 <rect rx="6.0" ry="6.0" x="286.15999999999997" y="525.4274502362906" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="557.84" y="525.4274502362906" width="59.54" height="56.0" class="key"/>
-<text x="587.61" y="553.4274502362906" class="tap">
-<tspan x="587.61" dy="-0.6em">KP</tspan><tspan x="587.61" dy="1.2em">0</tspan></text>
+<text x="587.61" y="553.4274502362906" class="tap">0</text>
 <rect rx="6.0" ry="6.0" x="621.3800000000001" y="517.0274502362906" width="59.54" height="56.0" class="key"/>
-<text x="651.1500000000001" y="545.0274502362906" class="tap">
-<tspan x="651.1500000000001" dy="-0.6em">KP</tspan><tspan x="651.1500000000001" dy="1.2em">4</tspan></text>
+<text x="651.1500000000001" y="545.0274502362906" class="tap">4</text>
 <rect rx="6.0" ry="6.0" x="684.9200000000001" y="493.6874502362907" width="59.54" height="56.0" class="key"/>
-<text x="714.69" y="521.6874502362907" class="tap">
-<tspan x="714.69" dy="-0.6em">KP</tspan><tspan x="714.69" dy="1.2em">5</tspan></text>
+<text x="714.69" y="521.6874502362907" class="tap">5</text>
 <rect rx="6.0" ry="6.0" x="748.46" y="514.8674502362907" width="59.54" height="56.0" class="key"/>
-<text x="778.23" y="542.8674502362907" class="tap">
-<tspan x="778.23" dy="-0.6em">KP</tspan><tspan x="778.23" dy="1.2em">6</tspan></text>
+<text x="778.23" y="542.8674502362907" class="tap">6</text>
 <rect rx="6.0" ry="6.0" x="812.0" y="557.2274502362907" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="31.999999999999996" y="617.2274502362907" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="95.53999999999999" y="574.8674502362907" width="59.54" height="56.0" class="key"/>
@@ -215,14 +208,11 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="286.15999999999997" y="585.4274502362907" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="557.84" y="585.4274502362907" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="621.3800000000001" y="577.0874502362907" width="59.54" height="56.0" class="key"/>
-<text x="651.1500000000001" y="605.0874502362907" class="tap">
-<tspan x="651.1500000000001" dy="-0.6em">KP</tspan><tspan x="651.1500000000001" dy="1.2em">1</tspan></text>
+<text x="651.1500000000001" y="605.0874502362907" class="tap">1</text>
 <rect rx="6.0" ry="6.0" x="684.9200000000001" y="553.6874502362907" width="59.54" height="56.0" class="key"/>
-<text x="714.69" y="581.6874502362907" class="tap">
-<tspan x="714.69" dy="-0.6em">KP</tspan><tspan x="714.69" dy="1.2em">2</tspan></text>
+<text x="714.69" y="581.6874502362907" class="tap">2</text>
 <rect rx="6.0" ry="6.0" x="748.46" y="574.8674502362907" width="59.54" height="56.0" class="key"/>
-<text x="778.23" y="602.8674502362907" class="tap">
-<tspan x="778.23" dy="-0.6em">KP</tspan><tspan x="778.23" dy="1.2em">3</tspan></text>
+<text x="778.23" y="602.8674502362907" class="tap">3</text>
 <rect rx="6.0" ry="6.0" x="812.0" y="617.2274502362907" width="59.54" height="56.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="201.74" y="647.5274502362906" width="59.54" height="56.0" class="key"/>
 <g transform="rotate(15.0, 302.31102222521133, 684.6396856649376)">
