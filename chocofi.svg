@@ -167,6 +167,22 @@ path.combo {
 </g>
 <rect rx="6.0" ry="6.0" x="642.26" y="271.84000000000003" width="59.54" height="56.0" class="key"/>
 <text x="672.03" y="299.84000000000003" class="tap">ESC</text>
+<rect rx="6.0" ry="6.0" x="206.62" y="144.67000000000002" width="28.0" height="26.0" class="combo"/>
+<text x="220.62" y="157.67000000000002" class="combo tap">(</text>
+<rect rx="6.0" ry="6.0" x="206.62" y="204.7" width="28.0" height="26.0" class="combo"/>
+<text x="220.62" y="217.7" class="combo tap">)</text>
+<rect rx="6.0" ry="6.0" x="143.07999999999998" y="143.59" width="28.0" height="26.0" class="combo"/>
+<text x="157.07999999999998" y="156.59" class="combo tap">&lt;</text>
+<rect rx="6.0" ry="6.0" x="143.07999999999998" y="203.59" width="28.0" height="26.0" class="combo"/>
+<text x="157.07999999999998" y="216.59" class="combo tap">&gt;</text>
+<rect rx="6.0" ry="6.0" x="668.9200000000001" y="144.67000000000002" width="28.0" height="26.0" class="combo"/>
+<text x="682.9200000000001" y="157.67000000000002" class="combo tap">{</text>
+<rect rx="6.0" ry="6.0" x="668.9200000000001" y="204.7" width="28.0" height="26.0" class="combo"/>
+<text x="682.9200000000001" y="217.7" class="combo tap">}</text>
+<rect rx="6.0" ry="6.0" x="732.46" y="143.59" width="28.0" height="26.0" class="combo"/>
+<text x="746.46" y="156.59" class="combo tap">[</text>
+<rect rx="6.0" ry="6.0" x="732.46" y="203.59" width="28.0" height="26.0" class="combo"/>
+<text x="746.46" y="216.59" class="combo tap">]</text>
 </g>
 <g class="layer-NUM">
 <text x="30.0" y="403.68745023629066" class="label">NUM</text>
