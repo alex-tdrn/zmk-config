@@ -147,7 +147,8 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="812.0" y="241.54000000000002" width="59.54" height="56.0" class="key"/>
 <text x="841.77" y="269.54" class="tap">/</text>
 <rect rx="6.0" ry="6.0" x="201.74" y="271.84000000000003" width="59.54" height="56.0" class="key"/>
-<text x="231.51000000000002" y="299.84000000000003" class="tap">⌦</text>
+<text x="231.51000000000002" y="299.84000000000003" class="tap" style="font-size: 78%">BACKSPACE</text>
+<text x="231.51000000000002" y="276.84000000000003" class="shifted">DELETE</text>
 <g transform="rotate(15.0, 302.31102222521133, 308.95223542864693)">
 <rect rx="6.0" ry="6.0" x="272.54102222521135" y="280.95223542864693" width="59.54" height="56.0" class="key"/>
 <text x="302.31102222521133" y="308.95223542864693" class="tap">⌫</text>
