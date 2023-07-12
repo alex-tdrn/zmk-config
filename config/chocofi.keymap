@@ -36,12 +36,12 @@
 //    ├───────────┼──────────┼───────────┼────────────┼───┤           ├───────┼──────────┼─────────┼────────┼─────────┤
 //    │           │          │           │            │   │           │ &kp 0 │  &kp 1   │  &kp 2  │ &kp 3  │    /    │
 //    └───────────┴──────────┴───────────┼────────────┼───┼───┐   ┌───┼───────┼──────────┼─────────┴────────┴─────────┘
-//                                       │     ▽      │ ⌫ │ ▽ │   │ ▽ │   ▽   │    ▽     │                             
+//                                       │            │   │ ▽ │   │ ▽ │   ▽   │    ▽     │                             
 //                                       └────────────┴───┴───┘   └───┴───────┴──────────┘                             
-  &none       &none      &none       &none        &none                            &kp J    &kp 7          &kp 8         &kp 9        &kp SQT    
-  &kp LMETA   &kp LALT   &kp LCTRL   &kp LSHIFT   &none                            &kp M    &mt RSHIFT 4   &mt RCTRL 5   &mt RALT 6   &mt RMETA O
-  &none       &none      &none       &none        &none                            &kp 0    &kp 1          &kp 2         &kp 3        &kp FSLH   
-                                     &trans       &kp BSPC   &trans       &trans   &trans   &trans                                               
+  &none       &none      &none       &none        &none                         &kp J    &kp 7          &kp 8         &kp 9        &kp SQT    
+  &kp LMETA   &kp LALT   &kp LCTRL   &kp LSHIFT   &none                         &kp M    &mt RSHIFT 4   &mt RCTRL 5   &mt RALT 6   &mt RMETA O
+  &none       &none      &none       &none        &none                         &kp 0    &kp 1          &kp 2         &kp 3        &kp FSLH   
+                                     &none        &none   &trans       &trans   &trans   &trans                                               
             >;
         };
     };
