@@ -73,7 +73,7 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="109.13" y="85.71000000000001" width="64.13" height="60.0" class="key"/>
 <text x="141.195" y="115.71000000000001" class="tap">W</text>
 <rect rx="6.0" ry="6.0" x="183.26" y="61.0" width="64.13" height="60.0" class="key"/>
-<text x="215.325" y="91.0" class="tap">&amp;kp</text>
+<text x="215.325" y="91.0" class="tap">F</text>
 <rect rx="6.0" ry="6.0" x="257.39" y="88.23" width="64.13" height="60.0" class="key"/>
 <text x="289.455" y="118.23" class="tap">P</text>
 <rect rx="6.0" ry="6.0" x="331.52" y="98.03" width="64.13" height="60.0" class="key"/>

@@ -1,0 +1,101 @@
+layout: {qmk_keyboard: chocofi}
+layers:
+  BASE:
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: A, h: Meta}
+  - {t: R, h: Alt}
+  - {t: S, h: Ctrl}
+  - {t: T, h: Shift}
+  - G
+  - M
+  - {t: N, h: Shift}
+  - {t: E, h: Ctrl}
+  - {t: I, h: Alt}
+  - {t: O, h: Meta}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - {t: ⌫, s: ⌦}
+  - {t: ⌫, h: NUM}
+  - ⭾
+  - ⏎
+  - {t: ‿, h: Shift}
+  - ESC
+  NUM:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '7'
+  - '8'
+  - '9'
+  - ''
+  - Meta
+  - Alt
+  - Ctrl
+  - Shift
+  - ''
+  - '0'
+  - '4'
+  - '5'
+  - '6'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '1'
+  - '2'
+  - '3'
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+combos:
+- p: [12, 13]
+  k: (
+  l: [BASE]
+- p: [22, 23]
+  k: )
+  l: [BASE]
+- p: [11, 12]
+  k: <
+  l: [BASE]
+- p: [21, 22]
+  k: '>'
+  l: [BASE]
+- p: [16, 17]
+  k: '{'
+  l: [BASE]
+- p: [26, 27]
+  k: '}'
+  l: [BASE]
+- p: [17, 18]
+  k: '['
+  l: [BASE]
+- p: [27, 28]
+  k: ']'
+  l: [BASE]
