@@ -2,28 +2,79 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-/ {
-    behaviors {
-        bspc_del: backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BACKSPACE_DELETE";
-            #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-    };
-};
-
-
+// Layers
 #define BASE 0
 #define NUM 1
 
-//  ╭────────────────────╮ ╭────────────────────╮
-//  │  0   1   2   3   4 │ │  5   6   7   8   9 │
-//  │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
-//  │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
-//  ╰───────╮ 30  31  32 │ │ 32  33  34 ╭───────╯
-//          ╰────────────╯ ╰────────────╯
+// Key positions
+// - first Letter is the hand: (L)eft or (R)ight
+// - second letter is the finger (P)inky; (R)ing; (M)iddle; (I)ndex; (T)humb
+// - third letter is either
+//      - the column for the thumb finger (O)uter; (H)ome; (I)nner
+//      - the row for all the other fingers (U)pper; (H)ome; (L)ower
+// - for the index fingers, the (I)nner column with another 'I' at the end
+//  ╭──────────────────────────────────────────────╮ ╭──────────────────────────────────────────────╮
+//  │ LPU (0)  LRU (1)  LMU (2)  LIU (3)  LIUI (4) │ │ RIUI (5)  RIU (6)  RMU (7)  RRU (8)  RPU (9) │
+//  │ LPH(10)  LRH(11)  LMH(12)  LIH(13)  LIHI(14) │ │ RIHI(15)  RIH(16)  RMH(17)  RRH(18)  RPH(19) │
+//  │ LPL(20)  LRL(21)  LML(22)  LIL(23)  LILI(24) │ │ RILI(25)  RIL(26)  RML(27)  RRL(28)  RPL(29) │
+//  ╰─────────────────╮ LTO(30)  LTH(31)  LTI (32) │ │ RTI (32)  RTH(33)  RTO(34) ╭─────────────────╯
+//                    ╰────────────────────────────╯ ╰────────────────────────────╯
+
+// left pinky finger
+#define LPU 0
+#define LPH 10
+#define LPL 20
+
+// left ring finger
+#define LRU 1
+#define LRH 11
+#define LRL 21
+
+// left middle finger
+#define LMU 2
+#define LMH 12
+#define LML 22
+
+// left index finger
+#define LIU 3
+#define LIH 13
+#define LIL 23
+#define LIUI 4
+#define LIHI 14
+#define LILI 24
+
+// left thumb
+#define LTO 30
+#define LTH 31
+#define LTI 32
+
+// right pinky finger
+#define RPU 9
+#define RPH 19
+#define RPL 29
+
+// right ring finger
+#define RRU 8
+#define RRH 18
+#define RRL 28
+
+// right middle finger
+#define RMU 7
+#define RMH 17
+#define RML 27
+
+// right index finger
+#define RIU 6
+#define RIH 16
+#define RIL 26
+#define RIUI 5
+#define RIHI 15
+#define RILI 25
+
+// right thumb
+#define RTO 34
+#define RTH 33
+#define RTI 32
 
 #define COMBO(NAME, LAYERS, KEYPOS, BINDINGS) \
         combo_##NAME { \
@@ -36,17 +87,29 @@
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(lpar, BASE, 12 13, &kp LPAR);
-        COMBO(rpar, BASE, 22 23, &kp RPAR);
+        COMBO(lpar, BASE, LMH LIH, &kp LPAR);
+        COMBO(rpar, BASE, LML LIL, &kp RPAR);
 
-        COMBO(lt, BASE, 11 12, &kp LT);
-        COMBO(gt, BASE, 21 22, &kp GT);
+        COMBO(lt, BASE, LRH LMH, &kp LT);
+        COMBO(gt, BASE, LRL LML, &kp GT);
 
-        COMBO(lbrace, BASE, 16 17, &kp LBRC);
-        COMBO(rbrace, BASE, 26 27, &kp RBRC);
+        COMBO(lbrace, BASE, RIH RMH, &kp LBRC);
+        COMBO(rbrace, BASE, RIL RML, &kp RBRC);
 
-        COMBO(lbracket, BASE, 17 18, &kp LBKT);
-        COMBO(rbracket, BASE, 27 28, &kp RBKT);
+        COMBO(lbracket, BASE, RMH RRH, &kp LBKT);
+        COMBO(rbracket, BASE, RML RRL, &kp RBKT);
+    };
+};
+
+/ {
+    behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 };
 
