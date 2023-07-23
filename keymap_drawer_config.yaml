@@ -84,6 +84,21 @@ parse_config:
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map: {}
+  zmk_combos:
+    combo_qu: 
+       'k': {t: 'Qu', h: 'Q'}
+    combo_th: 
+       'k': {t: 'Th'}
+    combo_ch: 
+       'k': {t: 'Ch'}
+    combo_sh: 
+       'k': {t: 'Sh'}
+    combo_wh: 
+       'k': {t: 'Wh'}
+    combo_gh: 
+       'k': {t: 'Gh'}
+    combo_ph: 
+       'k': {t: 'Ph'}
   sticky_label: sticky
   trans_legend:
     t: ▽

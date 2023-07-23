@@ -1,101 +1,64 @@
 layout: {qmk_keyboard: chocofi}
 layers:
   BASE:
-  - Q
-  - W
-  - F
-  - P
-  - B
   - J
-  - L
-  - U
-  - Y
-  - ''''
-  - {t: A, h: Meta}
-  - {t: R, h: Alt}
-  - {t: S, h: Ctrl}
-  - {t: T, h: Shift}
   - G
   - M
-  - {t: N, h: Shift}
+  - P
+  - V
+  - {t: ;, s: ':'}
+  - {t: ., s: '&'}
+  - {t: /, s: '*'}
+  - {t: '"', s: '?'}
+  - {t: '''', s: '!'}
+  - {t: R, h: Meta}
+  - {t: S, h: Alt}
+  - {t: N, h: Ctrl}
+  - {t: D, h: Shift}
+  - B
+  - {t: ',', s: '|'}
+  - {t: A, h: Shift}
   - {t: E, h: Ctrl}
   - {t: I, h: Alt}
-  - {t: O, h: Meta}
-  - Z
+  - {t: H, h: Meta}
   - X
+  - F
+  - L
   - C
-  - D
-  - V
+  - W
+  - {t: '-', s: +}
+  - U
+  - O
+  - Y
   - K
-  - H
-  - ','
-  - .
-  - /
   - {t: ⌫, s: ⌦}
-  - {t: ⌫, h: NUM}
+  - T
   - ⭾
   - ⏎
-  - {t: ‿, h: Shift}
+  - ‿
   - ESC
-  NUM:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '7'
-  - '8'
-  - '9'
-  - ''
-  - Meta
-  - Alt
-  - Ctrl
-  - Shift
-  - ''
-  - '0'
-  - '4'
-  - '5'
-  - '6'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '1'
-  - '2'
-  - '3'
-  - ''
-  - ''
-  - {type: held}
-  - ''
-  - ''
-  - ''
-  - ''
 combos:
-- p: [12, 13]
-  k: (
+- p: [20, 21]
+  k: Z
   l: [BASE]
-- p: [22, 23]
-  k: )
+- p: [29, 28]
+  k: {t: Qu, h: Q}
+  l: [BASE]
+- p: [13, 12]
+  k: Th
+  l: [BASE]
+- p: [23, 22]
+  k: Ch
   l: [BASE]
 - p: [11, 12]
-  k: <
+  k: Sh
   l: [BASE]
-- p: [21, 22]
-  k: '>'
+- p: [18, 19]
+  k: Wh
   l: [BASE]
-- p: [16, 17]
-  k: '{'
+- p: [1, 2]
+  k: Gh
   l: [BASE]
-- p: [26, 27]
-  k: '}'
-  l: [BASE]
-- p: [17, 18]
-  k: '['
-  l: [BASE]
-- p: [27, 28]
-  k: ']'
+- p: [2, 3]
+  k: Ph
   l: [BASE]
