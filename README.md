@@ -1,9 +1,10 @@
 My personal zmk config for the [chocofi](https://github.com/pashutk/chocofi)
 
-
 ![keymap](./chocofi.svg)
 
 ## Acknowledgements
+
+Alpha layout is [hands-down gold](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.8i2msuo3butx), with slight tweaks to the locations of the `Z` and `Qu` combos.
 
 Chocofi board definition taken from [infused-kim](https://github.com/infused-kim/zmk-config)
 
