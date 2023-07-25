@@ -75,6 +75,18 @@
 #define RTH 33
 #define RTI 32
 
+#define L_INDEX_FINGER LIUI LIHI LILI LIU LIH LIL
+#define L_MIDDLE_FINGER LMU LMH LML
+#define L_RING_FINGER LRU LRH LRL
+#define L_PINKY_FINGER LPU LPH LPL
+#define L_THUMB LTO LTH LTI
+
+#define R_INDEX_FINGER RIUI RIHI RILI RIU RIH RIL
+#define R_MIDDLE_FINGER RMU RMH RML
+#define R_RING_FINGER RRU RRH RRL
+#define R_PINKY_FINGER RPU RPH RPL
+#define R_THUMB RTO RTH RTI
+
 #define COMBO(NAME, LAYERS, KEYPOS, BINDINGS) \
 / { \
     combos { \
@@ -170,25 +182,46 @@ COMBO(gh, BASE, LRU LMU, &gh);
 BIGRAM(ph, P, H);
 COMBO(ph, BASE, LMU LIU, &ph);
 
-
 / {
+    behaviors {
+        lmt: lmt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "lmt";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <R_INDEX_FINGER R_MIDDLE_FINGER R_RING_FINGER R_PINKY_FINGER R_THUMB>;
+        };
+
+        rmt: rmt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "rmt";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <L_INDEX_FINGER L_MIDDLE_FINGER L_RING_FINGER L_PINKY_FINGER L_THUMB>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         BASE_layer {
             bindings = <
-//    ┌─────────────┬────────────┬─────────────┬──────────────┬───────┐                       ┌───────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
-//    │    &kp J    │   &kp G    │    &kp M    │    &kp P     │ &kp V │                       │ &symbols_RIUI │ &symbols_RIU │ &symbols_RMU │ &symbols_RRU │ &symbols_RPU │
-//    ├─────────────┼────────────┼─────────────┼──────────────┼───────┤                       ├───────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-//    │ &mt LMETA R │ &mt LALT S │ &mt LCTRL N │ &mt LSHIFT D │ &kp B │                       │ &symbols_RIHI │ &mt RSHIFT A │ &mt RCTRL E  │  &mt RALT I  │ &mt RMETA H  │
-//    ├─────────────┼────────────┼─────────────┼──────────────┼───────┤                       ├───────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-//    │    &kp X    │   &kp F    │    &kp L    │    &kp C     │ &kp W │                       │ &symbols_RILI │    &kp U     │    &kp O     │    &kp Y     │    &kp K     │
-//    └─────────────┴────────────┴─────────────┼──────────────┼───────┼─────────┐   ┌─────────┼───────────────┼──────────────┼──────────────┴──────────────┴──────────────┘
-//                                             │  &bspc_del   │ &kp T │ &kp TAB │   │ &kp RET │   &kp SPACE   │   &kp ESC    │                                             
-//                                             └──────────────┴───────┴─────────┘   └─────────┴───────────────┴──────────────┘                                             
-  &kp J         &kp G        &kp M         &kp P          &kp V                           &symbols_RIUI   &symbols_RIU   &symbols_RMU   &symbols_RRU   &symbols_RPU
-  &mt LMETA R   &mt LALT S   &mt LCTRL N   &mt LSHIFT D   &kp B                           &symbols_RIHI   &mt RSHIFT A   &mt RCTRL E    &mt RALT I     &mt RMETA H 
-  &kp X         &kp F        &kp L         &kp C          &kp W                           &symbols_RILI   &kp U          &kp O          &kp Y          &kp K       
-                                           &bspc_del      &kp T   &kp TAB       &kp RET   &kp SPACE       &kp ESC                                                  
+//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────┐                       ┌───────────────┬───────────────┬──────────────┬──────────────┬──────────────┐
+//    │    &kp J     │    &kp G    │    &kp M     │     &kp P     │ &kp V │                       │ &symbols_RIUI │ &symbols_RIU  │ &symbols_RMU │ &symbols_RRU │ &symbols_RPU │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                       ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
+//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │ &kp B │                       │ &symbols_RIHI │ &rmt RSHIFT A │ &rmt RCTRL E │ &rmt RALT I  │ &rmt RMETA H │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                       ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
+//    │    &kp X     │    &kp F    │    &kp L     │     &kp C     │ &kp W │                       │ &symbols_RILI │     &kp U     │    &kp O     │    &kp Y     │    &kp K     │
+//    └──────────────┴─────────────┴──────────────┼───────────────┼───────┼─────────┐   ┌─────────┼───────────────┼───────────────┼──────────────┴──────────────┴──────────────┘
+//                                                │   &bspc_del   │ &kp T │ &kp TAB │   │ &kp RET │   &kp SPACE   │    &kp ESC    │                                             
+//                                                └───────────────┴───────┴─────────┘   └─────────┴───────────────┴───────────────┘                                             
+  &kp J          &kp G         &kp M          &kp P           &kp V                           &symbols_RIUI   &symbols_RIU    &symbols_RMU   &symbols_RRU   &symbols_RPU
+  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                           &symbols_RIHI   &rmt RSHIFT A   &rmt RCTRL E   &rmt RALT I    &rmt RMETA H
+  &kp X          &kp F         &kp L          &kp C           &kp W                           &symbols_RILI   &kp U           &kp O          &kp Y          &kp K       
+                                              &bspc_del       &kp T   &kp TAB       &kp RET   &kp SPACE       &kp ESC                                                   
             >;
         };
     };
