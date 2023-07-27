@@ -8,6 +8,8 @@ Alpha layout is [hands-down gold](https://sites.google.com/alanreiser.com/handsd
 
 Chocofi board definition taken from [infused-kim](https://github.com/infused-kim/zmk-config)
 
+Uses [urob's zmk fork](https://github.com/urob/zmk)
+
 SVG keymaps are auto-generated using [keymap-drawer](https://github.com/caksoylar/keymap-drawer)
 
 Color palette used in the keymap SVGs is [kanagawa](https://github.com/rebelot/kanagawa.nvim/)
