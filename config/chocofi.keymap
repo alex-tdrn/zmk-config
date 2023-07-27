@@ -16,7 +16,7 @@
 //  │ LPU (0)  LRU (1)  LMU (2)  LIU (3)  LIUI (4) │ │ RIUI (5)  RIU (6)  RMU (7)  RRU (8)  RPU (9) │
 //  │ LPH(10)  LRH(11)  LMH(12)  LIH(13)  LIHI(14) │ │ RIHI(15)  RIH(16)  RMH(17)  RRH(18)  RPH(19) │
 //  │ LPL(20)  LRL(21)  LML(22)  LIL(23)  LILI(24) │ │ RILI(25)  RIL(26)  RML(27)  RRL(28)  RPL(29) │
-//  ╰─────────────────╮ LTO(30)  LTH(31)  LTI (32) │ │ RTI (32)  RTH(33)  RTO(34) ╭─────────────────╯
+//  ╰─────────────────╮ LTO(30)  LTH(31)  LTI (32) │ │ RTI (33)  RTH(34)  RTO(35) ╭─────────────────╯
 //                    ╰────────────────────────────╯ ╰────────────────────────────╯
 
 // left pinky finger
@@ -71,9 +71,9 @@
 #define RILI 25
 
 // right thumb
-#define RTO 34
-#define RTH 33
-#define RTI 32
+#define RTO 35
+#define RTH 34
+#define RTI 33
 
 #define L_INDEX_FINGER LIUI LIHI LILI LIU LIH LIL
 #define L_MIDDLE_FINGER LMU LMH LML
