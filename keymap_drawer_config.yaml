@@ -205,3 +205,4 @@ parse_config:
     RCTRL: $$control$$
     LMETA: $$meta$$
     RMETA: $$meta$$
+    ESC: 'Esc'
