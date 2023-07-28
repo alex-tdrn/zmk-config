@@ -12,7 +12,10 @@ draw_config:
   arc_radius: 10.0
   arc_scale: 1.0
   append_colon_to_layer_header: false
-  small_pad: 7.0
+  small_pad: 7.0 
+  glyph_tap_size: 14
+  glyph_hold_size: 10
+  glyph_shifted_size: 10
   svg_style: |
     /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
     :root {
