@@ -10,7 +10,8 @@
 
 // Layers
 #define BASE 0
-#define SYS 1
+#define NAV 1
+#define SYS 2
 
 // Key positions
 // - first Letter is the hand: (L)eft or (R)ight
@@ -228,21 +229,40 @@ COMBO(caps_word, BASE, LIH RIH, &caps_word);
         compatible = "zmk,keymap";
         BASE_layer {
             bindings = <
-//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────┐                       ┌───────────────┬───────────────┬──────────────┬──────────────┬──────────────┐
-//    │    &kp J     │    &kp G    │    &kp M     │     &kp P     │ &kp V │                       │ &symbols_RIUI │ &symbols_RIU  │ &symbols_RMU │ &symbols_RRU │ &symbols_RPU │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                       ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
-//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │ &kp B │                       │ &symbols_RIHI │ &rmt RSHIFT A │ &rmt RCTRL E │ &rmt RALT I  │ &rmt RMETA H │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                       ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
-//    │    &kp X     │    &kp F    │    &kp L     │     &kp C     │ &kp W │                       │ &symbols_RILI │     &kp U     │    &kp O     │    &kp Y     │    &kp K     │
-//    └──────────────┴─────────────┴──────────────┼───────────────┼───────┼─────────┐   ┌─────────┼───────────────┼───────────────┼──────────────┴──────────────┴──────────────┘
-//                                                │   &bspc_del   │ &kp T │ &kp TAB │   │ &kp RET │   &kp SPACE   │  &lt SYS ESC  │                                             
-//                                                └───────────────┴───────┴─────────┘   └─────────┴───────────────┴───────────────┘                                             
-  &kp J          &kp G         &kp M          &kp P           &kp V                           &symbols_RIUI   &symbols_RIU    &symbols_RMU   &symbols_RRU   &symbols_RPU
-  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                           &symbols_RIHI   &rmt RSHIFT A   &rmt RCTRL E   &rmt RALT I    &rmt RMETA H
-  &kp X          &kp F         &kp L          &kp C           &kp W                           &symbols_RILI   &kp U           &kp O          &kp Y          &kp K       
-                                              &bspc_del       &kp T   &kp TAB       &kp RET   &kp SPACE       &lt SYS ESC                                               
+//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────┐                           ┌───────────────┬───────────────┬──────────────┬──────────────┬──────────────┐
+//    │    &kp J     │    &kp G    │    &kp M     │     &kp P     │ &kp V │                           │ &symbols_RIUI │ &symbols_RIU  │ &symbols_RMU │ &symbols_RRU │ &symbols_RPU │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                           ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
+//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │ &kp B │                           │ &symbols_RIHI │ &rmt RSHIFT A │ &rmt RCTRL E │ &rmt RALT I  │ &rmt RMETA H │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                           ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
+//    │    &kp X     │    &kp F    │    &kp L     │     &kp C     │ &kp W │                           │ &symbols_RILI │     &kp U     │    &kp O     │    &kp Y     │    &kp K     │
+//    └──────────────┴─────────────┴──────────────┼───────────────┼───────┼─────────────┐   ┌─────────┼───────────────┼───────────────┼──────────────┴──────────────┴──────────────┘
+//                                                │   &bspc_del   │ &kp T │ &lt NAV TAB │   │ &kp RET │   &kp SPACE   │  &lt SYS ESC  │                                             
+//                                                └───────────────┴───────┴─────────────┘   └─────────┴───────────────┴───────────────┘                                             
+  &kp J          &kp G         &kp M          &kp P           &kp V                               &symbols_RIUI   &symbols_RIU    &symbols_RMU   &symbols_RRU   &symbols_RPU
+  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                               &symbols_RIHI   &rmt RSHIFT A   &rmt RCTRL E   &rmt RALT I    &rmt RMETA H
+  &kp X          &kp F         &kp L          &kp C           &kp W                               &symbols_RILI   &kp U           &kp O          &kp Y          &kp K       
+                                              &bspc_del       &kp T   &lt NAV TAB       &kp RET   &kp SPACE       &lt SYS ESC                                               
             >;
         };
+
+        NAV_layer {
+            bindings = <
+//    ┌───────┬──────────┬──────────┬───────────┬───────┐                   ┌───────┬────────────┬───────────┬──────────┬───────────┐
+//    │ &none │  &none   │  &kp UP  │   &none   │ &none │                   │ &none │   &none    │   &none   │  &none   │   &none   │
+//    ├───────┼──────────┼──────────┼───────────┼───────┤                   ├───────┼────────────┼───────────┼──────────┼───────────┤
+//    │ &none │ &kp LEFT │ &kp DOWN │ &kp RIGHT │ &none │                   │ &none │ &kp LSHIFT │ &kp LCTRL │ &kp LALT │ &kp LMETA │
+//    ├───────┼──────────┼──────────┼───────────┼───────┤                   ├───────┼────────────┼───────────┼──────────┼───────────┤
+//    │ &none │  &none   │  &none   │   &none   │ &none │                   │ &none │   &none    │   &none   │  &none   │   &none   │
+//    └───────┴──────────┴──────────┼───────────┼───────┼───────┐   ┌───────┼───────┼────────────┼───────────┴──────────┴───────────┘
+//                                  │   &none   │ &none │ &none │   │ &none │ &none │   &none    │                                   
+//                                  └───────────┴───────┴───────┘   └───────┴───────┴────────────┘                                   
+  &none   &none      &kp UP     &none       &none                       &none   &none        &none       &none      &none    
+  &none   &kp LEFT   &kp DOWN   &kp RIGHT   &none                       &none   &kp LSHIFT   &kp LCTRL   &kp LALT   &kp LMETA
+  &none   &none      &none      &none       &none                       &none   &none        &none       &none      &none    
+                                &none       &none   &none       &none   &none   &none                                        
+            >;
+        };
+
         SYS_layer {
             bindings = <
 //    ┌──────────────┬───────────────────┬──────────────────┬──────────────┬──────────────┐                   ┌───────┬───────┬───────┬───────┬───────┐
