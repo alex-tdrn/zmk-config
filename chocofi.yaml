@@ -11,16 +11,16 @@ layers:
   - {t: /, s: '*'}
   - {t: '"', s: '?'}
   - {t: '''', s: '!'}
-  - {t: R, h: Meta}
-  - {t: S, h: Alt}
-  - {t: N, h: Ctrl}
-  - {t: D, h: Shift}
+  - {t: R, h: $$meta$$}
+  - {t: S, h: $$alt$$}
+  - {t: N, h: $$control$$}
+  - {t: D, h: $$shift$$}
   - B
   - {t: ',', s: '|'}
-  - {t: A, h: Shift}
-  - {t: E, h: Ctrl}
-  - {t: I, h: Alt}
-  - {t: H, h: Meta}
+  - {t: A, h: $$shift$$}
+  - {t: E, h: $$control$$}
+  - {t: I, h: $$alt$$}
+  - {t: H, h: $$meta$$}
   - X
   - F
   - L
@@ -31,12 +31,12 @@ layers:
   - O
   - Y
   - K
-  - {t: ⌫, s: ⌦}
+  - {t: $$backspace$$, s: $$delete$$}
   - T
-  - ⭾
-  - ⏎
+  - Tab
+  - $$return$$
   - ‿
-  - {t: ESC, h: SYS}
+  - {t: Esc, h: SYS}
   SYS:
   - $$bluetooth_clear$$
   - $$led_off$$
