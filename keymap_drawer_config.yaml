@@ -188,7 +188,7 @@ parse_config:
     BSPC: $$backspace$$
     RET: '⏎'
     SPACE: '‿'
-    TAB: '⭾'
+    TAB: 'Tab'
     LSHIFT: 'Shift'
     RSHIFT: 'Shift'
     LALT: 'Alt'
