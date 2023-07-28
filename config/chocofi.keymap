@@ -191,20 +191,26 @@ COMBO(ph, BASE, LMU LIU, &ph);
             compatible = "zmk,behavior-hold-tap";
             label = "lmt";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <500>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            global-quick-tap-ms = <150>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <R_INDEX_FINGER R_MIDDLE_FINGER R_RING_FINGER R_PINKY_FINGER R_THUMB>;
+            hold-trigger-on-release;
         };
 
         rmt: rmt {
             compatible = "zmk,behavior-hold-tap";
             label = "rmt";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <500>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            global-quick-tap-ms = <150>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <L_INDEX_FINGER L_MIDDLE_FINGER L_RING_FINGER L_PINKY_FINGER L_THUMB>;
+            hold-trigger-on-release;
         };
     };
 
