@@ -33,10 +33,47 @@ layers:
   - K
   - {t: $$backspace$$, s: $$delete$$}
   - T
-  - Tab
+  - {t: Tab, h: NAV}
   - $$return$$
   - ‿
   - {t: Esc, h: SYS}
+  NAV:
+  - ''
+  - ''
+  - $$arrow_up$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$arrow_left$$
+  - $$arrow_down$$
+  - $$arrow_right$$
+  - ''
+  - ''
+  - $$shift$$
+  - $$control$$
+  - $$alt$$
+  - $$meta$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
   SYS:
   - $$bluetooth_clear$$
   - $$led_off$$
@@ -99,3 +136,8 @@ combos:
 - p: [2, 3]
   k: Ph
   l: [BASE]
+- p: [13, 16]
+  k: $$caps_word$$
+  l: [BASE]
+  a: bottom
+  o: 0.04
