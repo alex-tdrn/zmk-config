@@ -1,9 +1,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 // Layers
 #define BASE 0
+#define SYS 1
 
 // Key positions
 // - first Letter is the hand: (L)eft or (R)ight
@@ -216,12 +219,29 @@ COMBO(ph, BASE, LMU LIU, &ph);
 //    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                       ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
 //    │    &kp X     │    &kp F    │    &kp L     │     &kp C     │ &kp W │                       │ &symbols_RILI │     &kp U     │    &kp O     │    &kp Y     │    &kp K     │
 //    └──────────────┴─────────────┴──────────────┼───────────────┼───────┼─────────┐   ┌─────────┼───────────────┼───────────────┼──────────────┴──────────────┴──────────────┘
-//                                                │   &bspc_del   │ &kp T │ &kp TAB │   │ &kp RET │   &kp SPACE   │    &kp ESC    │                                             
+//                                                │   &bspc_del   │ &kp T │ &kp TAB │   │ &kp RET │   &kp SPACE   │  &lt SYS ESC  │                                             
 //                                                └───────────────┴───────┴─────────┘   └─────────┴───────────────┴───────────────┘                                             
   &kp J          &kp G         &kp M          &kp P           &kp V                           &symbols_RIUI   &symbols_RIU    &symbols_RMU   &symbols_RRU   &symbols_RPU
   &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                           &symbols_RIHI   &rmt RSHIFT A   &rmt RCTRL E   &rmt RALT I    &rmt RMETA H
   &kp X          &kp F         &kp L          &kp C           &kp W                           &symbols_RILI   &kp U           &kp O          &kp Y          &kp K       
-                                              &bspc_del       &kp T   &kp TAB       &kp RET   &kp SPACE       &kp ESC                                                   
+                                              &bspc_del       &kp T   &kp TAB       &kp RET   &kp SPACE       &lt SYS ESC                                               
+            >;
+        };
+        SYS_layer {
+            bindings = <
+//    ┌──────────────┬───────────────────┬──────────────────┬──────────────┬──────────────┐                   ┌───────┬───────┬───────┬───────┬───────┐
+//    │  &bt BT_CLR  │ &ext_power EP_OFF │ &ext_power EP_ON │ &out OUT_USB │ &out OUT_BLE │                   │ &none │ &none │ &none │ &none │ &none │
+//    ├──────────────┼───────────────────┼──────────────────┼──────────────┼──────────────┤                   ├───────┼───────┼───────┼───────┼───────┤
+//    │ &bt BT_SEL 4 │   &bt BT_SEL 3    │   &bt BT_SEL 2   │ &bt BT_SEL 1 │ &bt BT_SEL 0 │                   │ &none │ &none │ &none │ &none │ &none │
+//    ├──────────────┼───────────────────┼──────────────────┼──────────────┼──────────────┤                   ├───────┼───────┼───────┼───────┼───────┤
+//    │    &none     │       &none       │      &none       │    &none     │    &none     │                   │ &none │ &none │ &none │ &none │ &none │
+//    └──────────────┴───────────────────┴──────────────────┼──────────────┼──────────────┼───────┐   ┌───────┼───────┼───────┼───────┴───────┴───────┘
+//                                                          │    &none     │    &none     │ &none │   │ &none │ &none │ &none │                        
+//                                                          └──────────────┴──────────────┴───────┘   └───────┴───────┴───────┘                        
+  &bt BT_CLR     &ext_power EP_OFF   &ext_power EP_ON   &out OUT_USB   &out OUT_BLE                       &none   &none   &none   &none   &none
+  &bt BT_SEL 4   &bt BT_SEL 3        &bt BT_SEL 2       &bt BT_SEL 1   &bt BT_SEL 0                       &none   &none   &none   &none   &none
+  &none          &none               &none              &none          &none                              &none   &none   &none   &none   &none
+                                                        &none          &none          &none       &none   &none   &none                        
             >;
         };
     };
