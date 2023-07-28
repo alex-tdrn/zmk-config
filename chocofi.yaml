@@ -36,7 +36,44 @@ layers:
   - ⭾
   - ⏎
   - ‿
-  - ESC
+  - {t: ESC, h: SYS}
+  SYS:
+  - $$bluetooth_clear$$
+  - $$led_off$$
+  - $$led_on$$
+  - $$send_keypresses_usb$$
+  - $$send_keypresses_bluetooth$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$bluetooth_5$$
+  - $$bluetooth_4$$
+  - $$bluetooth_3$$
+  - $$bluetooth_2$$
+  - $$bluetooth_1$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
 combos:
 - p: [20, 21]
   k: Z
