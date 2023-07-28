@@ -189,6 +189,12 @@ COMBO(gh, BASE, LRU LMU, &gh);
 BIGRAM(ph, P, H);
 COMBO(ph, BASE, LMU LIU, &ph);
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
+};
+
+COMBO(caps_word, BASE, LIH RIH, &caps_word);
+
 / {
     behaviors {
         lmt: lmt {
