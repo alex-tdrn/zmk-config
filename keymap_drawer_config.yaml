@@ -116,7 +116,6 @@ parse_config:
     combo_qu: 
        key: 
          tap: Qu
-         hold: Q
     combo_th: 
        key: 
          tap: Th
