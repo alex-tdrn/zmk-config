@@ -12,8 +12,8 @@ parse_config:
     '&bt BT_SEL 2': $$bluetooth_3$$
     '&bt BT_SEL 3': $$bluetooth_4$$
     '&bt BT_SEL 4': $$bluetooth_5$$
-    '&auto_double_quotes_ht 0 0': {t: '"', s: '?', h: '"|"'}
-    '&auto_single_quotes_ht 0 0': {t: '''', s: '!', h: "'|'"}
+    '&auto_double_quotes_ht 0 0': {t: '"', s: '?', h: '"⌄"'}
+    '&auto_single_quotes_ht 0 0': {t: '''', s: '!', h: "'⌄'"}
   zmk_combos:
     combo_qu: 
        key: 
@@ -46,22 +46,22 @@ parse_config:
        key: 
          tap: '('
          shifted: ')'
-         hold: '(|)'
+         hold: '(⌄)'
     combo_square_brackets: 
        key: 
          tap: '['
          shifted: ']'
-         hold: '[|]'
+         hold: '[⌄]'
     combo_curly_brackets: 
        key: 
          tap: '{'
          shifted: '}'
-         hold: '{|}'
+         hold: '{⌄}'
     combo_angled_brackets: 
        key: 
          tap: '<'
          shifted: '>'
-         hold: '<|>'
+         hold: '<⌄>'
   sticky_label: sticky
   trans_legend:
     t: ▽
