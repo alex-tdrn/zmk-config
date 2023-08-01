@@ -112,12 +112,16 @@ layers:
   - ''
   - {type: held}
 combos:
-- p: [0, 1]
+- p: [10, 11]
   k: Z
   l: [BASE]
 - p: [20, 21]
-  k: {t: Qu, h: Q}
+  k: Q
   l: [BASE]
+- p: [20, 21, 22]
+  k: Qu
+  l: [BASE]
+  a: bottom
 - p: [13, 12]
   k: Th
   l: [BASE]
