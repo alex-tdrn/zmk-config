@@ -34,14 +34,14 @@ layers:
   - {t: $$backspace$$, s: $$delete$$}
   - T
   - {t: Tab, h: NAV}
-  - $$return$$
+  - {t: $$return$$, h: NAV}
   - ‿
   - {t: Esc, h: SYS}
   NAV:
   - ''
-  - ''
+  - PAGE DOWN
   - $$arrow_up$$
-  - ''
+  - PAGE UP
   - ''
   - ''
   - '7'
@@ -59,9 +59,9 @@ layers:
   - {t: '6', h: $$alt$$}
   - $$meta$$
   - ''
+  - HOME
   - ''
-  - ''
-  - ''
+  - END
   - ''
   - ''
   - '1'
@@ -71,7 +71,7 @@ layers:
   - ''
   - ''
   - {type: held}
-  - ''
+  - {type: held}
   - ''
   - ''
   SYS:
