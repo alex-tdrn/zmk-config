@@ -165,12 +165,12 @@ SHIFTED(symbols_RILI, &kp MINUS, &kp PLUS);
 
 SHIFTED(bspc_del, &kp BSPC, &kp DEL);
 
-COMBO(z, BASE, LPL LRL, &kp Z);
+COMBO(z, BASE, LPU LRU, &kp Z);
 
 BIGRAM(qu, Q, U);
 MACRO(q_hold_tap_workaround, <&macro_tap &kp Q>);
 HOLD_TAP(q_qu_hold_tap, &q_hold_tap_workaround, &qu);
-COMBO(qu, BASE, RPL RRL, &q_qu_hold_tap 0 0);
+COMBO(qu, BASE, LPL LRL, &q_qu_hold_tap 0 0);
 
 BIGRAM(th, T, H);
 COMBO(th, BASE, LIH LMH, &th);
@@ -182,7 +182,7 @@ BIGRAM(sh, S, H);
 COMBO(sh, BASE, LRH LMH, &sh);
 
 BIGRAM(wh, W, H);
-COMBO(wh, BASE, RRH RPH, &wh);
+COMBO(wh, BASE, LRL LML, &wh);
 
 BIGRAM(gh, G, H);
 COMBO(gh, BASE, LRU LMU, &gh);
