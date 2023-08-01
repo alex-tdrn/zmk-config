@@ -195,6 +195,16 @@ COMBO(ph, BASE, LMU LIU, &ph);
 
 COMBO(caps_word, BASE, LIH RIH, &caps_word);
 
+SHIFTED(round_brackets, &kp LPAR, &kp RPAR);
+SHIFTED(angled_brackets, &kp LESS_THAN, &kp GREATER_THAN);
+SHIFTED(curly_brackets, &kp LEFT_BRACE, &kp RIGHT_BRACE);
+SHIFTED(square_brackets, &kp LEFT_BRACKET, &kp RIGHT_BRACKET);
+
+COMBO(round_brackets, BASE, RIH RMH, &round_brackets);
+COMBO(angled_brackets, BASE, RIL RML, &angled_brackets);
+COMBO(curly_brackets, BASE, RMH RRH, &curly_brackets);
+COMBO(square_brackets, BASE, RML RRL, &square_brackets);
+
 / {
     behaviors {
         lmt: lmt {
