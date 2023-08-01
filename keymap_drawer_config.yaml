@@ -1,6 +1,7 @@
 parse_config:
   preprocess: true
   skip_binding_parsing: false
+  mark_alternate_layer_activators: true
   raw_binding_map:
     '&ext_power EP_OFF': $$led_off$$
     '&ext_power EP_ON ': $$led_on$$
