@@ -226,6 +226,18 @@ COMBO(square_brackets, BASE, RML RRL, &auto_square_brackets_ht 0 0);
 AUTOPAIR_HOLD_TAP(auto_back_tick, GRAVE, GRAVE, &kp);
 COMBO(backtick_tilde, BASE, RRU RPU, &auto_back_tick_ht 0 GRAVE);
 
+SHIFTED(equal_percent, &kp EQUAL, &kp PERCENT);
+COMBO(equal_percent, BASE, RMU RRU, &equal_percent);
+
+SHIFTED(underscore_backslash, &kp UNDERSCORE, &kp BACKSLASH);
+COMBO(underscore_backslash, BASE, RIU RMU, &underscore_backslash);
+
+SHIFTED(hash_at, &kp HASH, &kp AT_SIGN);
+COMBO(hash_at, BASE, RRH RPH, &hash_at);
+
+SHIFTED(dollar_caret, &kp DOLLAR, &kp CARET);
+COMBO(dollar_caret, BASE, RRL RPL, &dollar_caret);
+
 / {
     behaviors {
         lmt: lmt {
