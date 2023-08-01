@@ -223,6 +223,9 @@ COMBO(angled_brackets, BASE, RIL RML, &auto_angled_brackets_ht 0 0);
 COMBO(curly_brackets, BASE, RMH RRH, &auto_curly_brackets_ht 0 0);
 COMBO(square_brackets, BASE, RML RRL, &auto_square_brackets_ht 0 0);
 
+AUTOPAIR_HOLD_TAP(auto_back_tick, GRAVE, GRAVE, &kp);
+COMBO(backtick_tilde, BASE, RRU RPU, &auto_back_tick_ht 0 GRAVE);
+
 / {
     behaviors {
         lmt: lmt {

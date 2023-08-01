@@ -61,7 +61,12 @@ parse_config:
        key: 
          tap: '<'
          shifted: '>'
-         hold: '<⌄>'
+         hold: '<⌄>'    
+    combo_backtick_tilde: 
+       key: 
+         tap: '`'
+         shifted: '~'
+         hold: '`⌄`'
   sticky_label: sticky
   trans_legend:
     t: ▽
