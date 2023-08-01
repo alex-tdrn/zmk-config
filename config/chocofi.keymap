@@ -154,9 +154,22 @@ MACRO(NAME ## _lowercase, <&macro_tap &kp FIRST_LETTER &kp SECOND_LETTER>); \
 MACRO(NAME ## _sentence_case, <&macro_tap &kp LS(FIRST_LETTER) &kp SECOND_LETTER>); \
 SHIFTED(NAME, & ## NAME ## _lowercase, & ## NAME ## _sentence_case)
 
+#define AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL) \
+MACRO(NAME ## _autopair, <&macro_tap &kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
+MACRO(NAME ## _autopair_padded, <&macro_tap &kp OPENING_SYMBOL &kp SPACE &kp SPACE &kp CLOSING_SYMBOL &kp LEFT &kp LEFT>); \
+SHIFTED(NAME, & ## NAME ## _autopair, & ## NAME ## _autopair_padded)
+
+#define AUTOPAIR_HOLD_TAP(NAME, OPENING_SYMBOL, CLOSING_SYMBOL, TAP_BEHAVIOR) \
+AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL); \
+HOLD_TAP(NAME ## _ht, & ## NAME, TAP_BEHAVIOR)
+
 
 SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &kp EXCLAMATION);
 SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &kp QUESTION);
+
+AUTOPAIR_HOLD_TAP(auto_single_quotes, SINGLE_QUOTE, SINGLE_QUOTE, &symbols_RPU);
+AUTOPAIR_HOLD_TAP(auto_double_quotes, DOUBLE_QUOTES, DOUBLE_QUOTES, &symbols_RRU);
+
 SHIFTED(symbols_RMU, &kp SLASH, &kp ASTERISK);
 SHIFTED(symbols_RIU, &kp PERIOD, &kp AMPERSAND);
 SHIFTED(symbols_RIUI, &kp SEMICOLON, &kp COLON);
@@ -200,10 +213,15 @@ SHIFTED(angled_brackets, &kp LESS_THAN, &kp GREATER_THAN);
 SHIFTED(curly_brackets, &kp LEFT_BRACE, &kp RIGHT_BRACE);
 SHIFTED(square_brackets, &kp LEFT_BRACKET, &kp RIGHT_BRACKET);
 
-COMBO(round_brackets, BASE, RIH RMH, &round_brackets);
-COMBO(angled_brackets, BASE, RIL RML, &angled_brackets);
-COMBO(curly_brackets, BASE, RMH RRH, &curly_brackets);
-COMBO(square_brackets, BASE, RML RRL, &square_brackets);
+AUTOPAIR_HOLD_TAP(auto_round_brackets, LPAR, RPAR, &round_brackets);
+AUTOPAIR_HOLD_TAP(auto_angled_brackets, LESS_THAN, GREATER_THAN, &angled_brackets);
+AUTOPAIR_HOLD_TAP(auto_curly_brackets, LEFT_BRACE, RIGHT_BRACE, &curly_brackets);
+AUTOPAIR_HOLD_TAP(auto_square_brackets, LEFT_BRACKET, RIGHT_BRACKET, &square_brackets);
+
+COMBO(round_brackets, BASE, RIH RMH, &auto_round_brackets_ht 0 0);
+COMBO(angled_brackets, BASE, RIL RML, &auto_angled_brackets_ht 0 0);
+COMBO(curly_brackets, BASE, RMH RRH, &auto_curly_brackets_ht 0 0);
+COMBO(square_brackets, BASE, RML RRL, &auto_square_brackets_ht 0 0);
 
 / {
     behaviors {
@@ -238,19 +256,19 @@ COMBO(square_brackets, BASE, RML RRL, &square_brackets);
         compatible = "zmk,keymap";
         BASE_layer {
             bindings = <
-//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────┐                           ┌───────────────┬───────────────┬──────────────┬──────────────┬──────────────┐
-//    │    &kp J     │    &kp G    │    &kp M     │     &kp P     │ &kp V │                           │ &symbols_RIUI │ &symbols_RIU  │ &symbols_RMU │ &symbols_RRU │ &symbols_RPU │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                           ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
-//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │ &kp B │                           │ &symbols_RIHI │ &rmt RSHIFT A │ &rmt RCTRL E │ &rmt RALT I  │ &rmt RMETA H │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                           ├───────────────┼───────────────┼──────────────┼──────────────┼──────────────┤
-//    │    &kp X     │    &kp F    │    &kp L     │     &kp C     │ &kp W │                           │ &symbols_RILI │     &kp U     │    &kp O     │    &kp Y     │    &kp K     │
-//    └──────────────┴─────────────┴──────────────┼───────────────┼───────┼─────────────┐   ┌─────────┼───────────────┼───────────────┼──────────────┴──────────────┴──────────────┘
-//                                                │   &bspc_del   │ &kp T │ &lt NAV TAB │   │ &kp RET │   &kp SPACE   │  &lt SYS ESC  │                                             
-//                                                └───────────────┴───────┴─────────────┘   └─────────┴───────────────┴───────────────┘                                             
-  &kp J          &kp G         &kp M          &kp P           &kp V                               &symbols_RIUI   &symbols_RIU    &symbols_RMU   &symbols_RRU   &symbols_RPU
-  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                               &symbols_RIHI   &rmt RSHIFT A   &rmt RCTRL E   &rmt RALT I    &rmt RMETA H
-  &kp X          &kp F         &kp L          &kp C           &kp W                               &symbols_RILI   &kp U           &kp O          &kp Y          &kp K       
-                                              &bspc_del       &kp T   &lt NAV TAB       &kp RET   &kp SPACE       &lt SYS ESC                                               
+//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────┐                           ┌───────────────┬───────────────┬──────────────┬────────────────────────────┬────────────────────────────┐
+//    │    &kp J     │    &kp G    │    &kp M     │     &kp P     │ &kp V │                           │ &symbols_RIUI │ &symbols_RIU  │ &symbols_RMU │ &auto_double_quotes_ht 0 0 │ &auto_single_quotes_ht 0 0 │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                           ├───────────────┼───────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
+//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │ &kp B │                           │ &symbols_RIHI │ &rmt RSHIFT A │ &rmt RCTRL E │        &rmt RALT I         │        &rmt RMETA H        │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────┤                           ├───────────────┼───────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
+//    │    &kp X     │    &kp F    │    &kp L     │     &kp C     │ &kp W │                           │ &symbols_RILI │     &kp U     │    &kp O     │           &kp Y            │           &kp K            │
+//    └──────────────┴─────────────┴──────────────┼───────────────┼───────┼─────────────┐   ┌─────────┼───────────────┼───────────────┼──────────────┴────────────────────────────┴────────────────────────────┘
+//                                                │   &bspc_del   │ &kp T │ &lt NAV TAB │   │ &kp RET │   &kp SPACE   │  &lt SYS ESC  │                                                                         
+//                                                └───────────────┴───────┴─────────────┘   └─────────┴───────────────┴───────────────┘                                                                         
+  &kp J          &kp G         &kp M          &kp P           &kp V                               &symbols_RIUI   &symbols_RIU    &symbols_RMU   &auto_double_quotes_ht 0 0   &auto_single_quotes_ht 0 0
+  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                               &symbols_RIHI   &rmt RSHIFT A   &rmt RCTRL E   &rmt RALT I                  &rmt RMETA H              
+  &kp X          &kp F         &kp L          &kp C           &kp W                               &symbols_RILI   &kp U           &kp O          &kp Y                        &kp K                     
+                                              &bspc_del       &kp T   &lt NAV TAB       &kp RET   &kp SPACE       &lt SYS ESC                                                                           
             >;
         };
 
