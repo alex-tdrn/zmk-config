@@ -32,10 +32,10 @@ layers:
   - Y
   - K
   - {t: $$backspace$$, s: $$delete$$}
-  - T
-  - {t: Tab, h: NAV}
-  - {t: $$return$$, h: NAV}
-  - ‿
+  - {t: T, h: NAV}
+  - Tab
+  - $$return$$
+  - {t: ‿, h: NAV}
   - {t: Esc, h: SYS}
   NAV:
   - ''
@@ -69,10 +69,10 @@ layers:
   - '3'
   - ''
   - ''
-  - ''
-  - {type: held}
   - {type: held}
   - ''
+  - ''
+  - {type: held}
   - ''
   SYS:
   - $$bluetooth_clear$$
