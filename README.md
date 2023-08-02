@@ -23,7 +23,6 @@ The sticky shift is set to only deactivate after 10s if no input is received, to
 Alpha layout is [hands-down gold](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.8i2msuo3butx), with slight tweaks to the locations of the letter and bigram combos:
  - All bigrams are on the left side of the keyboard since they are all either surrounded by, or preceeded by vowels, and typing a combo in 
  rapid succesion with a vowel is hard for me.
- - The `Z` combo is moved down. Typing the upper ring finger + pinky combo is not comfortable for my hands
  - The `Qu` combo was initially a hold-tap with `Qu` on tap and `Q` on hold. This is perfect when typing prose, I found that I only needed 
  `Q` for initialism, and the hold-delay was not a problem for me. However, `Q` is a very common key in vim/nvim and it quickly became annoying
  having to hold the combo every time I needed to exit a dialog or close a window. `Qt` codebases are also painful to work in when having `Q` on hold.
