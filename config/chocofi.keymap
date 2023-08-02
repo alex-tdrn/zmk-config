@@ -108,18 +108,21 @@
     }; \
 }
 
-#define SHIFTED(NAME, WITHOUT_SHIFT, WITH_SHIFT) \
+#define MOD_MORPH(NAME, MODS, WITHOUT_MODS, WITH_MODS) \
 / { \
     behaviors { \
         NAME##: NAME { \
             compatible = "zmk,behavior-mod-morph"; \
             label = #NAME; \
             #binding-cells = <0>; \
-            bindings = <WITHOUT_SHIFT>, <WITH_SHIFT>; \
-            mods = <(MOD_LSFT|MOD_RSFT)>; \
+            bindings = <WITHOUT_MODS>, <WITH_MODS>; \
+            mods = <(MODS)>; \
         }; \
     }; \
 }
+
+#define SHIFTED(NAME, WITHOUT_SHIFT, WITH_SHIFT) \
+MOD_MORPH(NAME, MOD_LSFT|MOD_RSFT, WITHOUT_SHIFT, WITH_SHIFT)
 
 #define MACRO(NAME, ...) \
 / { \
@@ -155,14 +158,15 @@ MACRO(NAME ## _sentence_case, <&macro_tap &kp LS(FIRST_LETTER) &kp SECOND_LETTER
 SHIFTED(NAME, & ## NAME ## _lowercase, & ## NAME ## _sentence_case)
 
 #define AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL) \
-MACRO(NAME ## _autopair, <&macro_tap &kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
-MACRO(NAME ## _autopair_padded, <&macro_tap &kp OPENING_SYMBOL &kp SPACE &kp SPACE &kp CLOSING_SYMBOL &kp LEFT &kp LEFT>); \
-SHIFTED(NAME, & ## NAME ## _autopair, & ## NAME ## _autopair_padded)
+MACRO(NAME ## _ap, <&macro_tap &kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
+MACRO(NAME ## _ap_space, <&macro_tap &kp OPENING_SYMBOL &kp SPACE &kp SPACE &kp CLOSING_SYMBOL &kp LEFT &kp LEFT>); \
+MACRO(NAME ## _ap_enter, <&macro_tap &kp OPENING_SYMBOL &kp RET &kp RET &kp CLOSING_SYMBOL &kp UP>); \
+SHIFTED(NAME ## _shifted, & ## NAME ## _ap, & ## NAME ## _ap_space); \
+MOD_MORPH(NAME, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _ap_enter)
 
 #define AUTOPAIR_HOLD_TAP(NAME, OPENING_SYMBOL, CLOSING_SYMBOL, TAP_BEHAVIOR) \
 AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL); \
 HOLD_TAP(NAME ## _ht, & ## NAME, TAP_BEHAVIOR)
-
 
 SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &kp EXCLAMATION);
 SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &kp QUESTION);

@@ -4,11 +4,14 @@ My personal zmk config for the [chocofi](https://github.com/pashutk/chocofi)
 
 ## Autopair
 Bracket and quotation symbols have `autopair` functionality on hold.
-This functionality basically types a pair of such symbols, then steps back in between them.
-By shift-holding, additional space padding is added inside.
+This functionality types a pair of such symbols, then steps back in between them.
+By holding down `shift` as well, additional `space` padding is added inside.
+By holding down `control` instead, the inside is padded with `return`.
+This is extremely convenient for quickly opening scopes using `{}`, or markdown code blocks.
+
 This kind of functionality is normally available through text editor plugins but I never used it personally because I find that I often run into cases where I **don't** want this functionality to kick in.
 So having it optional, and activated manually is more convenient to me.
-Also, this makes this feature available anywhere where `CTRL+LEFT_ARROW` works.
+Also, this makes this feature available anywhere where arrow key navigation works.
 
 ## Acknowledgements
 
