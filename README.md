@@ -11,7 +11,7 @@ This is extremely convenient for quickly opening scopes using `{}`, or markdown 
 
 This kind of functionality is normally available through text editor plugins but I never used it personally because I find that I often run into cases where I **don't** want this functionality to kick in.
 So having it optional, and activated manually is more convenient to me.
-Also, this makes this feature available anywhere where arrow key navigation works.
+Also, this makes this feature available anywhere arrow key navigation works.
 
 ## Acknowledgements
 
