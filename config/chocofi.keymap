@@ -20,7 +20,8 @@
 // Layers
 #define BASE 0
 #define NAV_NUM 1
-#define FUNCTION 2
+#define FPS 2
+#define FUNCTION 3
 
 // Key positions
 // - first Letter is the hand: (L)eft or (R)ight
@@ -266,6 +267,13 @@ COMBO(hash_at, BASE, RRH RPH, &hash_at);
 SHIFTED(dollar_caret, &kp DOLLAR, &kp CARET);
 COMBO(dollar_caret, BASE, RRL RPL, &dollar_caret);
 
+COMBO(fps_1, FPS, LPU LRU, &kp N1);
+COMBO(fps_2, FPS, LRU LMU, &kp N2);
+COMBO(fps_3, FPS, LMU LIU, &kp N3);
+COMBO(fps_T, FPS, LMH LIH, &kp T);
+COMBO(fps_G, FPS, LML LIL, &kp G);
+COMBO(fps_backtick, FPS, LPH LRH, &kp GRAVE);
+
 / {
     behaviors {
         lmt: lmt {
@@ -332,6 +340,25 @@ COMBO(dollar_caret, BASE, RRL RPL, &dollar_caret);
   &none   &kp LEFT        &kp DOWN   &kp RIGHT     &none                       &kp N0   &rmt RSHIFT N4   &rmt RCTRL N5   &rmt RALT N6   &kp RMETA
   &none   &kp HOME        &none      &kp END       &none                       &none    &kp N1           &kp N2          &kp N3         &none    
                                      &none         &none   &none       &none   &none    &none                                                    
+            >;
+        };
+
+        FPS_layer {
+            label = "FPS";
+            bindings = <
+//    ┌────────────┬───┬───┬──────────┬───┐           ┌───┬───┬───┬───┬───┐
+//    │     ⭾      │ Q │ W │    E     │ R │           │   │   │   │   │   │
+//    ├────────────┼───┼───┼──────────┼───┤           ├───┼───┼───┼───┼───┤
+//    │ &kp LSHIFT │ A │ S │    D     │ F │           │   │   │   │   │   │
+//    ├────────────┼───┼───┼──────────┼───┤           ├───┼───┼───┼───┼───┤
+//    │ &kp LCTRL  │ Z │ X │    C     │ V │           │   │   │   │   │   │
+//    └────────────┴───┴───┼──────────┼───┼───┐   ┌───┼───┼───┼───┴───┴───┘
+//                         │ &kp LALT │ ‿ │ B │   │   │   │   │            
+//                         └──────────┴───┴───┘   └───┴───┴───┘            
+  &kp TAB      &kp Q   &kp W   &kp E      &kp R                           &none   &none   &none   &none   &none
+  &kp LSHIFT   &kp A   &kp S   &kp D      &kp F                           &none   &none   &none   &none   &none
+  &kp LCTRL    &kp Z   &kp X   &kp C      &kp V                           &none   &none   &none   &none   &none
+                               &kp LALT   &kp SPACE   &kp B       &none   &none   &none                        
             >;
         };
 
