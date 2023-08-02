@@ -1,6 +1,6 @@
 layout: {qmk_keyboard: chocofi}
 layers:
-  🔡🔣:
+  BASE:
   - J
   - G
   - M
@@ -32,16 +32,16 @@ layers:
   - Y
   - K
   - {t: $$backspace$$, s: $$delete$$}
-  - {t: T, h: 🦘🔢}
+  - {t: T, h: NAV/NUM}
   - Tab
   - $$return$$
-  - {t: ‿, h: 🦘🔢}
-  - {t: Esc, h: ⚙️}
-  🦘🔢:
+  - {t: ‿, h: NAV/NUM}
+  - {t: Esc, h: FN}
+  NAV/NUM:
   - ''
-  - PAGE DOWN
+  - Page Down
   - $$arrow_up$$
-  - PAGE UP
+  - Page Up
   - ''
   - ''
   - '7'
@@ -59,9 +59,9 @@ layers:
   - {t: '6', h: $$alt$$}
   - $$meta$$
   - ''
-  - HOME
+  - Home
   - ''
-  - END
+  - End
   - ''
   - ''
   - '1'
@@ -74,7 +74,7 @@ layers:
   - ''
   - {type: held}
   - ''
-  ⚙️:
+  FN:
   - $$bluetooth_clear$$
   - $$led_off$$
   - $$led_on$$
@@ -114,60 +114,60 @@ layers:
 combos:
 - p: [0, 1]
   k: Z
-  l: [🔡🔣]
+  l: [BASE]
 - p: [10, 11]
   k: Qu
-  l: [🔡🔣]
+  l: [BASE]
 - p: [20, 21]
   k: Q
-  l: [🔡🔣]
+  l: [BASE]
 - p: [13, 12]
   k: Th
-  l: [🔡🔣]
+  l: [BASE]
 - p: [23, 22]
   k: Ch
-  l: [🔡🔣]
+  l: [BASE]
 - p: [11, 12]
   k: Sh
-  l: [🔡🔣]
+  l: [BASE]
 - p: [21, 22]
   k: Wh
-  l: [🔡🔣]
+  l: [BASE]
 - p: [1, 2]
   k: Gh
-  l: [🔡🔣]
+  l: [BASE]
 - p: [2, 3]
   k: Ph
-  l: [🔡🔣]
+  l: [BASE]
 - p: [13, 16]
   k: $$caps_word$$
-  l: [🔡🔣]
+  l: [BASE]
   a: bottom
   o: 0.04
 - p: [16, 17]
   k: {t: (, h: (⌄), s: )}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [26, 27]
   k: {t: <, h: <⌄>, s: '>'}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [17, 18]
   k: {t: '{', h: '{⌄}', s: '}'}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [27, 28]
   k: {t: '[', h: '[⌄]', s: ']'}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [8, 9]
   k: {t: '`', h: '`⌄`', s: '~'}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [7, 8]
   k: {t: '=', s: '%'}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [6, 7]
   k: {t: _, s: \}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [18, 19]
   k: {t: '#', s: '@'}
-  l: [🔡🔣]
+  l: [BASE]
 - p: [28, 29]
   k: {t: $, s: ^}
-  l: [🔡🔣]
+  l: [BASE]
