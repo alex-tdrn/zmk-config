@@ -1,6 +1,6 @@
 layout: {qmk_keyboard: chocofi}
 layers:
-  custom name:
+  🔡🔣:
   - J
   - G
   - M
@@ -32,12 +32,12 @@ layers:
   - Y
   - K
   - {t: $$backspace$$, s: $$delete$$}
-  - {t: T, h: }
+  - {t: T, h: 🦘🔢}
   - Tab
   - $$return$$
-  - {t: ‿, h: }
-  - {t: Esc, h: 🤠}
-  :
+  - {t: ‿, h: 🦘🔢}
+  - {t: Esc, h: ⚙️}
+  🦘🔢:
   - ''
   - PAGE DOWN
   - $$arrow_up$$
@@ -74,7 +74,7 @@ layers:
   - ''
   - {type: held}
   - ''
-  🤠:
+  ⚙️:
   - $$bluetooth_clear$$
   - $$led_off$$
   - $$led_on$$
@@ -114,60 +114,60 @@ layers:
 combos:
 - p: [0, 1]
   k: Z
-  l: [custom name]
+  l: [🔡🔣]
 - p: [10, 11]
   k: Qu
-  l: [custom name]
+  l: [🔡🔣]
 - p: [20, 21]
   k: Q
-  l: [custom name]
+  l: [🔡🔣]
 - p: [13, 12]
   k: Th
-  l: [custom name]
+  l: [🔡🔣]
 - p: [23, 22]
   k: Ch
-  l: [custom name]
+  l: [🔡🔣]
 - p: [11, 12]
   k: Sh
-  l: [custom name]
+  l: [🔡🔣]
 - p: [21, 22]
   k: Wh
-  l: [custom name]
+  l: [🔡🔣]
 - p: [1, 2]
   k: Gh
-  l: [custom name]
+  l: [🔡🔣]
 - p: [2, 3]
   k: Ph
-  l: [custom name]
+  l: [🔡🔣]
 - p: [13, 16]
   k: $$caps_word$$
-  l: [custom name]
+  l: [🔡🔣]
   a: bottom
   o: 0.04
 - p: [16, 17]
   k: {t: (, h: (⌄), s: )}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [26, 27]
   k: {t: <, h: <⌄>, s: '>'}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [17, 18]
   k: {t: '{', h: '{⌄}', s: '}'}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [27, 28]
   k: {t: '[', h: '[⌄]', s: ']'}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [8, 9]
   k: {t: '`', h: '`⌄`', s: '~'}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [7, 8]
   k: {t: '=', s: '%'}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [6, 7]
   k: {t: _, s: \}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [18, 19]
   k: {t: '#', s: '@'}
-  l: [custom name]
+  l: [🔡🔣]
 - p: [28, 29]
   k: {t: $, s: ^}
-  l: [custom name]
+  l: [🔡🔣]
