@@ -1,13 +1,13 @@
 layout: {qmk_keyboard: chocofi}
 layers:
-  BASE:
+  custom name:
   - J
   - G
   - M
   - P
   - V
   - {t: ;, s: ':'}
-  - {t: '&period_dts', s: '&'}
+  - {t: ., s: '&'}
   - {t: /, s: '*'}
   - {t: '"', h: '"⌄"', s: '?'}
   - {t: '''', h: '''⌄''', s: '!'}
@@ -32,12 +32,12 @@ layers:
   - Y
   - K
   - {t: $$backspace$$, s: $$delete$$}
-  - {t: T, h: NAV}
+  - {t: T, h: }
   - Tab
   - $$return$$
-  - {t: ‿, h: NAV}
-  - {t: Esc, h: SYS}
-  NAV:
+  - {t: ‿, h: }
+  - {t: Esc, h: 🤠}
+  :
   - ''
   - PAGE DOWN
   - $$arrow_up$$
@@ -74,7 +74,7 @@ layers:
   - ''
   - {type: held}
   - ''
-  SYS:
+  🤠:
   - $$bluetooth_clear$$
   - $$led_off$$
   - $$led_on$$
@@ -112,63 +112,62 @@ layers:
   - ''
   - {type: held}
 combos:
-- p: [10, 11]
+- p: [0, 1]
   k: Z
-  l: [BASE]
+  l: [custom name]
+- p: [10, 11]
+  k: Qu
+  l: [custom name]
 - p: [20, 21]
   k: Q
-  l: [BASE]
-- p: [20, 21, 22]
-  k: Qu
-  l: [BASE]
-  a: bottom
+  l: [custom name]
 - p: [13, 12]
   k: Th
-  l: [BASE]
+  l: [custom name]
 - p: [23, 22]
   k: Ch
-  l: [BASE]
+  l: [custom name]
 - p: [11, 12]
   k: Sh
-  l: [BASE]
+  l: [custom name]
 - p: [21, 22]
   k: Wh
-  l: [BASE]
+  l: [custom name]
 - p: [1, 2]
   k: Gh
-  l: [BASE]
+  l: [custom name]
 - p: [2, 3]
   k: Ph
-  l: [BASE]
+  l: [custom name]
 - p: [13, 16]
   k: $$caps_word$$
-  l: [BASE]
+  l: [custom name]
   a: bottom
   o: 0.04
 - p: [16, 17]
   k: {t: (, h: (⌄), s: )}
-  l: [BASE]
+  l: [custom name]
 - p: [26, 27]
   k: {t: <, h: <⌄>, s: '>'}
-  l: [BASE]
+  l: [custom name]
 - p: [17, 18]
   k: {t: '{', h: '{⌄}', s: '}'}
-  l: [BASE]
+  l: [custom name]
 - p: [27, 28]
   k: {t: '[', h: '[⌄]', s: ']'}
-  l: [BASE]
+  l: [custom name]
 - p: [8, 9]
   k: {t: '`', h: '`⌄`', s: '~'}
-  l: [BASE]
+  l: [custom name]
 - p: [7, 8]
   k: {t: '=', s: '%'}
-  l: [BASE]
+  l: [custom name]
 - p: [6, 7]
   k: {t: _, s: \}
-  l: [BASE]
+  l: [custom name]
 - p: [18, 19]
   k: {t: '#', s: '@'}
-  l: [BASE]
+  l: [custom name]
 - p: [28, 29]
   k: {t: $, s: ^}
-  l: [BASE]
+  l: [custom name]
