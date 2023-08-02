@@ -156,6 +156,10 @@ parse_config:
     DOWN: $$arrow_down$$
     LEFT: $$arrow_left$$
     RIGHT: $$arrow_right$$
+    PAGE_DOWN: 'Page Down'
+    PAGE_UP: 'Page Up'
+    HOME: 'Home'
+    END: 'End'
 
 draw_config:
   key_h: 70.0
