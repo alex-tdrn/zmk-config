@@ -8,6 +8,15 @@
 #undef COMBO_HOOK
 #define COMBO_HOOK global-quick-tap-ms = <100>;
 
+&sk {
+    quick-release;
+    release-after-ms = <10000>;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
+};
+
 // Layers
 #define BASE 0
 #define NAV 1
@@ -168,14 +177,33 @@ MOD_MORPH(NAME, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _ap_enter
 AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL); \
 HOLD_TAP(NAME ## _ht, & ## NAME, TAP_BEHAVIOR)
 
-SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &kp EXCLAMATION);
-SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &kp QUESTION);
+#define DOUBLE_TAP_SENTENCE_CASE(NAME, SENTENCE_ENDING_SYMBOL) \
+MACRO(NAME ## _sc, <&macro_tap &kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>); \
+/ { \
+    behaviors { \
+        NAME##: NAME { \
+            compatible = "zmk,behavior-tap-dance"; \
+            label = #NAME; \
+            #binding-cells = <0>; \
+            tapping-term-ms = <400>; \
+            bindings = <&kp SENTENCE_ENDING_SYMBOL>, <& ## NAME ## _sc>; \
+        }; \
+    }; \
+}
+
+DOUBLE_TAP_SENTENCE_CASE(exclamation_dtsc, EXCLAMATION);
+SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &exclamation_dtsc);
+
+DOUBLE_TAP_SENTENCE_CASE(question_dtsc, QUESTION);
+SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &question_dtsc);
 
 AUTOPAIR_HOLD_TAP(auto_single_quotes, SINGLE_QUOTE, SINGLE_QUOTE, &symbols_RPU);
 AUTOPAIR_HOLD_TAP(auto_double_quotes, DOUBLE_QUOTES, DOUBLE_QUOTES, &symbols_RRU);
 
+DOUBLE_TAP_SENTENCE_CASE(period_dtsc, PERIOD);
+
 SHIFTED(symbols_RMU, &kp SLASH, &kp ASTERISK);
-SHIFTED(symbols_RIU, &kp PERIOD, &kp AMPERSAND);
+SHIFTED(symbols_RIU, &period_dtsc, &kp AMPERSAND);
 SHIFTED(symbols_RIUI, &kp SEMICOLON, &kp COLON);
 SHIFTED(symbols_RIHI, &kp COMMA, &kp PIPE);
 SHIFTED(symbols_RILI, &kp MINUS, &kp PLUS);
@@ -205,10 +233,6 @@ COMBO(gh, BASE, LRU LMU, &gh);
 
 BIGRAM(ph, P, H);
 COMBO(ph, BASE, LMU LIU, &ph);
-
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
-};
 
 COMBO(caps_word, BASE, LIH RIH, &caps_word);
 
