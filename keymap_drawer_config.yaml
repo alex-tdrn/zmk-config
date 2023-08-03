@@ -73,6 +73,10 @@ parse_config:
          tap: '`'
          shifted: '~'
          hold: '`⌄`'
+    combo_oneshot_fn_layer:
+        key: 'FN one shot'
+        align: top
+        offset: 0.4
   sticky_label: sticky
   trans_legend:
     t: ▽
@@ -225,7 +229,7 @@ draw_config:
         fill: var(--shifted-color);
     }
 
-    .held, .hold {
+    .hold {
         font-size: 12px;
         fill: var(--held-color);
         text-anchor: middle;
