@@ -185,7 +185,7 @@ MACRO(NAME ## _sc, <&macro_tap &kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>)
             compatible = "zmk,behavior-tap-dance"; \
             label = #NAME; \
             #binding-cells = <0>; \
-            tapping-term-ms = <400>; \
+            tapping-term-ms = <300>; \
             bindings = <&kp SENTENCE_ENDING_SYMBOL>, <& ## NAME ## _sc>; \
         }; \
     }; \
