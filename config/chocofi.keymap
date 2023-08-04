@@ -276,6 +276,20 @@ COMBO(num_word, BASE, LTH RTH, &num_word);
 
 COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
 
+// experimental numbers on base layer using combos
+COMBO(vertical_0, BASE, RIUI RIHI, &kp N0);
+COMBO(vertical_2, BASE, RIU  RIH,  &kp N2);
+COMBO(vertical_4, BASE, RMU  RMH,  &kp N4);
+COMBO(vertical_6, BASE, RRU  RRH,  &kp N6);
+COMBO(vertical_8, BASE, RIL  RIH,  &kp N8);
+
+
+COMBO(vertical_1, BASE, LIUI LIHI, &kp N1);
+COMBO(vertical_3, BASE, LIU  LIH,  &kp N3);
+COMBO(vertical_5, BASE, LMU  LMH,  &kp N5);
+COMBO(vertical_7, BASE, LRU  LRH,  &kp N7);
+COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
+
 / {
     behaviors {
         lmt: lmt {

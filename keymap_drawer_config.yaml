@@ -17,6 +17,26 @@ parse_config:
     '&auto_single_quotes_ht 0 0': {t: '''', s: '!', h: "'⌄'"}
     '&symbols_RIU': {t: '.', s: '&'}
   zmk_combos:
+    combo_vertical_0:
+       type: 'vertical_combo'
+    combo_vertical_1:
+       type: 'vertical_combo'
+    combo_vertical_2:
+       type: 'vertical_combo'
+    combo_vertical_3:
+       type: 'vertical_combo'
+    combo_vertical_4:
+       type: 'vertical_combo'
+    combo_vertical_5:
+       type: 'vertical_combo'
+    combo_vertical_6:
+       type: 'vertical_combo'
+    combo_vertical_7:
+       type: 'vertical_combo'
+    combo_vertical_8:
+       type: 'vertical_combo'
+    combo_vertical_9:
+       type: 'vertical_combo'
     combo_qu: 
        key: 
          tap: Qu
@@ -43,6 +63,7 @@ parse_config:
          tap: 'caps word'
        align: bottom
        offset: 0.04
+       arc_scale: 0.97
     combo_num_word: 
        key: 
          tap: 'num word'
@@ -178,11 +199,11 @@ draw_config:
   key_ry: 6.0
   inner_pad_w: 5.0
   inner_pad_h: 5.0
-  outer_pad_w: 30.0
-  outer_pad_h: 56.0
+  outer_pad_w: 10.0
+  outer_pad_h: 40.0
   line_spacing: 1.2
-  arc_radius: 10.0
-  arc_scale: 1.0
+  arc_radius: 20.0
+  arc_scale: 1
   append_colon_to_layer_header: false
   small_pad: 7.0 
   glyph_tap_size: 12
@@ -212,7 +233,7 @@ draw_config:
     rect {
         fill: var(--background-color);
         stroke: var(--keycap-color);
-        stroke-width: 2;
+        stroke-width: 0.5;
     }
 
     .label {
@@ -237,13 +258,25 @@ draw_config:
     }
 
     path.combo {
-        stroke-width: 2;
+        stroke-width: 1;
         stroke: var(--combo-color);
         fill: none;
     }
 
     rect.combo {
         stroke: var(--combo-color);
+        stroke-width: 1.0;
+    }
+
+    rect.vertical_combo {
+        stroke: none;
+        fill: none;
+    }
+    
+    text.vertical_combo {
+        font-size: 22px;
+        text-anchor: middle;
+        dominant-baseline: middle;
     }
 
   glyphs: # most of these are made using https://danmarshall.github.io/google-font-to-svg-path/ by uploading the nerdfonts variant of JetBrainsMono
