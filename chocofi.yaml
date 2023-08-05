@@ -7,10 +7,10 @@ layers:
   - P
   - V
   - {t: ;, s: ':'}
-  - {t: ., s: '&'}
+  - {t: ., h: $$dot_sentence_case$$, s: '&'}
   - {t: /, s: '*'}
-  - {t: '"', h: '"⌄"', s: '?'}
-  - {t: '''', h: '''⌄''', s: '!'}
+  - {t: '"', h: '"⌄"', s: '#'}
+  - {t: '''', h: '''⌄''', s: $}
   - {t: R, h: $$meta$$}
   - {t: S, h: $$alt$$}
   - {t: N, h: $$control$$}
@@ -32,12 +32,12 @@ layers:
   - Y
   - K
   - {t: $$backspace$$, s: $$delete$$}
-  - {t: T, h: NAV/NUM}
+  - {t: T, h: NAV_NUM}
   - Tab
   - $$return$$
-  - {t: ‿, h: NAV/NUM}
-  - {t: Esc, h: FN}
-  NAV/NUM:
+  - {t: ‿, h: NAV_NUM}
+  - Esc
+  NAV_NUM:
   - ''
   - Page Down
   - $$arrow_up$$
@@ -68,17 +68,17 @@ layers:
   - '2'
   - '3'
   - ''
-  - ''
+  - {t: $$backspace$$, s: $$delete$$}
   - {type: held}
-  - ''
-  - ''
-  - {type: held}
-  - ''
+  - Tab
+  - $$return$$
+  - {t: ‿, type: held}
+  - Esc
   FN:
-  - $$bluetooth_clear$$
-  - $$led_off$$
-  - $$led_on$$
-  - $$send_keypresses_usb$$
+  - {t: $$bluetooth_clear$$, type: held}
+  - {t: $$led_off$$, type: held}
+  - {t: $$led_on$$, type: held}
+  - {t: $$send_keypresses_usb$$, type: held}
   - $$send_keypresses_bluetooth$$
   - ''
   - ''
@@ -110,7 +110,7 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
+  - ''
 combos:
 - p: [0, 1]
   k: Z
@@ -140,10 +140,11 @@ combos:
   k: Ph
   l: [BASE]
 - p: [13, 16]
-  k: $$caps_word$$
+  k: caps word
   l: [BASE]
   a: bottom
   o: 0.04
+  arc_scale: 0.97
 - p: [16, 17]
   k: {t: (, h: (⌄), s: )}
   l: [BASE]
@@ -166,8 +167,58 @@ combos:
   k: {t: _, s: \}
   l: [BASE]
 - p: [18, 19]
-  k: {t: '#', s: '@'}
+  k: {t: '!', h: $$exclamation_sentence_case$$, s: '@'}
   l: [BASE]
 - p: [28, 29]
-  k: {t: $, s: ^}
+  k: {t: '?', h: $$question_sentence_case$$, s: ^}
   l: [BASE]
+- p: [31, 34]
+  k: num word
+  l: [BASE]
+  a: bottom
+  o: 0.5
+- p: [0, 1, 2, 3]
+  k: FN one shot
+  l: [BASE]
+  a: top
+  o: 0.4
+- p: [5, 15]
+  k: '0'
+  l: [BASE]
+  type: vertical_combo
+- p: [6, 16]
+  k: '2'
+  l: [BASE]
+  type: vertical_combo
+- p: [7, 17]
+  k: '4'
+  l: [BASE]
+  type: vertical_combo
+- p: [8, 18]
+  k: '6'
+  l: [BASE]
+  type: vertical_combo
+- p: [26, 16]
+  k: '8'
+  l: [BASE]
+  type: vertical_combo
+- p: [4, 14]
+  k: '1'
+  l: [BASE]
+  type: vertical_combo
+- p: [3, 13]
+  k: '3'
+  l: [BASE]
+  type: vertical_combo
+- p: [2, 12]
+  k: '5'
+  l: [BASE]
+  type: vertical_combo
+- p: [1, 11]
+  k: '7'
+  l: [BASE]
+  type: vertical_combo
+- p: [23, 13]
+  k: '9'
+  l: [BASE]
+  type: vertical_combo

@@ -36,5 +36,3 @@ SVG keymaps are auto-generated using [keymap-drawer](https://github.com/caksoyla
 The keymap diagrams contain svgs using nerdfont icons. These svgs have been generated using this [text to svg converter](https://danmarshall.github.io/google-font-to-svg-path/) with the [JetBrainsMonoNerdFont-Medium.ttf](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip) uploaded. A stroke width of 0.1mm seems to provide good results. After you have your svg, remove the added `<g id="svgGroup"...` element, to allow the glyphs to take on the config's colors.
 
 Color palette used in the keymap SVGs is [kanagawa](https://github.com/rebelot/kanagawa.nvim/)
-
-Comments in *.keymap files are auto-generated and auto-indented using [qmk.nvim](https://github.com/codethread/qmk.nvim)

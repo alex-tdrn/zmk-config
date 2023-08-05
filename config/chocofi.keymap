@@ -4,30 +4,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-// Layers
-#define BASE 0
-#define NAV_NUM 1
-#define FUNCTION 2
-
-// use global-quick-tap-ms for combos (requires PR 1387)
-#undef COMBO_HOOK
-#define COMBO_HOOK global-quick-tap-ms = <100>;
-
-&sk {
-    quick-release;
-    release-after-ms = <10000>;
-};
-
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
-    /delete-property/ ignore-modifiers;
-};
-
-&num_word {
-    layers = <NAV_NUM>;
-    ignore-modifiers;
-};
-
 // Key positions
 // - first Letter is the hand: (L)eft or (R)ight
 // - second letter is the finger (P)inky; (R)ing; (M)iddle; (I)ndex; (T)humb
@@ -110,6 +86,15 @@
 #define R_PINKY_FINGER RPU RPH RPL
 #define R_THUMB RTO RTH RTI
 
+// Layers
+#define BASE 0
+#define NAV_NUM 1
+#define FUNCTION 2
+
+// use global-quick-tap-ms for combos (requires PR 1387)
+#undef COMBO_HOOK
+#define COMBO_HOOK global-quick-tap-ms = <100>;
+
 #define COMBO(NAME, LAYERS, KEYPOS, BINDINGS) \
 / { \
     combos { \
@@ -187,99 +172,52 @@ HOLD_TAP(NAME ## _ht, & ## NAME, TAP_BEHAVIOR)
 MACRO(NAME ## _sc, <&macro_tap &kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>); \
 HOLD_TAP(NAME ## _sc_ht, & ## NAME ## _sc, TAP_BEHAVIOR)
 
-SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &kp DOLLAR);
+#define LAYER_KEYMAP(LAYER, \
+    LEFT_UPPER_ROW, \
+    LEFT_HOME_ROW, \
+    LEFT_LOWER_ROW, \
+    LEFT_THUMB_ROW, \
+    RIGHT_UPPER_ROW, \
+    RIGHT_HOME_ROW, \
+    RIGHT_LOWER_ROW, \
+    RIGHT_THUMB_ROW \
+) \
+/ { \
+    keymap { \
+        compatible = "zmk,keymap"; \
+        LAYER ## _layer { \
+            label = #LAYER; \
+            bindings = <\
+                LEFT_UPPER_ROW \
+                RIGHT_UPPER_ROW \
+                LEFT_HOME_ROW \
+                RIGHT_HOME_ROW \
+                LEFT_LOWER_ROW \
+                RIGHT_LOWER_ROW \
+                LEFT_THUMB_ROW \
+                RIGHT_THUMB_ROW \
+            >; \
+        }; \
+    }; \
+}
 
-SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &kp HASH);
+// ----------------------------------------------------------------------------------------------------------------------------------------
+// BEHAVIORS
 
-AUTOPAIR_HOLD_TAP(auto_single_quotes, SINGLE_QUOTE, SINGLE_QUOTE, &symbols_RPU);
-AUTOPAIR_HOLD_TAP(auto_double_quotes, DOUBLE_QUOTES, DOUBLE_QUOTES, &symbols_RRU);
+&sk {
+    quick-release;
+    release-after-ms = <10000>;
+};
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
+    /delete-property/ ignore-modifiers;
+};
 
-SHIFTED(symbols_RMU, &kp SLASH, &kp ASTERISK);
-SHIFTED(symbols_RIU, &kp PERIOD, &kp AMPERSAND);
-SHIFTED(symbols_RIUI, &kp SEMICOLON, &kp COLON);
-SHIFTED(symbols_RIHI, &kp COMMA, &kp PIPE);
-SHIFTED(symbols_RILI, &kp MINUS, &kp PLUS);
-
-SENTENCE_CASE_HOLD_TAP(period, PERIOD, &symbols_RIU);
-
-SHIFTED(bspc_del, &kp BSPC, &kp DEL);
-
-COMBO(z, BASE, LPU LRU, &kp Z);
-
-BIGRAM(qu, Q, U);
-COMBO(qu, BASE, LPH LRH, &qu);
-COMBO(q, BASE, LPL LRL, &kp Q);
-
-BIGRAM(th, T, H);
-COMBO(th, BASE, LIH LMH, &th);
-
-BIGRAM(ch, C, H);
-COMBO(ch, BASE, LIL LML, &ch);
-
-BIGRAM(sh, S, H);
-COMBO(sh, BASE, LRH LMH, &sh);
-
-BIGRAM(wh, W, H);
-COMBO(wh, BASE, LRL LML, &wh);
-
-BIGRAM(gh, G, H);
-COMBO(gh, BASE, LRU LMU, &gh);
-
-BIGRAM(ph, P, H);
-COMBO(ph, BASE, LMU LIU, &ph);
-
-COMBO(caps_word, BASE, LIH RIH, &caps_word);
-
-SHIFTED(round_brackets, &kp LPAR, &kp RPAR);
-SHIFTED(angled_brackets, &kp LESS_THAN, &kp GREATER_THAN);
-SHIFTED(curly_brackets, &kp LEFT_BRACE, &kp RIGHT_BRACE);
-SHIFTED(square_brackets, &kp LEFT_BRACKET, &kp RIGHT_BRACKET);
-
-AUTOPAIR_HOLD_TAP(auto_round_brackets, LPAR, RPAR, &round_brackets);
-AUTOPAIR_HOLD_TAP(auto_angled_brackets, LESS_THAN, GREATER_THAN, &angled_brackets);
-AUTOPAIR_HOLD_TAP(auto_curly_brackets, LEFT_BRACE, RIGHT_BRACE, &curly_brackets);
-AUTOPAIR_HOLD_TAP(auto_square_brackets, LEFT_BRACKET, RIGHT_BRACKET, &square_brackets);
-
-COMBO(round_brackets, BASE, RIH RMH, &auto_round_brackets_ht 0 0);
-COMBO(angled_brackets, BASE, RIL RML, &auto_angled_brackets_ht 0 0);
-COMBO(curly_brackets, BASE, RMH RRH, &auto_curly_brackets_ht 0 0);
-COMBO(square_brackets, BASE, RML RRL, &auto_square_brackets_ht 0 0);
-
-AUTOPAIR_HOLD_TAP(auto_back_tick, GRAVE, GRAVE, &kp);
-COMBO(backtick_tilde, BASE, RRU RPU, &auto_back_tick_ht 0 GRAVE);
-
-SHIFTED(equal_percent, &kp EQUAL, &kp PERCENT);
-COMBO(equal_percent, BASE, RMU RRU, &equal_percent);
-
-SHIFTED(underscore_backslash, &kp UNDERSCORE, &kp BACKSLASH);
-COMBO(underscore_backslash, BASE, RIU RMU, &underscore_backslash);
-
-SHIFTED(exclamation_at, &kp EXCLAMATION, &kp AT_SIGN);
-SENTENCE_CASE_HOLD_TAP(exclamation, EXCLAMATION, &exclamation_at);
-COMBO(exclamation_at, BASE, RRH RPH, &exclamation_sc_ht 0 0);
-
-SHIFTED(question_caret, &kp QUESTION, &kp CARET);
-SENTENCE_CASE_HOLD_TAP(question, QUESTION, &question_caret);
-COMBO(question_caret, BASE, RRL RPL, &question_sc_ht 0 0);
-
-COMBO(num_word, BASE, LTH RTH, &num_word);
-
-COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
-
-// experimental numbers on base layer using combos
-COMBO(vertical_0, BASE, RIUI RIHI, &kp N0);
-COMBO(vertical_2, BASE, RIU  RIH,  &kp N2);
-COMBO(vertical_4, BASE, RMU  RMH,  &kp N4);
-COMBO(vertical_6, BASE, RRU  RRH,  &kp N6);
-COMBO(vertical_8, BASE, RIL  RIH,  &kp N8);
-
-
-COMBO(vertical_1, BASE, LIUI LIHI, &kp N1);
-COMBO(vertical_3, BASE, LIU  LIH,  &kp N3);
-COMBO(vertical_5, BASE, LMU  LMH,  &kp N5);
-COMBO(vertical_7, BASE, LRU  LRH,  &kp N7);
-COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
+&num_word {
+    layers = <NAV_NUM>;
+    ignore-modifiers;
+};
 
 / {
     behaviors {
@@ -309,64 +247,142 @@ COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
             hold-trigger-on-release;
         };
     };
-
-    keymap {
-        compatible = "zmk,keymap";
-        BASE_layer {
-            label = "BASE";
-            bindings = <
-//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────────────┐           ┌───────────────────┬───────────────────┬──────────────┬────────────────────────────┬────────────────────────────┐
-//    │      J       │      G      │      M       │       P       │       V       │           │   &symbols_RIUI   │ &period_sc_ht 0 0 │ &symbols_RMU │ &auto_double_quotes_ht 0 0 │ &auto_single_quotes_ht 0 0 │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────────────┤           ├───────────────────┼───────────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
-//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │       B       │           │   &symbols_RIHI   │   &rmt RSHIFT A   │ &rmt RCTRL E │        &rmt RALT I         │        &rmt RMETA H        │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────────────┤           ├───────────────────┼───────────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
-//    │      X       │      F      │      L       │       C       │       W       │           │   &symbols_RILI   │         U         │      O       │             Y              │             K              │
-//    └──────────────┴─────────────┴──────────────┼───────────────┼───────────────┼───┐   ┌───┼───────────────────┼───────────────────┼──────────────┴────────────────────────────┴────────────────────────────┘
-//                                                │   &bspc_del   │ &lt NAV_NUM T │ ⭾ │   │ ⏎ │ &lt NAV_NUM SPACE │        Esc        │                                                                         
-//                                                └───────────────┴───────────────┴───┘   └───┴───────────────────┴───────────────────┘                                                                         
-  &kp J          &kp G         &kp M          &kp P           &kp V                                   &symbols_RIUI       &period_sc_ht 0 0   &symbols_RMU   &auto_double_quotes_ht 0 0   &auto_single_quotes_ht 0 0
-  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                                   &symbols_RIHI       &rmt RSHIFT A       &rmt RCTRL E   &rmt RALT I                  &rmt RMETA H              
-  &kp X          &kp F         &kp L          &kp C           &kp W                                   &symbols_RILI       &kp U               &kp O          &kp Y                        &kp K                     
-                                              &bspc_del       &lt NAV_NUM T   &kp TAB       &kp RET   &lt NAV_NUM SPACE   &kp ESC                                                                                   
-            >;
-        };
-
-        NAV_NUM_layer {
-            label = "NAV/NUM";
-            bindings = <
-//    ┌───┬───────────────┬──────────┬─────────────┬───┐           ┌────────┬────────────────┬───────────────┬──────────────┬───────────┐
-//    │   │ &kp PAGE_DOWN │  &kp UP  │ &kp PAGE_UP │   │           │        │     &kp N7     │    &kp N8     │    &kp N9    │           │
-//    ├───┼───────────────┼──────────┼─────────────┼───┤           ├────────┼────────────────┼───────────────┼──────────────┼───────────┤
-//    │   │   &kp LEFT    │ &kp DOWN │  &kp RIGHT  │   │           │ &kp N0 │ &rmt RSHIFT N4 │ &rmt RCTRL N5 │ &rmt RALT N6 │ &kp RMETA │
-//    ├───┼───────────────┼──────────┼─────────────┼───┤           ├────────┼────────────────┼───────────────┼──────────────┼───────────┤
-//    │   │   &kp HOME    │          │   &kp END   │   │           │        │     &kp N1     │    &kp N2     │    &kp N3    │           │
-//    └───┴───────────────┴──────────┼─────────────┼───┼───┐   ┌───┼────────┼────────────────┼───────────────┴──────────────┴───────────┘
-//                                   │  &bspc_del  │   │ ⭾ │   │ ⏎ │   ‿    │      Esc       │                                           
-//                                   └─────────────┴───┴───┘   └───┴────────┴────────────────┘                                           
-  &none   &kp PAGE_DOWN   &kp UP     &kp PAGE_UP   &none                           &none       &kp N7           &kp N8          &kp N9         &none    
-  &none   &kp LEFT        &kp DOWN   &kp RIGHT     &none                           &kp N0      &rmt RSHIFT N4   &rmt RCTRL N5   &rmt RALT N6   &kp RMETA
-  &none   &kp HOME        &none      &kp END       &none                           &none       &kp N1           &kp N2          &kp N3         &none    
-                                     &bspc_del     &none   &kp TAB       &kp RET   &kp SPACE   &kp ESC                                                  
-            >;
-        };
-
-        FUNCTION_layer {
-            label = "FN";
-            bindings = <
-//    ┌──────────────┬───────────────────┬──────────────────┬──────────────┬──────────────┐           ┌───┬───┬───┬───┬───┐
-//    │  &bt BT_CLR  │ &ext_power EP_OFF │ &ext_power EP_ON │ &out OUT_USB │ &out OUT_BLE │           │   │   │   │   │   │
-//    ├──────────────┼───────────────────┼──────────────────┼──────────────┼──────────────┤           ├───┼───┼───┼───┼───┤
-//    │ &bt BT_SEL 4 │   &bt BT_SEL 3    │   &bt BT_SEL 2   │ &bt BT_SEL 1 │ &bt BT_SEL 0 │           │   │   │   │   │   │
-//    ├──────────────┼───────────────────┼──────────────────┼──────────────┼──────────────┤           ├───┼───┼───┼───┼───┤
-//    │              │                   │                  │              │              │           │   │   │   │   │   │
-//    └──────────────┴───────────────────┴──────────────────┼──────────────┼──────────────┼───┐   ┌───┼───┼───┼───┴───┴───┘
-//                                                          │              │              │   │   │   │   │   │            
-//                                                          └──────────────┴──────────────┴───┘   └───┴───┴───┘            
-  &bt BT_CLR     &ext_power EP_OFF   &ext_power EP_ON   &out OUT_USB   &out OUT_BLE                       &none   &none   &none   &none   &none
-  &bt BT_SEL 4   &bt BT_SEL 3        &bt BT_SEL 2       &bt BT_SEL 1   &bt BT_SEL 0                       &none   &none   &none   &none   &none
-  &none          &none               &none              &none          &none                              &none   &none   &none   &none   &none
-                                                        &none          &none          &none       &none   &none   &none                        
-            >;
-        };
-    };
 };
+
+SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &kp DOLLAR);
+
+SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &kp HASH);
+
+AUTOPAIR_HOLD_TAP(auto_single_quotes, SINGLE_QUOTE, SINGLE_QUOTE, &symbols_RPU);
+AUTOPAIR_HOLD_TAP(auto_double_quotes, DOUBLE_QUOTES, DOUBLE_QUOTES, &symbols_RRU);
+
+SHIFTED(symbols_RMU, &kp SLASH, &kp ASTERISK);
+SHIFTED(symbols_RIU, &kp PERIOD, &kp AMPERSAND);
+SHIFTED(symbols_RIUI, &kp SEMICOLON, &kp COLON);
+SHIFTED(symbols_RIHI, &kp COMMA, &kp PIPE);
+SHIFTED(symbols_RILI, &kp MINUS, &kp PLUS);
+
+SENTENCE_CASE_HOLD_TAP(period, PERIOD, &symbols_RIU);
+
+SHIFTED(bspc_del, &kp BSPC, &kp DEL);
+
+BIGRAM(qu, Q, U);
+
+BIGRAM(th, T, H);
+
+BIGRAM(ch, C, H);
+
+BIGRAM(sh, S, H);
+
+BIGRAM(wh, W, H);
+
+BIGRAM(gh, G, H);
+
+BIGRAM(ph, P, H);
+
+SHIFTED(round_brackets, &kp LPAR, &kp RPAR);
+SHIFTED(angled_brackets, &kp LESS_THAN, &kp GREATER_THAN);
+SHIFTED(curly_brackets, &kp LEFT_BRACE, &kp RIGHT_BRACE);
+SHIFTED(square_brackets, &kp LEFT_BRACKET, &kp RIGHT_BRACKET);
+
+AUTOPAIR_HOLD_TAP(auto_round_brackets, LPAR, RPAR, &round_brackets);
+AUTOPAIR_HOLD_TAP(auto_angled_brackets, LESS_THAN, GREATER_THAN, &angled_brackets);
+AUTOPAIR_HOLD_TAP(auto_curly_brackets, LEFT_BRACE, RIGHT_BRACE, &curly_brackets);
+AUTOPAIR_HOLD_TAP(auto_square_brackets, LEFT_BRACKET, RIGHT_BRACKET, &square_brackets);
+
+
+AUTOPAIR_HOLD_TAP(auto_back_tick, GRAVE, GRAVE, &kp);
+
+SHIFTED(equal_percent, &kp EQUAL, &kp PERCENT);
+
+SHIFTED(underscore_backslash, &kp UNDERSCORE, &kp BACKSLASH);
+
+SHIFTED(exclamation_at, &kp EXCLAMATION, &kp AT_SIGN);
+SENTENCE_CASE_HOLD_TAP(exclamation, EXCLAMATION, &exclamation_at);
+
+SHIFTED(question_caret, &kp QUESTION, &kp CARET);
+SENTENCE_CASE_HOLD_TAP(question, QUESTION, &question_caret);
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+// COMBO BINDINGS
+
+// letter and bigram combos
+COMBO(z, BASE, LPU LRU, &kp Z);
+COMBO(qu, BASE, LPH LRH, &qu);
+COMBO(q, BASE, LPL LRL, &kp Q);
+
+COMBO(th, BASE, LIH LMH, &th);
+COMBO(ch, BASE, LIL LML, &ch);
+COMBO(sh, BASE, LRH LMH, &sh);
+
+COMBO(wh, BASE, LRL LML, &wh);
+COMBO(gh, BASE, LRU LMU, &gh);
+COMBO(ph, BASE, LMU LIU, &ph);
+
+// symbol combos
+COMBO(caps_word, BASE, LIH RIH, &caps_word);
+COMBO(round_brackets, BASE, RIH RMH, &auto_round_brackets_ht 0 0);
+COMBO(angled_brackets, BASE, RIL RML, &auto_angled_brackets_ht 0 0);
+COMBO(curly_brackets, BASE, RMH RRH, &auto_curly_brackets_ht 0 0);
+COMBO(square_brackets, BASE, RML RRL, &auto_square_brackets_ht 0 0);
+COMBO(backtick_tilde, BASE, RRU RPU, &auto_back_tick_ht 0 GRAVE);
+COMBO(equal_percent, BASE, RMU RRU, &equal_percent);
+COMBO(underscore_backslash, BASE, RIU RMU, &underscore_backslash);
+COMBO(exclamation_at, BASE, RRH RPH, &exclamation_sc_ht 0 0);
+COMBO(question_caret, BASE, RRL RPL, &question_sc_ht 0 0);
+COMBO(num_word, BASE, LTH RTH, &num_word);
+
+// number combos
+COMBO(vertical_0, BASE, RIUI RIHI, &kp N0);
+COMBO(vertical_2, BASE, RIU  RIH,  &kp N2);
+COMBO(vertical_4, BASE, RMU  RMH,  &kp N4);
+COMBO(vertical_6, BASE, RRU  RRH,  &kp N6);
+COMBO(vertical_8, BASE, RIL  RIH,  &kp N8);
+
+COMBO(vertical_1, BASE, LIUI LIHI, &kp N1);
+COMBO(vertical_3, BASE, LIU  LIH,  &kp N3);
+COMBO(vertical_5, BASE, LMU  LMH,  &kp N5);
+COMBO(vertical_7, BASE, LRU  LRH,  &kp N7);
+COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
+
+// layer combos
+COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+// KEY BINDINGS
+
+LAYER_KEYMAP(BASE,
+    &kp J &kp G &kp M &kp P &kp V,
+    &lmt LMETA R &lmt LALT S &lmt LCTRL N &lmt LSHIFT D &kp B,
+    &kp X &kp F &kp L &kp C &kp W,
+    &bspc_del &lt NAV_NUM T &kp TAB,
+
+    &symbols_RIUI &period_sc_ht 0 0 &symbols_RMU &auto_double_quotes_ht 0 0 &auto_single_quotes_ht 0 0,
+    &symbols_RIHI &rmt RSHIFT A &rmt RCTRL E &rmt RALT I &rmt RMETA H,
+    &symbols_RILI &kp U &kp O &kp Y &kp K,
+    &kp RET &lt NAV_NUM SPACE &kp ESC
+);
+
+LAYER_KEYMAP(NAV_NUM,
+    &none &kp PAGE_DOWN &kp UP &kp PAGE_UP &none,
+    &none &kp LEFT &kp DOWN &kp RIGHT &none,
+    &none &kp HOME &none &kp END &none,
+    &bspc_del &none &kp TAB,
+
+    &none &kp N7 &kp N8 &kp N9 &none,
+    &kp N0 &rmt RSHIFT N4 &rmt RCTRL N5 &rmt RALT N6 &kp RMETA,
+    &none &kp N1 &kp N2 &kp N3 &none,
+    &kp RET &kp SPACE &kp ESC
+);
+
+LAYER_KEYMAP(FN,
+    &bt BT_CLR &ext_power EP_OFF &ext_power EP_ON &out OUT_USB &out OUT_BLE,
+    &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0,
+    &none &none &none &none &none,
+    &none &none &none,
+
+    &none &none &none &none &none,
+    &none &none &none &none &none,
+    &none &none &none &none &none,
+    &none &none &none
+);
