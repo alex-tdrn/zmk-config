@@ -13,9 +13,8 @@ This kind of functionality is normally available through text editor plugins but
 So having it optional, and activated manually is more convenient to me.
 Also, this makes this feature available anywhere arrow key navigation works.
 
-## Double-tap sentence case
-The sentence ending symbols (period, exclamation mark, and question mark) can be double-tapped to trigger sentence case: the symbol itself will be emitted then a space and finally sticky shift will be activated, automatically turning the next letter uppercase.
-The double-tap interval is pretty generous in order to be able to activate this with the ring and pinky finger, so for cases where you need to repeat the symbol without sentence-case, tapping needs to be done a little slower, but I haven't found this to be an issue yet.
+## Sentence case
+The sentence ending symbols (period, exclamation mark, and question mark) can be held to trigger sentence case: the symbol itself will be emitted then a space and finally sticky shift will be activated, automatically turning the next letter uppercase.
 The sticky shift is set to only deactivate after 10s if no input is received, to allow for a slight pause before the next sentence, if needed.
 
 ## Acknowledgements

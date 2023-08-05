@@ -15,7 +15,7 @@ parse_config:
     '&bt BT_SEL 4': $$bluetooth_5$$
     '&auto_double_quotes_ht 0 0': {t: '"', s: '#', h: '"⌄"'}
     '&auto_single_quotes_ht 0 0': {t: '''', s: '$', h: "'⌄'"}
-    '&symbols_RIU': {t: '.', s: '&', h: $$dot_sentence_case$$}
+    '&period_sc_ht 0 0': {t: '.', s: '&', h: $$dot_sentence_case$$}
   zmk_combos:
     combo_vertical_0:
        type: 'vertical_combo'

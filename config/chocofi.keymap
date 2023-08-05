@@ -183,19 +183,9 @@ MOD_MORPH(NAME, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _ap_enter
 AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL); \
 HOLD_TAP(NAME ## _ht, & ## NAME, TAP_BEHAVIOR)
 
-#define DOUBLE_TAP_SENTENCE_CASE(NAME, SENTENCE_ENDING_SYMBOL) \
+#define SENTENCE_CASE_HOLD_TAP(NAME, SENTENCE_ENDING_SYMBOL, TAP_BEHAVIOR) \
 MACRO(NAME ## _sc, <&macro_tap &kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>); \
-/ { \
-    behaviors { \
-        NAME##: NAME { \
-            compatible = "zmk,behavior-tap-dance"; \
-            label = #NAME; \
-            #binding-cells = <0>; \
-            tapping-term-ms = <300>; \
-            bindings = <&kp SENTENCE_ENDING_SYMBOL>, <& ## NAME ## _sc>; \
-        }; \
-    }; \
-}
+HOLD_TAP(NAME ## _sc_ht, & ## NAME ## _sc, TAP_BEHAVIOR)
 
 SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &kp DOLLAR);
 
@@ -204,13 +194,14 @@ SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &kp HASH);
 AUTOPAIR_HOLD_TAP(auto_single_quotes, SINGLE_QUOTE, SINGLE_QUOTE, &symbols_RPU);
 AUTOPAIR_HOLD_TAP(auto_double_quotes, DOUBLE_QUOTES, DOUBLE_QUOTES, &symbols_RRU);
 
-DOUBLE_TAP_SENTENCE_CASE(period_dtsc, PERIOD);
 
 SHIFTED(symbols_RMU, &kp SLASH, &kp ASTERISK);
-SHIFTED(symbols_RIU, &period_dtsc, &kp AMPERSAND);
+SHIFTED(symbols_RIU, &kp PERIOD, &kp AMPERSAND);
 SHIFTED(symbols_RIUI, &kp SEMICOLON, &kp COLON);
 SHIFTED(symbols_RIHI, &kp COMMA, &kp PIPE);
 SHIFTED(symbols_RILI, &kp MINUS, &kp PLUS);
+
+SENTENCE_CASE_HOLD_TAP(period, PERIOD, &symbols_RIU);
 
 SHIFTED(bspc_del, &kp BSPC, &kp DEL);
 
@@ -264,14 +255,13 @@ COMBO(equal_percent, BASE, RMU RRU, &equal_percent);
 SHIFTED(underscore_backslash, &kp UNDERSCORE, &kp BACKSLASH);
 COMBO(underscore_backslash, BASE, RIU RMU, &underscore_backslash);
 
-DOUBLE_TAP_SENTENCE_CASE(exclamation_dtsc, EXCLAMATION);
-DOUBLE_TAP_SENTENCE_CASE(question_dtsc, QUESTION);
-
 SHIFTED(exclamation_at, &kp EXCLAMATION, &kp AT_SIGN);
-COMBO(exclamation_at, BASE, RRH RPH, &exclamation_at);
+SENTENCE_CASE_HOLD_TAP(exclamation, EXCLAMATION, &exclamation_at);
+COMBO(exclamation_at, BASE, RRH RPH, &exclamation_sc_ht 0 0);
 
 SHIFTED(question_caret, &kp QUESTION, &kp CARET);
-COMBO(question_caret, BASE, RRL RPL, &question_caret);
+SENTENCE_CASE_HOLD_TAP(question, QUESTION, &question_caret);
+COMBO(question_caret, BASE, RRL RPL, &question_sc_ht 0 0);
 
 COMBO(num_word, BASE, LTH RTH, &num_word);
 
@@ -325,19 +315,19 @@ COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
         BASE_layer {
             label = "BASE";
             bindings = <
-//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────────────┐           ┌───────────────────┬───────────────┬──────────────┬────────────────────────────┬────────────────────────────┐
-//    │      J       │      G      │      M       │       P       │       V       │           │   &symbols_RIUI   │ &symbols_RIU  │ &symbols_RMU │ &auto_double_quotes_ht 0 0 │ &auto_single_quotes_ht 0 0 │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────────────┤           ├───────────────────┼───────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
-//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │       B       │           │   &symbols_RIHI   │ &rmt RSHIFT A │ &rmt RCTRL E │        &rmt RALT I         │        &rmt RMETA H        │
-//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────────────┤           ├───────────────────┼───────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
-//    │      X       │      F      │      L       │       C       │       W       │           │   &symbols_RILI   │       U       │      O       │             Y              │             K              │
-//    └──────────────┴─────────────┴──────────────┼───────────────┼───────────────┼───┐   ┌───┼───────────────────┼───────────────┼──────────────┴────────────────────────────┴────────────────────────────┘
-//                                                │   &bspc_del   │ &lt NAV_NUM T │ ⭾ │   │ ⏎ │ &lt NAV_NUM SPACE │      Esc      │                                                                         
-//                                                └───────────────┴───────────────┴───┘   └───┴───────────────────┴───────────────┘                                                                         
-  &kp J          &kp G         &kp M          &kp P           &kp V                                   &symbols_RIUI       &symbols_RIU    &symbols_RMU   &auto_double_quotes_ht 0 0   &auto_single_quotes_ht 0 0
-  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                                   &symbols_RIHI       &rmt RSHIFT A   &rmt RCTRL E   &rmt RALT I                  &rmt RMETA H              
-  &kp X          &kp F         &kp L          &kp C           &kp W                                   &symbols_RILI       &kp U           &kp O          &kp Y                        &kp K                     
-                                              &bspc_del       &lt NAV_NUM T   &kp TAB       &kp RET   &lt NAV_NUM SPACE   &kp ESC                                                                               
+//    ┌──────────────┬─────────────┬──────────────┬───────────────┬───────────────┐           ┌───────────────────┬───────────────────┬──────────────┬────────────────────────────┬────────────────────────────┐
+//    │      J       │      G      │      M       │       P       │       V       │           │   &symbols_RIUI   │ &period_sc_ht 0 0 │ &symbols_RMU │ &auto_double_quotes_ht 0 0 │ &auto_single_quotes_ht 0 0 │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────────────┤           ├───────────────────┼───────────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
+//    │ &lmt LMETA R │ &lmt LALT S │ &lmt LCTRL N │ &lmt LSHIFT D │       B       │           │   &symbols_RIHI   │   &rmt RSHIFT A   │ &rmt RCTRL E │        &rmt RALT I         │        &rmt RMETA H        │
+//    ├──────────────┼─────────────┼──────────────┼───────────────┼───────────────┤           ├───────────────────┼───────────────────┼──────────────┼────────────────────────────┼────────────────────────────┤
+//    │      X       │      F      │      L       │       C       │       W       │           │   &symbols_RILI   │         U         │      O       │             Y              │             K              │
+//    └──────────────┴─────────────┴──────────────┼───────────────┼───────────────┼───┐   ┌───┼───────────────────┼───────────────────┼──────────────┴────────────────────────────┴────────────────────────────┘
+//                                                │   &bspc_del   │ &lt NAV_NUM T │ ⭾ │   │ ⏎ │ &lt NAV_NUM SPACE │        Esc        │                                                                         
+//                                                └───────────────┴───────────────┴───┘   └───┴───────────────────┴───────────────────┘                                                                         
+  &kp J          &kp G         &kp M          &kp P           &kp V                                   &symbols_RIUI       &period_sc_ht 0 0   &symbols_RMU   &auto_double_quotes_ht 0 0   &auto_single_quotes_ht 0 0
+  &lmt LMETA R   &lmt LALT S   &lmt LCTRL N   &lmt LSHIFT D   &kp B                                   &symbols_RIHI       &rmt RSHIFT A       &rmt RCTRL E   &rmt RALT I                  &rmt RMETA H              
+  &kp X          &kp F         &kp L          &kp C           &kp W                                   &symbols_RILI       &kp U               &kp O          &kp Y                        &kp K                     
+                                              &bspc_del       &lt NAV_NUM T   &kp TAB       &kp RET   &lt NAV_NUM SPACE   &kp ESC                                                                                   
             >;
         };
 
