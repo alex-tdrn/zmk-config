@@ -159,7 +159,13 @@ parse_config:
         key: 'FN one shot'
         align: top
         offset: 0.2
-        slide: -0.5
+        slide: -0.6
+    combo_lock:
+        align: top
+        offset: 0.7
+    combo_unlock:
+        align: top
+        offset: 0.7
   sticky_label: sticky
   trans_legend:
     t: ▽

@@ -89,6 +89,7 @@
 // Layers
 #define BASE 0
 #define FUNCTION 1
+#define LOCK 2
 
 // use global-quick-tap-ms for combos (requires PR 1387)
 #undef COMBO_HOOK
@@ -334,6 +335,9 @@ COMBO(end, BASE, LMH LIL, &kp END);
 COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
 COMBO(caps_word, BASE, LIH RIH, &caps_word);
 
+COMBO(lock, BASE, LPU LRU LMU LIU RIU RMU RRU RPU, &to LOCK);
+COMBO(unlock, LOCK, LPU LRU LMU LIU RIU RMU RRU RPU, &to BASE);
+
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // KEY BINDINGS
 
@@ -352,6 +356,18 @@ LAYER_KEYMAP(BASE,
 LAYER_KEYMAP(FN,
     &bt BT_CLR &ext_power EP_OFF &ext_power EP_ON &out OUT_USB &out OUT_BLE,
     &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0,
+    &none &none &none &none &none,
+    &none &none &none,
+
+    &none &none &none &none &none,
+    &none &none &none &none &none,
+    &none &none &none &none &none,
+    &none &none &none
+);
+
+LAYER_KEYMAP(LOCK,
+    &none &none &none &none &none,
+    &none &none &none &none &none,
     &none &none &none &none &none,
     &none &none &none,
 
