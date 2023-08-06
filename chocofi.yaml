@@ -177,11 +177,6 @@ combos:
   l: [BASE]
   a: bottom
   o: 0.5
-- p: [0, 1, 2, 3]
-  k: FN one shot
-  l: [BASE]
-  a: top
-  o: 0.4
 - p: [5, 15]
   k: '0'
   l: [BASE]
@@ -222,3 +217,8 @@ combos:
   k: '9'
   l: [BASE]
   type: vertical_combo
+- p: [0, 1, 2, 3]
+  k: FN one shot
+  l: [BASE]
+  a: top
+  o: 0.4
