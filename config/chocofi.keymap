@@ -152,25 +152,29 @@ MOD_MORPH(NAME, MOD_LSFT|MOD_RSFT, WITHOUT_SHIFT, WITH_SHIFT)
     }; \
 }
 
+#define BIND_HOLD_TAP_ARGUMENTS(NAME, HOLD_TAP_BEHAVIOR, ARGUMENT_1, ARGUMENT_2) \
+MACRO(NAME, <&macro_press & ## HOLD_TAP_BEHAVIOR ARGUMENT_1 ARGUMENT_2>, <&macro_pause_for_release>, <&macro_release & ## HOLD_TAP_BEHAVIOR ARGUMENT_1 ARGUMENT_2>)
+
 #define BIGRAM(NAME, FIRST_LETTER, SECOND_LETTER) \
-MACRO(NAME ## _lowercase, <&macro_tap &kp FIRST_LETTER &kp SECOND_LETTER>); \
-MACRO(NAME ## _sentence_case, <&macro_tap &kp LS(FIRST_LETTER) &kp SECOND_LETTER>); \
+MACRO(NAME ## _lowercase, <&kp FIRST_LETTER &kp SECOND_LETTER>); \
+MACRO(NAME ## _sentence_case, <&kp LS(FIRST_LETTER) &kp SECOND_LETTER>); \
 SHIFTED(NAME, & ## NAME ## _lowercase, & ## NAME ## _sentence_case)
 
-#define AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL) \
-MACRO(NAME ## _ap, <&macro_tap &kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
-MACRO(NAME ## _ap_space, <&macro_tap &kp OPENING_SYMBOL &kp SPACE &kp SPACE &kp CLOSING_SYMBOL &kp LEFT &kp LEFT>); \
-MACRO(NAME ## _ap_enter, <&macro_tap &kp OPENING_SYMBOL &kp RET &kp RET &kp CLOSING_SYMBOL &kp UP>); \
+#define AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL, SHIFTED_TAP_SYMBOL) \
+MACRO(NAME ## _ap, <&kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
+MACRO(NAME ## _ap_space, <&kp OPENING_SYMBOL &kp SPACE &kp SPACE &kp CLOSING_SYMBOL &kp LEFT &kp LEFT>); \
+MACRO(NAME ## _ap_enter, <&kp OPENING_SYMBOL &kp RET &kp RET &kp CLOSING_SYMBOL &kp UP>); \
 SHIFTED(NAME ## _shifted, & ## NAME ## _ap, & ## NAME ## _ap_space); \
-MOD_MORPH(NAME, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _ap_enter)
+MOD_MORPH(NAME ## _mod_morph, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _ap_enter); \
+SHIFTED(NAME ## _shifted_tap_symbols, &kp OPENING_SYMBOL, &kp SHIFTED_TAP_SYMBOL); \
+HOLD_TAP(NAME ## _hold_tap, & ## NAME ## _mod_morph, & ## NAME ## _shifted_tap_symbols); \
+BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _hold_tap, 0, 0)
 
-#define AUTOPAIR_HOLD_TAP(NAME, OPENING_SYMBOL, CLOSING_SYMBOL, TAP_BEHAVIOR) \
-AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL); \
-HOLD_TAP(NAME ## _ht, & ## NAME, TAP_BEHAVIOR)
-
-#define SENTENCE_CASE_HOLD_TAP(NAME, SENTENCE_ENDING_SYMBOL, TAP_BEHAVIOR) \
-MACRO(NAME ## _sc, <&macro_tap &kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>); \
-HOLD_TAP(NAME ## _sc_ht, & ## NAME ## _sc, TAP_BEHAVIOR)
+#define AUTO_SENTENCE_CASE(NAME, SENTENCE_ENDING_SYMBOL, SHIFTED_TAP_SYMBOL) \
+MACRO(NAME ## _sc, <&kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>); \
+SHIFTED(NAME ## _shifted_tap_symbols, &kp SENTENCE_ENDING_SYMBOL, &kp SHIFTED_TAP_SYMBOL); \
+HOLD_TAP(NAME ## _sc_ht, & ## NAME ## _sc, & ## NAME ## _shifted_tap_symbols); \
+BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _sc_ht, 0, 0)
 
 #define LAYER_KEYMAP(LAYER, \
     LEFT_UPPER_ROW, \
@@ -210,7 +214,7 @@ HOLD_TAP(NAME ## _sc_ht, & ## NAME ## _sc, TAP_BEHAVIOR)
 };
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
+    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
     /delete-property/ ignore-modifiers;
 };
 
@@ -249,59 +253,33 @@ HOLD_TAP(NAME ## _sc_ht, & ## NAME ## _sc, TAP_BEHAVIOR)
     };
 };
 
-SHIFTED(symbols_RPU, &kp SINGLE_QUOTE, &kp DOLLAR);
+SHIFTED(divide_multiply, &kp SLASH, &kp ASTERISK);
+SHIFTED(minus_plus, &kp MINUS, &kp PLUS);
+SHIFTED(and_or, &kp AMPERSAND, &kp PIPE);
+SHIFTED(equal_tilde, &kp EQUAL, &kp TILDE);
+SHIFTED(underscore_backslash, &kp UNDERSCORE, &kp BACKSLASH);
+SHIFTED(semicolon_colon, &kp SEMICOLON, &kp COLON);
+SHIFTED(backspace_delete, &kp BACKSPACE, &kp DELETE);
 
-SHIFTED(symbols_RRU, &kp DOUBLE_QUOTES, &kp HASH);
+AUTO_SENTENCE_CASE(period_comma, PERIOD, COMMA);
+AUTO_SENTENCE_CASE(question_percent, QUESTION, PERCENT);
+AUTO_SENTENCE_CASE(exclamation_at, EXCLAMATION, AT_SIGN);
 
-AUTOPAIR_HOLD_TAP(auto_single_quotes, SINGLE_QUOTE, SINGLE_QUOTE, &symbols_RPU);
-AUTOPAIR_HOLD_TAP(auto_double_quotes, DOUBLE_QUOTES, DOUBLE_QUOTES, &symbols_RRU);
-
-SHIFTED(symbols_RMU, &kp SLASH, &kp ASTERISK);
-SHIFTED(symbols_RIU, &kp PERIOD, &kp AMPERSAND);
-SHIFTED(symbols_RIUI, &kp SEMICOLON, &kp COLON);
-SHIFTED(symbols_RIHI, &kp COMMA, &kp PIPE);
-SHIFTED(symbols_RILI, &kp MINUS, &kp PLUS);
-
-SENTENCE_CASE_HOLD_TAP(period, PERIOD, &symbols_RIU);
-
-SHIFTED(bspc_del, &kp BSPC, &kp DEL);
+AUTOPAIR(angled_brackets, LESS_THAN, GREATER_THAN, GREATER_THAN);
+AUTOPAIR(round_brackets, LPAR, RPAR, RPAR);
+AUTOPAIR(curly_brackets, LEFT_BRACE, RIGHT_BRACE, RIGHT_BRACE);
+AUTOPAIR(square_brackets, LEFT_BRACKET, RIGHT_BRACKET, RIGHT_BRACKET);
+AUTOPAIR(backtick_caret, GRAVE, GRAVE, CARET);
+AUTOPAIR(double_quotes_hash, DOUBLE_QUOTES, DOUBLE_QUOTES, HASH);
+AUTOPAIR(single_quote_dollar, SINGLE_QUOTE, SINGLE_QUOTE, DOLLAR);
 
 BIGRAM(qu, Q, U);
-
-BIGRAM(th, T, H);
-
-BIGRAM(ch, C, H);
-
-BIGRAM(sh, S, H);
-
-BIGRAM(wh, W, H);
-
 BIGRAM(gh, G, H);
-
+BIGRAM(sh, S, H);
+BIGRAM(wh, W, H);
 BIGRAM(ph, P, H);
-
-SHIFTED(round_brackets, &kp LPAR, &kp RPAR);
-SHIFTED(angled_brackets, &kp LESS_THAN, &kp GREATER_THAN);
-SHIFTED(curly_brackets, &kp LEFT_BRACE, &kp RIGHT_BRACE);
-SHIFTED(square_brackets, &kp LEFT_BRACKET, &kp RIGHT_BRACKET);
-
-AUTOPAIR_HOLD_TAP(auto_round_brackets, LPAR, RPAR, &round_brackets);
-AUTOPAIR_HOLD_TAP(auto_angled_brackets, LESS_THAN, GREATER_THAN, &angled_brackets);
-AUTOPAIR_HOLD_TAP(auto_curly_brackets, LEFT_BRACE, RIGHT_BRACE, &curly_brackets);
-AUTOPAIR_HOLD_TAP(auto_square_brackets, LEFT_BRACKET, RIGHT_BRACKET, &square_brackets);
-
-
-AUTOPAIR_HOLD_TAP(auto_back_tick, GRAVE, GRAVE, &kp);
-
-SHIFTED(equal_percent, &kp EQUAL, &kp PERCENT);
-
-SHIFTED(underscore_backslash, &kp UNDERSCORE, &kp BACKSLASH);
-
-SHIFTED(exclamation_at, &kp EXCLAMATION, &kp AT_SIGN);
-SENTENCE_CASE_HOLD_TAP(exclamation, EXCLAMATION, &exclamation_at);
-
-SHIFTED(question_caret, &kp QUESTION, &kp CARET);
-SENTENCE_CASE_HOLD_TAP(question, QUESTION, &question_caret);
+BIGRAM(ch, C, H);
+BIGRAM(th, T, H);
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // COMBO BINDINGS
@@ -311,26 +289,26 @@ COMBO(z, BASE, LPU LRU, &kp Z);
 COMBO(qu, BASE, LPH LRH, &qu);
 COMBO(q, BASE, LPL LRL, &kp Q);
 
-COMBO(th, BASE, LIH LMH, &th);
-COMBO(ch, BASE, LIL LML, &ch);
-COMBO(sh, BASE, LRH LMH, &sh);
-
-COMBO(wh, BASE, LRL LML, &wh);
 COMBO(gh, BASE, LRU LMU, &gh);
+COMBO(sh, BASE, LRH LMH, &sh);
+COMBO(wh, BASE, LRL LML, &wh);
+
 COMBO(ph, BASE, LMU LIU, &ph);
+COMBO(th, BASE, LMH LIH, &th);
+COMBO(ch, BASE, LML LIL, &ch);
 
 // symbol combos
-COMBO(caps_word, BASE, LIH RIH, &caps_word);
-COMBO(round_brackets, BASE, RIH RMH, &auto_round_brackets_ht 0 0);
-COMBO(angled_brackets, BASE, RIL RML, &auto_angled_brackets_ht 0 0);
-COMBO(curly_brackets, BASE, RMH RRH, &auto_curly_brackets_ht 0 0);
-COMBO(square_brackets, BASE, RML RRL, &auto_square_brackets_ht 0 0);
-COMBO(backtick_tilde, BASE, RRU RPU, &auto_back_tick_ht 0 GRAVE);
-COMBO(equal_percent, BASE, RMU RRU, &equal_percent);
-COMBO(underscore_backslash, BASE, RIU RMU, &underscore_backslash);
-COMBO(exclamation_at, BASE, RRH RPH, &exclamation_sc_ht 0 0);
-COMBO(question_caret, BASE, RRL RPL, &question_sc_ht 0 0);
-COMBO(num_word, BASE, LTH RTH, &num_word);
+COMBO(angled_brackets, BASE, RIU RMU, &angled_brackets);
+COMBO(underscore_backslash, BASE, RIH RMH, &underscore_backslash);
+COMBO(square_brackets, BASE, RIL RML, &square_brackets);
+
+COMBO(round_brackets, BASE, RMU RRU, &round_brackets);
+COMBO(equal_tilde, BASE, RMH RRH, &equal_tilde);
+COMBO(curly_brackets, BASE, RML RRL, &curly_brackets);
+
+COMBO(backtick_caret, BASE, RRU RPU, &backtick_caret);
+COMBO(double_quotes_hash, BASE, RRH RPH, &double_quotes_hash);
+COMBO(single_quote_dollar, BASE, RRL RPL, &single_quote_dollar);
 
 // number combos
 COMBO(vertical_0, BASE, RIUI RIHI, &kp N0);
@@ -345,8 +323,10 @@ COMBO(vertical_5, BASE, LMU  LMH,  &kp N5);
 COMBO(vertical_7, BASE, LRU  LRH,  &kp N7);
 COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
 
-// layer combos
+// layer and word combos
 COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
+COMBO(num_word, BASE, LTH RTH, &num_word);
+COMBO(caps_word, BASE, LIH RIH, &caps_word);
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // KEY BINDINGS
@@ -355,11 +335,11 @@ LAYER_KEYMAP(BASE,
     &kp J &kp G &kp M &kp P &kp V,
     &lmt LMETA R &lmt LALT S &lmt LCTRL N &lmt LSHIFT D &kp B,
     &kp X &kp F &kp L &kp C &kp W,
-    &bspc_del &lt NAV_NUM T &kp TAB,
+    &backspace_delete &lt NAV_NUM T &kp TAB,
 
-    &symbols_RIUI &period_sc_ht 0 0 &symbols_RMU &auto_double_quotes_ht 0 0 &auto_single_quotes_ht 0 0,
-    &symbols_RIHI &rmt RSHIFT A &rmt RCTRL E &rmt RALT I &rmt RMETA H,
-    &symbols_RILI &kp U &kp O &kp Y &kp K,
+    &divide_multiply &semicolon_colon &period_comma &question_percent &exclamation_at,
+    &minus_plus &rmt RSHIFT A &rmt RCTRL E &rmt RALT I &rmt RMETA H,
+    &and_or &kp U &kp O &kp Y &kp K,
     &kp RET &lt NAV_NUM SPACE &kp ESC
 );
 
@@ -367,7 +347,7 @@ LAYER_KEYMAP(NAV_NUM,
     &none &kp PAGE_DOWN &kp UP &kp PAGE_UP &none,
     &none &kp LEFT &kp DOWN &kp RIGHT &none,
     &none &kp HOME &none &kp END &none,
-    &bspc_del &none &kp TAB,
+    &backspace_delete &none &kp TAB,
 
     &none &kp N7 &kp N8 &kp N9 &none,
     &kp N0 &rmt RSHIFT N4 &rmt RCTRL N5 &rmt RALT N6 &kp RMETA,

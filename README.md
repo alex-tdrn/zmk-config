@@ -26,6 +26,7 @@ Alpha layout is [hands-down gold](https://sites.google.com/alanreiser.com/handsd
  `Q` for initialism, and the hold-delay was not a problem for me. However, `Q` is a very common key in vim/nvim and it quickly became annoying
  having to hold the combo every time I needed to exit a dialog or close a window. `Qt` codebases are also painful to work in when having `Q` on hold.
  So `Q` and `Qu` have been split into adjacent combos, maintaining the best of both worlds.
+Symbols have also been moved around, partially to combos, to better suit my usage.
 
 Chocofi board definition taken from [infused-kim](https://github.com/infused-kim/zmk-config)
 

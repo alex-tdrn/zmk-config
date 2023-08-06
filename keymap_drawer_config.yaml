@@ -13,9 +13,9 @@ parse_config:
     '&bt BT_SEL 2': $$bluetooth_3$$
     '&bt BT_SEL 3': $$bluetooth_4$$
     '&bt BT_SEL 4': $$bluetooth_5$$
-    '&auto_double_quotes_ht 0 0': {t: '"', s: '#', h: '"⌄"'}
-    '&auto_single_quotes_ht 0 0': {t: '''', s: '$', h: "'⌄'"}
-    '&period_sc_ht 0 0': {t: '.', s: '&', h: $$dot_sentence_case$$}
+    '&period_comma': {t: '.', s: ',', h: $$dot_sentence_case$$}
+    '&question_percent': {t: '?', s: '%', h: $$question_sentence_case$$}
+    '&exclamation_at': {t: '!', s: '@', h: $$exclamation_sentence_case$$}
   zmk_combos:
     combo_vertical_0:
        type: 'vertical_combo'
@@ -89,21 +89,21 @@ parse_config:
          tap: '<'
          shifted: '>'
          hold: '<⌄>'    
-    combo_backtick_tilde: 
+    combo_backtick_caret:
        key: 
          tap: '`'
-         shifted: '~'
-         hold: '`⌄`'
-    combo_exclamation_at: 
-       key: 
-         tap: '!'
-         shifted: '@'
-         hold: $$exclamation_sentence_case$$
-    combo_question_caret: 
-       key: 
-         tap: '?'
          shifted: '^'
-         hold: $$question_sentence_case$$
+         hold: '`⌄`'
+    combo_double_quotes_hash:
+       key: 
+         tap: '"'
+         shifted: '#'
+         hold: '"⌄"'
+    combo_single_quote_dollar:
+       key: 
+         tap: ''''
+         shifted: '$'
+         hold: '''⌄'''
     combo_oneshot_fn_layer:
         key: 'FN one shot'
         align: top
@@ -179,7 +179,9 @@ parse_config:
     NUHS: '#'
     TILDE2: '~'
     DEL: $$delete$$
+    DELETE: $$delete$$
     BSPC: $$backspace$$
+    BACKSPACE: $$backspace$$
     RET: $$return$$
     SPACE: '‿'
     TAB: 'Tab'
