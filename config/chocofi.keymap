@@ -157,8 +157,10 @@ MACRO(NAME, <&macro_press & ## HOLD_TAP_BEHAVIOR ARGUMENT_1 ARGUMENT_2>, <&macro
 
 #define BIGRAM(NAME, FIRST_LETTER, SECOND_LETTER) \
 MACRO(NAME ## _lowercase, <&kp FIRST_LETTER &kp SECOND_LETTER>); \
-MACRO(NAME ## _sentence_case, <&kp LS(FIRST_LETTER) &kp SECOND_LETTER>); \
-SHIFTED(NAME, & ## NAME ## _lowercase, & ## NAME ## _sentence_case)
+MACRO(NAME ## _uppercase, <&kp LS(FIRST_LETTER) &kp SECOND_LETTER>); \
+MACRO(NAME ## _all_caps, <&kp LS(FIRST_LETTER) &kp LS(SECOND_LETTER)>); \
+SHIFTED(NAME ## _shifted, & ## NAME ## _lowercase, & ## NAME ## _uppercase); \
+MOD_MORPH(NAME, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _all_caps)
 
 #define AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL, SHIFTED_TAP_SYMBOL) \
 MACRO(NAME ## _ap, <&kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
