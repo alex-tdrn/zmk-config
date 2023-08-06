@@ -46,8 +46,8 @@ The sticky shift is set to only deactivate after 10s if no input is received, to
 ## Numbers
 I hate switching layers, so I am currently experimenting with numbers on vertical (same finger) base layer combos. I am finding it difficult to get used to the same-finger combos, but will give this a try for a while. Otherwise, might put the numbers on diagonal combos (neighbouring fingers). However, that will tip the keymap diagram into the 'categorically incomprehensible' zone.
 
-# Locked Layer
-The LOCKED layer is used when travelling to prevent accidental keytaps, since ZMK does not have a power on/off behavior. Since it's (de)activated using all 10 fingers, it should be very unlikely to go back to the base layer and send random keytaps, while in a bag.
+# Lock Layer
+The `LOCK` layer is used when travelling to prevent accidental keytaps, since ZMK does not have a power on/off behavior. Since it's (de)activated using 8 fingers, it should be very unlikely to go back to the base layer and send random keytaps, while in a bag.
 
 # ZMK tricks
 If you have a custom hold-tap behavior that does not need any arguments and you don't want to have to pass `0 0` in your keymap to bind it, you can wrap it in a macro that uses [`macro_pause_for_release`](https://zmk.dev/docs/behaviors/macros#processing-continuation-on-release):
