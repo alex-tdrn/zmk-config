@@ -6,17 +6,17 @@ layers:
   - M
   - P
   - V
-  - {t: ;, s: ':'}
-  - {t: ., h: $$dot_sentence_case$$, s: '&'}
   - {t: /, s: '*'}
-  - {t: '"', h: '"⌄"', s: '#'}
-  - {t: '''', h: '''⌄''', s: $}
+  - {t: ;, s: ':'}
+  - {t: ., h: $$dot_sentence_case$$, s: ','}
+  - {t: '?', h: $$question_sentence_case$$, s: '%'}
+  - {t: '!', h: $$exclamation_sentence_case$$, s: '@'}
   - {t: R, h: $$meta$$}
   - {t: S, h: $$alt$$}
   - {t: N, h: $$control$$}
   - {t: D, h: $$shift$$}
   - B
-  - {t: ',', s: '|'}
+  - {t: '-', s: +}
   - {t: A, h: $$shift$$}
   - {t: E, h: $$control$$}
   - {t: I, h: $$alt$$}
@@ -26,7 +26,7 @@ layers:
   - L
   - C
   - W
-  - {t: '-', s: +}
+  - {t: '&', s: '|'}
   - U
   - O
   - Y
@@ -121,11 +121,8 @@ combos:
 - p: [20, 21]
   k: Q
   l: [BASE]
-- p: [13, 12]
-  k: Th
-  l: [BASE]
-- p: [23, 22]
-  k: Ch
+- p: [1, 2]
+  k: Gh
   l: [BASE]
 - p: [11, 12]
   k: Sh
@@ -133,50 +130,42 @@ combos:
 - p: [21, 22]
   k: Wh
   l: [BASE]
-- p: [1, 2]
-  k: Gh
-  l: [BASE]
 - p: [2, 3]
   k: Ph
   l: [BASE]
-- p: [13, 16]
-  k: caps word
+- p: [12, 13]
+  k: Th
   l: [BASE]
-  a: bottom
-  o: 0.04
-  arc_scale: 0.97
-- p: [16, 17]
-  k: {t: (, h: (⌄), s: )}
-  l: [BASE]
-- p: [26, 27]
-  k: {t: <, h: <⌄>, s: '>'}
-  l: [BASE]
-- p: [17, 18]
-  k: {t: '{', h: '{⌄}', s: '}'}
-  l: [BASE]
-- p: [27, 28]
-  k: {t: '[', h: '[⌄]', s: ']'}
-  l: [BASE]
-- p: [8, 9]
-  k: {t: '`', h: '`⌄`', s: '~'}
-  l: [BASE]
-- p: [7, 8]
-  k: {t: '=', s: '%'}
+- p: [22, 23]
+  k: Ch
   l: [BASE]
 - p: [6, 7]
+  k: {t: <, h: <⌄>, s: '>'}
+  l: [BASE]
+- p: [16, 17]
   k: {t: _, s: \}
   l: [BASE]
+- p: [26, 27]
+  k: {t: '[', h: '[⌄]', s: ']'}
+  l: [BASE]
+- p: [7, 8]
+  k: {t: (, h: (⌄), s: )}
+  l: [BASE]
+- p: [17, 18]
+  k: {t: '=', s: '~'}
+  l: [BASE]
+- p: [27, 28]
+  k: {t: '{', h: '{⌄}', s: '}'}
+  l: [BASE]
+- p: [8, 9]
+  k: {t: '`', h: '`⌄`', s: ^}
+  l: [BASE]
 - p: [18, 19]
-  k: {t: '!', h: $$exclamation_sentence_case$$, s: '@'}
+  k: {t: '"', h: '"⌄"', s: '#'}
   l: [BASE]
 - p: [28, 29]
-  k: {t: '?', h: $$question_sentence_case$$, s: ^}
+  k: {t: '''', h: '''⌄''', s: $}
   l: [BASE]
-- p: [31, 34]
-  k: num word
-  l: [BASE]
-  a: bottom
-  o: 0.5
 - p: [5, 15]
   k: '0'
   l: [BASE]
@@ -222,3 +211,14 @@ combos:
   l: [BASE]
   a: top
   o: 0.4
+- p: [31, 34]
+  k: num word
+  l: [BASE]
+  a: bottom
+  o: 0.5
+- p: [13, 16]
+  k: caps word
+  l: [BASE]
+  a: bottom
+  o: 0.04
+  arc_scale: 0.97
