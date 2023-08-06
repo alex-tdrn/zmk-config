@@ -37,6 +37,38 @@ parse_config:
        type: 'vertical_combo'
     combo_vertical_9:
        type: 'vertical_combo'
+    combo_up:
+       type: 'diagonal_combo'
+       slide: -0.2
+       dendron: true
+    combo_down:
+       type: 'diagonal_combo'
+       dendron: true
+       slide: -0.2
+    combo_left:
+       type: 'diagonal_combo'
+       dendron: true
+       slide: 0.2
+    combo_right:
+       type: 'diagonal_combo'
+       dendron: true
+       slide: 0.2
+    combo_page_up:
+       type: 'diagonal_combo'
+       dendron: true
+       slide: -0.2
+    combo_page_down:
+       type: 'diagonal_combo'
+       dendron: true
+       slide: 0.2
+    combo_home:
+       type: 'diagonal_combo'
+       dendron: true
+       slide: 0.2
+    combo_end:
+       type: 'diagonal_combo'
+       dendron: true
+       slide: 0.2
     combo_qu: 
        key: 
          tap: Qu
@@ -46,49 +78,68 @@ parse_config:
     combo_ch: 
        key: 
          tap: Ch
+       align: bottom
+       dendron: false
+       offset: -0.3
     combo_sh: 
        key: 
          tap: Sh
     combo_wh: 
        key: 
          tap: Wh
+       align: bottom
+       dendron: false
+       offset: -0.3
     combo_gh: 
        key: 
          tap: Gh
+       align: top
+       dendron: false
+       offset: -0.3
     combo_ph: 
        key: 
          tap: Ph
+       align: top
+       dendron: false
+       offset: -0.3
     combo_caps_word: 
        key: 
          tap: 'caps word'
        align: bottom
        offset: 0.04
        arc_scale: 0.97
-    combo_num_word: 
-       key: 
-         tap: 'num word'
-       align: bottom
-       offset: 0.5
     combo_round_brackets: 
        key: 
          tap: '('
          shifted: ')'
          hold: '(⌄)'
+       align: top
+       dendron: false
+       offset: -0.3
     combo_square_brackets: 
        key: 
          tap: '['
          shifted: ']'
          hold: '[⌄]'
+       align: bottom
+       dendron: false
+       offset: -0.3
     combo_curly_brackets: 
        key: 
          tap: '{'
          shifted: '}'
          hold: '{⌄}'
+       align: bottom
+       dendron: false
+       offset: -0.3
     combo_angled_brackets: 
        key: 
          tap: '<'
          shifted: '>'
          hold: '<⌄>'    
+       align: top
+       dendron: false
+       offset: -0.3
     combo_backtick_caret:
        key: 
          tap: '`'
@@ -107,7 +158,8 @@ parse_config:
     combo_oneshot_fn_layer:
         key: 'FN one shot'
         align: top
-        offset: 0.4
+        offset: 0.2
+        slide: -0.5
   sticky_label: sticky
   trans_legend:
     t: ▽
@@ -270,7 +322,7 @@ draw_config:
     }
 
     path.combo {
-        stroke-width: 1;
+        stroke-width: 0.5;
         stroke: var(--combo-color);
         fill: none;
     }
@@ -280,13 +332,19 @@ draw_config:
         stroke-width: 1.0;
     }
 
-    rect.vertical_combo {
+    rect.vertical_combo, rect.diagonal_combo {
         stroke: none;
         fill: none;
     }
     
     text.vertical_combo {
         font-size: 22px;
+        text-anchor: middle;
+        dominant-baseline: middle;
+    }
+
+    text.diagonal_combo {
+        font-size: 12px;
         text-anchor: middle;
         dominant-baseline: middle;
     }

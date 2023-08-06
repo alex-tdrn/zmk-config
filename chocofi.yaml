@@ -32,47 +32,10 @@ layers:
   - Y
   - K
   - {t: $$backspace$$, s: $$delete$$}
-  - {t: T, h: NAV_NUM}
+  - T
   - Tab
   - $$return$$
-  - {t: ‿, h: NAV_NUM}
-  - Esc
-  NAV_NUM:
-  - ''
-  - Page Down
-  - $$arrow_up$$
-  - Page Up
-  - ''
-  - ''
-  - '7'
-  - '8'
-  - '9'
-  - ''
-  - ''
-  - $$arrow_left$$
-  - $$arrow_down$$
-  - $$arrow_right$$
-  - ''
-  - '0'
-  - {t: '4', h: $$shift$$}
-  - {t: '5', h: $$control$$}
-  - {t: '6', h: $$alt$$}
-  - $$meta$$
-  - ''
-  - Home
-  - ''
-  - End
-  - ''
-  - ''
-  - '1'
-  - '2'
-  - '3'
-  - ''
-  - {t: $$backspace$$, s: $$delete$$}
-  - {type: held}
-  - Tab
-  - $$return$$
-  - {t: ‿, type: held}
+  - ‿
   - Esc
   FN:
   - {t: $$bluetooth_clear$$, type: held}
@@ -124,39 +87,63 @@ combos:
 - p: [1, 2]
   k: Gh
   l: [BASE]
+  a: top
+  o: -0.3
+  d: false
 - p: [11, 12]
   k: Sh
   l: [BASE]
 - p: [21, 22]
   k: Wh
   l: [BASE]
+  a: bottom
+  o: -0.3
+  d: false
 - p: [2, 3]
   k: Ph
   l: [BASE]
+  a: top
+  o: -0.3
+  d: false
 - p: [12, 13]
   k: Th
   l: [BASE]
 - p: [22, 23]
   k: Ch
   l: [BASE]
+  a: bottom
+  o: -0.3
+  d: false
 - p: [6, 7]
   k: {t: <, h: <⌄>, s: '>'}
   l: [BASE]
+  a: top
+  o: -0.3
+  d: false
 - p: [16, 17]
   k: {t: _, s: \}
   l: [BASE]
 - p: [26, 27]
   k: {t: '[', h: '[⌄]', s: ']'}
   l: [BASE]
+  a: bottom
+  o: -0.3
+  d: false
 - p: [7, 8]
   k: {t: (, h: (⌄), s: )}
   l: [BASE]
+  a: top
+  o: -0.3
+  d: false
 - p: [17, 18]
   k: {t: '=', s: '~'}
   l: [BASE]
 - p: [27, 28]
   k: {t: '{', h: '{⌄}', s: '}'}
   l: [BASE]
+  a: bottom
+  o: -0.3
+  d: false
 - p: [8, 9]
   k: {t: '`', h: '`⌄`', s: ^}
   l: [BASE]
@@ -206,16 +193,60 @@ combos:
   k: '9'
   l: [BASE]
   type: vertical_combo
+- p: [7, 18]
+  k: $$arrow_up$$
+  l: [BASE]
+  d: true
+  s: -0.3
+  type: diagonal_combo
+- p: [16, 7]
+  k: $$arrow_down$$
+  l: [BASE]
+  d: true
+  s: -0.3
+  type: diagonal_combo
+- p: [26, 17]
+  k: $$arrow_left$$
+  l: [BASE]
+  d: true
+  s: 0.3
+  type: diagonal_combo
+- p: [17, 28]
+  k: $$arrow_right$$
+  l: [BASE]
+  d: true
+  s: 0.3
+  type: diagonal_combo
+- p: [2, 13]
+  k: Page Up
+  l: [BASE]
+  d: true
+  s: -0.3
+  type: diagonal_combo
+- p: [11, 2]
+  k: Page Down
+  l: [BASE]
+  d: true
+  s: 0.3
+  type: diagonal_combo
+- p: [21, 12]
+  k: Home
+  l: [BASE]
+  d: true
+  s: 0.3
+  type: diagonal_combo
+- p: [12, 23]
+  k: End
+  l: [BASE]
+  d: true
+  s: 0.3
+  type: diagonal_combo
 - p: [0, 1, 2, 3]
   k: FN one shot
   l: [BASE]
   a: top
-  o: 0.4
-- p: [31, 34]
-  k: num word
-  l: [BASE]
-  a: bottom
-  o: 0.5
+  o: 0.2
+  s: -0.6
 - p: [13, 16]
   k: caps word
   l: [BASE]

@@ -88,8 +88,7 @@
 
 // Layers
 #define BASE 0
-#define NAV_NUM 1
-#define FUNCTION 2
+#define FUNCTION 1
 
 // use global-quick-tap-ms for combos (requires PR 1387)
 #undef COMBO_HOOK
@@ -103,7 +102,7 @@
             bindings = <BINDINGS>; \
             key-positions = <KEYPOS>; \
             layers = <LAYERS>; \
-            timeout-ms = <40>; \
+            timeout-ms = <60>; \
         }; \
     }; \
 }
@@ -220,11 +219,6 @@ BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _sc_ht, 0, 0)
     /delete-property/ ignore-modifiers;
 };
 
-&num_word {
-    layers = <NAV_NUM>;
-    ignore-modifiers;
-};
-
 / {
     behaviors {
         lmt: lmt {
@@ -325,9 +319,19 @@ COMBO(vertical_5, BASE, LMU  LMH,  &kp N5);
 COMBO(vertical_7, BASE, LRU  LRH,  &kp N7);
 COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
 
+// navigation combos
+COMBO(up, BASE, RMU RRH, &kp UP);
+COMBO(down, BASE, RIH RMU, &kp DOWN);
+COMBO(left, BASE, RIL RMH, &kp LEFT);
+COMBO(right, BASE, RMH RRL, &kp RIGHT);
+
+COMBO(page_up, BASE, LMU LIH, &kp PAGE_UP);
+COMBO(page_down, BASE, LRH LMU, &kp PAGE_DOWN);
+COMBO(home, BASE, LRL LMH, &kp HOME);
+COMBO(end, BASE, LMH LIL, &kp END);
+
 // layer and word combos
 COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
-COMBO(num_word, BASE, LTH RTH, &num_word);
 COMBO(caps_word, BASE, LIH RIH, &caps_word);
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
@@ -337,23 +341,11 @@ LAYER_KEYMAP(BASE,
     &kp J &kp G &kp M &kp P &kp V,
     &lmt LMETA R &lmt LALT S &lmt LCTRL N &lmt LSHIFT D &kp B,
     &kp X &kp F &kp L &kp C &kp W,
-    &backspace_delete &lt NAV_NUM T &kp TAB,
+    &backspace_delete &kp T &kp TAB,
 
     &divide_multiply &semicolon_colon &period_comma &question_percent &exclamation_at,
     &minus_plus &rmt RSHIFT A &rmt RCTRL E &rmt RALT I &rmt RMETA H,
     &and_or &kp U &kp O &kp Y &kp K,
-    &kp RET &lt NAV_NUM SPACE &kp ESC
-);
-
-LAYER_KEYMAP(NAV_NUM,
-    &none &kp PAGE_DOWN &kp UP &kp PAGE_UP &none,
-    &none &kp LEFT &kp DOWN &kp RIGHT &none,
-    &none &kp HOME &none &kp END &none,
-    &backspace_delete &none &kp TAB,
-
-    &none &kp N7 &kp N8 &kp N9 &none,
-    &kp N0 &rmt RSHIFT N4 &rmt RCTRL N5 &rmt RALT N6 &kp RMETA,
-    &none &kp N1 &kp N2 &kp N3 &none,
     &kp RET &kp SPACE &kp ESC
 );
 
