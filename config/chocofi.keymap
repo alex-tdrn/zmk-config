@@ -281,7 +281,7 @@ BIGRAM(th, T, H);
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // COMBO BINDINGS
 
-COMBO(repeat, BASE, LTO LTH, &repeat);
+COMBO(repeat, BASE, LTO LTH, &key_repeat);
 
 // letter and bigram combos
 COMBO(z, BASE, LPU LRU, &kp Z);
