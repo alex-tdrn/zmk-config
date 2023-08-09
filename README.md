@@ -43,8 +43,8 @@ What's a bit annoying is having to step out of the pair created (have to type ri
 The sentence ending symbols (`.`, `!`, and `?`) can be held to trigger sentence case: the symbol itself will be emitted, then a space, and finally sticky shift will be activated, automatically turning the next letter uppercase.
 The sticky shift is set to only deactivate after 10s if no input is received, to allow for a slight pause before the next sentence, if needed.
 
-## Numbers
-I hate switching layers, so I am currently experimenting with numbers on vertical (same finger) base layer combos. I am finding it difficult to get used to the same-finger combos, but will give this a try for a while. Otherwise, might put the numbers on diagonal combos (neighbouring fingers). However, that will tip the keymap diagram into the 'categorically incomprehensible' zone.
+## Numbers & Navigation
+I hate switching layers, so I am currently experimenting with numbers and navigation keys on vertical (same finger) base layer combos. The stronger fingers get smaller digits, since, according to [Benford's Law](https://en.m.wikipedia.org/wiki/Benford%27s_law) they tend to appear more often in real-life numerical data (also in vim relative line jumps). Idea taken from the [T34 layout](https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#where-are-the-digits). The navigation keys are arranged on the lower combo rows, slightly offset to reuse vim-like navigation muscle memory (TODO: make my dotfiles public and write a segment on vim navigation using arrow keys and pageup/down home/end accross modes).
 
 # Lock Layer
 The `LOCK` layer is used when travelling to prevent accidental keytaps, since ZMK does not have a power on/off behavior. Since it's (de)activated using 8 fingers, it should be very unlikely to go back to the base layer and send random keytaps, while in a bag.

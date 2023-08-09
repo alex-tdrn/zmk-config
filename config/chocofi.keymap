@@ -308,28 +308,28 @@ COMBO(double_quotes_hash, BASE, RRH RPH, &double_quotes_hash);
 COMBO(single_quote_dollar, BASE, RRL RPL, &single_quote_dollar);
 
 // number combos
-COMBO(vertical_0, BASE, RIUI RIHI, &kp N0);
-COMBO(vertical_2, BASE, RIU  RIH,  &kp N2);
-COMBO(vertical_4, BASE, RMU  RMH,  &kp N4);
-COMBO(vertical_6, BASE, RRU  RRH,  &kp N6);
-COMBO(vertical_8, BASE, RIL  RIH,  &kp N8);
+COMBO(vertical_8, BASE, RIUI RIHI, &kp N8);
+COMBO(vertical_0, BASE, RIU  RIH,  &kp N0);
+COMBO(vertical_2, BASE, RMU  RMH,  &kp N2);
+COMBO(vertical_4, BASE, RRU  RRH,  &kp N4);
+COMBO(vertical_6, BASE, RPU  RPH,  &kp N6);
 
-COMBO(vertical_1, BASE, LIUI LIHI, &kp N1);
-COMBO(vertical_3, BASE, LIU  LIH,  &kp N3);
-COMBO(vertical_5, BASE, LMU  LMH,  &kp N5);
-COMBO(vertical_7, BASE, LRU  LRH,  &kp N7);
-COMBO(vertical_9, BASE, LIL  LIH,  &kp N9);
+COMBO(vertical_9, BASE, LIUI LIHI, &kp N9);
+COMBO(vertical_1, BASE, LIU  LIH,  &kp N1);
+COMBO(vertical_3, BASE, LMU  LMH,  &kp N3);
+COMBO(vertical_5, BASE, LRU  LRH,  &kp N5);
+COMBO(vertical_7, BASE, LPU  LPH,  &kp N7);
 
 // navigation combos
-COMBO(up, BASE, RMU RRH, &kp UP);
-COMBO(down, BASE, RIH RMU, &kp DOWN);
-COMBO(left, BASE, RIL RMH, &kp LEFT);
-COMBO(right, BASE, RMH RRL, &kp RIGHT);
+COMBO(left, BASE, RIHI RILI, &kp LEFT);
+COMBO(down, BASE, RIH RIL, &kp DOWN);
+COMBO(up, BASE, RMH RML, &kp UP);
+COMBO(right, BASE, RRH RRL, &kp RIGHT);
 
-COMBO(page_up, BASE, LMU LIH, &kp PAGE_UP);
-COMBO(page_down, BASE, LRH LMU, &kp PAGE_DOWN);
-COMBO(home, BASE, LRL LMH, &kp HOME);
-COMBO(end, BASE, LMH LIL, &kp END);
+COMBO(home, BASE, LRH LRL, &kp HOME);
+COMBO(page_down, BASE, LMH LML, &kp PAGE_DOWN);
+COMBO(page_up, BASE, LIH LIL, &kp PAGE_UP);
+COMBO(end, BASE, LIHI LILI, &kp END);
 
 // layer and word combos
 COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);

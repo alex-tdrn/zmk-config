@@ -38,37 +38,25 @@ parse_config:
     combo_vertical_9:
        type: 'vertical_combo'
     combo_up:
-       type: 'diagonal_combo'
-       slide: -0.2
-       dendron: true
+       type: 'vertical_combo'
     combo_down:
-       type: 'diagonal_combo'
-       dendron: true
-       slide: -0.2
+       type: 'vertical_combo'
     combo_left:
-       type: 'diagonal_combo'
-       dendron: true
-       slide: 0.2
+       type: 'vertical_combo'
     combo_right:
-       type: 'diagonal_combo'
-       dendron: true
-       slide: 0.2
+       type: 'vertical_combo'
     combo_page_up:
-       type: 'diagonal_combo'
-       dendron: true
-       slide: -0.2
+       type: 'vertical_combo'
+       key:
+         tap: "PgUp"
     combo_page_down:
-       type: 'diagonal_combo'
-       dendron: true
-       slide: 0.2
+       type: 'vertical_combo'
+       key:
+         tap: "PgDn"
     combo_home:
-       type: 'diagonal_combo'
-       dendron: true
-       slide: 0.2
+       type: 'vertical_combo'
     combo_end:
-       type: 'diagonal_combo'
-       dendron: true
-       slide: 0.2
+       type: 'vertical_combo'
     combo_qu: 
        key: 
          tap: Qu
@@ -78,30 +66,18 @@ parse_config:
     combo_ch: 
        key: 
          tap: Ch
-       align: bottom
-       dendron: false
-       offset: -0.3
     combo_sh: 
        key: 
          tap: Sh
     combo_wh: 
        key: 
          tap: Wh
-       align: bottom
-       dendron: false
-       offset: -0.3
     combo_gh: 
        key: 
          tap: Gh
-       align: top
-       dendron: false
-       offset: -0.3
     combo_ph: 
        key: 
          tap: Ph
-       align: top
-       dendron: false
-       offset: -0.3
     combo_caps_word: 
        key: 
          tap: 'caps word'
@@ -113,33 +89,21 @@ parse_config:
          tap: '('
          shifted: ')'
          hold: '(⌄)'
-       align: top
-       dendron: false
-       offset: -0.3
     combo_square_brackets: 
        key: 
          tap: '['
          shifted: ']'
          hold: '[⌄]'
-       align: bottom
-       dendron: false
-       offset: -0.3
     combo_curly_brackets: 
        key: 
          tap: '{'
          shifted: '}'
          hold: '{⌄}'
-       align: bottom
-       dendron: false
-       offset: -0.3
     combo_angled_brackets: 
        key: 
          tap: '<'
          shifted: '>'
          hold: '<⌄>'    
-       align: top
-       dendron: false
-       offset: -0.3
     combo_backtick_caret:
        key: 
          tap: '`'
@@ -344,7 +308,7 @@ draw_config:
     }
     
     text.vertical_combo {
-        font-size: 22px;
+        font-size: 14px;
         text-anchor: middle;
         dominant-baseline: middle;
     }
