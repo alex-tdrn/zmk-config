@@ -172,11 +172,16 @@ SHIFTED(NAME ## _shifted_tap_symbols, &kp OPENING_SYMBOL, &kp SHIFTED_TAP_SYMBOL
 HOLD_TAP(NAME ## _hold_tap, & ## NAME ## _mod_morph, & ## NAME ## _shifted_tap_symbols); \
 BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _hold_tap, 0, 0)
 
-#define AUTO_SENTENCE_CASE(NAME, SENTENCE_ENDING_SYMBOL, SHIFTED_TAP_SYMBOL) \
+#define AUTO_SENTENCE_CASE(NAME, SENTENCE_ENDING_SYMBOL, SHIFTED_BEHAVIOR) \
 MACRO(NAME ## _sc, <&kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>); \
-SHIFTED(NAME ## _shifted_tap_symbols, &kp SENTENCE_ENDING_SYMBOL, &kp SHIFTED_TAP_SYMBOL); \
+SHIFTED(NAME ## _shifted_tap_symbols, &kp SENTENCE_ENDING_SYMBOL, SHIFTED_BEHAVIOR); \
 HOLD_TAP(NAME ## _sc_ht, & ## NAME ## _sc, & ## NAME ## _shifted_tap_symbols); \
 BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _sc_ht, 0, 0)
+
+#define AUTO_SPACE(NAME, SYMBOL) \
+MACRO(NAME ## _space, <&kp SYMBOL &kp SPACE>); \
+HOLD_TAP(NAME ## _ht, & NAME ## _space, &kp); \
+BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _ht, 0, SYMBOL)
 
 #define LAYER_KEYMAP(LAYER, \
     LEFT_UPPER_ROW, \
@@ -258,9 +263,15 @@ SHIFTED(underscore_backslash, &kp UNDERSCORE, &kp BACKSLASH);
 SHIFTED(semicolon_colon, &kp SEMICOLON, &kp COLON);
 SHIFTED(backspace_delete, &kp BACKSPACE, &kp DELETE);
 
-AUTO_SENTENCE_CASE(period_comma, PERIOD, COMMA);
-AUTO_SENTENCE_CASE(question_percent, QUESTION, PERCENT);
-AUTO_SENTENCE_CASE(exclamation_at, EXCLAMATION, AT_SIGN);
+// AUTO_SPACE(comma_autospace, COMMA);
+
+MACRO(comma_space, <&kp COMMA &kp SPACE>);
+HOLD_TAP(comma_space_ht, &comma_space, &kp);
+BIND_HOLD_TAP_ARGUMENTS(comma_autospace, comma_space_ht, 0, COMMA);
+
+AUTO_SENTENCE_CASE(period_comma, PERIOD, &comma_autospace);
+AUTO_SENTENCE_CASE(question_percent, QUESTION, &kp PERCENT);
+AUTO_SENTENCE_CASE(exclamation_at, EXCLAMATION, &kp AT_SIGN);
 
 AUTOPAIR(angled_brackets, LESS_THAN, GREATER_THAN, GREATER_THAN);
 AUTOPAIR(round_brackets, LPAR, RPAR, RPAR);
