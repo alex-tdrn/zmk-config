@@ -269,9 +269,9 @@ MACRO(comma_space, <&kp COMMA &kp SPACE>);
 HOLD_TAP(comma_space_ht, &comma_space, &kp);
 
 
-// BIND_HOLD_TAP_ARGUMENTS(comma_autospace, comma_space_ht, 0, COMMA);
+BIND_HOLD_TAP_ARGUMENTS(comma_autospace, comma_space_ht, 0, COMMA);
 
-MACRO(comma_autospace, <&macro_press &comma_space_ht 0 COMMA>, <&macro_pause_for_release>, <&macro_release &comma_space_ht 0 COMMA>);
+// MACRO(comma_autospace, <&macro_press &comma_space_ht 0 COMMA>, <&macro_pause_for_release>, <&macro_release &comma_space_ht 0 COMMA>);
 
 AUTO_SENTENCE_CASE(period_comma, PERIOD, &comma_autospace);
 AUTO_SENTENCE_CASE(question_percent, QUESTION, &kp PERCENT);
