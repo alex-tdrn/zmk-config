@@ -219,8 +219,3 @@ combos:
   l: [BASE]
   a: top
   o: 0.7
-- p: [0, 1, 2, 3, 6, 7, 8, 9]
-  k: BASE
-  l: [LOCK]
-  a: top
-  o: 0.7
