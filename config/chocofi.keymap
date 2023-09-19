@@ -345,12 +345,12 @@ LAYER_KEYMAP(BASE,
     &kp J &kp G &kp M &kp P &kp V,
     &lmt LMETA R &lmt LALT S &lmt LCTRL N &lmt LSHIFT D &kp B,
     &kp X &kp F &kp L &kp C &kp W,
-    &backspace_delete &kp T &kp TAB,
+    &kp ESC &kp T &backspace_delete,
 
     &divide_multiply &semicolon_colon &period_comma &question_percent &exclamation_at,
     &minus_plus &rmt RSHIFT A &rmt RCTRL E &rmt RALT I &rmt RMETA H,
     &and_or &kp U &kp O &kp Y &kp K,
-    &kp RET &kp SPACE &kp ESC
+    &kp RET &kp SPACE &kp TAB
 );
 
 LAYER_KEYMAP(FN,
