@@ -336,7 +336,6 @@ COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
 COMBO(caps_word, BASE, LIH RIH, &caps_word);
 
 COMBO(lock, BASE, LPU LRU LMU LIU RIU RMU RRU RPU, &to LOCK);
-COMBO(unlock, LOCK, LPU LRU LMU LIU RIU RMU RRU RPU, &to BASE);
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // KEY BINDINGS
