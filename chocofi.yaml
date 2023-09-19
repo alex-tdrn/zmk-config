@@ -31,12 +31,12 @@ layers:
   - O
   - Y
   - K
-  - {t: $$backspace$$, s: $$delete$$}
+  - Esc
   - T
-  - Tab
+  - {t: $$backspace$$, s: $$delete$$}
   - $$return$$
   - ‿
-  - Esc
+  - Tab
   FN:
   - {t: $$bluetooth_clear$$, type: held}
   - {t: $$led_off$$, type: held}
