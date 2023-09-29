@@ -321,15 +321,15 @@ COMBO(vertical_5, BASE, LRU  LRH,  &kp N5);
 COMBO(vertical_7, BASE, LPU  LPH,  &kp N7);
 
 // navigation combos
-COMBO(left, BASE, RIHI RILI, &kp LEFT);
-COMBO(down, BASE, RIH RIL, &kp DOWN);
-COMBO(up, BASE, RMH RML, &kp UP);
-COMBO(right, BASE, RRH RRL, &kp RIGHT);
+COMBO(left, BASE, RIH RIL, &kp LEFT);
+COMBO(down, BASE, RMH RML, &kp DOWN);
+COMBO(up, BASE, RRH RRL, &kp UP);
+COMBO(right, BASE, RPH RPL, &kp RIGHT);
 
-COMBO(home, BASE, LRH LRL, &kp HOME);
-COMBO(page_down, BASE, LMH LML, &kp PAGE_DOWN);
-COMBO(page_up, BASE, LIH LIL, &kp PAGE_UP);
-COMBO(end, BASE, LIHI LILI, &kp END);
+COMBO(home, BASE, LPH LPL, &kp HOME);
+COMBO(page_down, BASE, LRH LRL, &kp PAGE_DOWN);
+COMBO(page_up, BASE, LMH LML, &kp PAGE_UP);
+COMBO(end, BASE, LIH LIL, &kp END);
 
 // layer and word combos
 COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
