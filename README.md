@@ -72,7 +72,7 @@ If you have a custom hold-tap behavior that does not need any arguments and you 
 
 Chocofi board definition taken from [infused-kim](https://github.com/infused-kim/zmk-config)
 
-Uses [urob's zmk fork](https://github.com/urob/zmk), as well as his parameters for [timerless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods)
+Uses urob's parameters for [timerless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods)
 
 The keymap diagrams contain svgs using nerdfont icons. These svgs have been generated using this [text to svg converter](https://danmarshall.github.io/google-font-to-svg-path/) with the [JetBrainsMonoNerdFont-Medium.ttf](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip) uploaded. A stroke width of 0.1mm seems to provide good results. After you have your svg, remove the added `<g id="svgGroup"...` element, to allow the glyphs to take on the config's colors.
 
