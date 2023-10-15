@@ -443,36 +443,36 @@ text.diagonal_combo {
 <text x="37" y="144" class="combo vertical_combo tap">7</text>
 </g>
 <g class="combo vertical_combo combopos-28">
-<rect rx="6" ry="6" x="631" y="147" width="40" height="60" class="combo vertical_combo"/>
-<use href="#arrow_left" xlink:href="#arrow_left" x="645" y="171" height="12" width="11.32414569947472" class="combo vertical_combo tap glyph arrow_left"/>
+<rect rx="6" ry="6" x="705" y="137" width="40" height="60" class="combo vertical_combo"/>
+<use href="#arrow_left" xlink:href="#arrow_left" x="719" y="161" height="12" width="11.32414569947472" class="combo vertical_combo tap glyph arrow_left"/>
 </g>
 <g class="combo vertical_combo combopos-29">
-<rect rx="6" ry="6" x="705" y="137" width="40" height="60" class="combo vertical_combo"/>
-<use href="#arrow_down" xlink:href="#arrow_down" x="718" y="161" height="12" width="12.59404362213473" class="combo vertical_combo tap glyph arrow_down"/>
+<rect rx="6" ry="6" x="779" y="110" width="40" height="60" class="combo vertical_combo"/>
+<use href="#arrow_down" xlink:href="#arrow_down" x="793" y="134" height="12" width="12.59404362213473" class="combo vertical_combo tap glyph arrow_down"/>
 </g>
 <g class="combo vertical_combo combopos-30">
-<rect rx="6" ry="6" x="779" y="110" width="40" height="60" class="combo vertical_combo"/>
-<use href="#arrow_up" xlink:href="#arrow_up" x="792" y="134" height="12" width="12.686123039865695" class="combo vertical_combo tap glyph arrow_up"/>
+<rect rx="6" ry="6" x="853" y="135" width="40" height="60" class="combo vertical_combo"/>
+<use href="#arrow_up" xlink:href="#arrow_up" x="867" y="159" height="12" width="12.686123039865695" class="combo vertical_combo tap glyph arrow_up"/>
 </g>
 <g class="combo vertical_combo combopos-31">
-<rect rx="6" ry="6" x="853" y="135" width="40" height="60" class="combo vertical_combo"/>
-<use href="#arrow_right" xlink:href="#arrow_right" x="867" y="159" height="12" width="11.32414569947472" class="combo vertical_combo tap glyph arrow_right"/>
+<rect rx="6" ry="6" x="927" y="184" width="40" height="60" class="combo vertical_combo"/>
+<use href="#arrow_right" xlink:href="#arrow_right" x="941" y="208" height="12" width="11.32414569947472" class="combo vertical_combo tap glyph arrow_right"/>
 </g>
 <g class="combo vertical_combo combopos-32">
-<rect rx="6" ry="6" x="91" y="135" width="40" height="60" class="combo vertical_combo"/>
-<text x="111" y="165" class="combo vertical_combo tap">Home</text>
+<rect rx="6" ry="6" x="17" y="184" width="40" height="60" class="combo vertical_combo"/>
+<text x="37" y="214" class="combo vertical_combo tap">Home</text>
 </g>
 <g class="combo vertical_combo combopos-33">
-<rect rx="6" ry="6" x="165" y="110" width="40" height="60" class="combo vertical_combo"/>
-<text x="185" y="140" class="combo vertical_combo tap">PgDn</text>
+<rect rx="6" ry="6" x="91" y="135" width="40" height="60" class="combo vertical_combo"/>
+<text x="111" y="165" class="combo vertical_combo tap">PgDn</text>
 </g>
 <g class="combo vertical_combo combopos-34">
-<rect rx="6" ry="6" x="239" y="137" width="40" height="60" class="combo vertical_combo"/>
-<text x="259" y="167" class="combo vertical_combo tap">PgUp</text>
+<rect rx="6" ry="6" x="165" y="110" width="40" height="60" class="combo vertical_combo"/>
+<text x="185" y="140" class="combo vertical_combo tap">PgUp</text>
 </g>
 <g class="combo vertical_combo combopos-35">
-<rect rx="6" ry="6" x="314" y="147" width="40" height="60" class="combo vertical_combo"/>
-<text x="334" y="177" class="combo vertical_combo tap">End</text>
+<rect rx="6" ry="6" x="239" y="137" width="40" height="60" class="combo vertical_combo"/>
+<text x="259" y="167" class="combo vertical_combo tap">End</text>
 </g>
 <g class="combo combopos-36">
 <path d="M82,-16 h-24 a20.0,20.0 0 0 0 -20.0,20.0 v82" class="combo"/>

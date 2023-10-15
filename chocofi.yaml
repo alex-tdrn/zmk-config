@@ -170,35 +170,35 @@ combos:
   k: '7'
   l: [BASE]
   type: vertical_combo
-- p: [15, 25]
+- p: [16, 26]
   k: $$arrow_left$$
   l: [BASE]
   type: vertical_combo
-- p: [16, 26]
+- p: [17, 27]
   k: $$arrow_down$$
   l: [BASE]
   type: vertical_combo
-- p: [17, 27]
+- p: [18, 28]
   k: $$arrow_up$$
   l: [BASE]
   type: vertical_combo
-- p: [18, 28]
+- p: [19, 29]
   k: $$arrow_right$$
   l: [BASE]
   type: vertical_combo
-- p: [11, 21]
+- p: [10, 20]
   k: Home
   l: [BASE]
   type: vertical_combo
-- p: [12, 22]
+- p: [11, 21]
   k: PgDn
   l: [BASE]
   type: vertical_combo
-- p: [13, 23]
+- p: [12, 22]
   k: PgUp
   l: [BASE]
   type: vertical_combo
-- p: [14, 24]
+- p: [13, 23]
   k: End
   l: [BASE]
   type: vertical_combo
