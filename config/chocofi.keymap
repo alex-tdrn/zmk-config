@@ -158,15 +158,20 @@ MACRO(NAME ## _all_caps, <&kp LS(FIRST_LETTER) &kp LS(SECOND_LETTER)>); \
 SHIFTED(NAME ## _shifted, & ## NAME ## _lowercase, & ## NAME ## _uppercase); \
 MOD_MORPH(NAME, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _all_caps)
 
+
 #define AUTOPAIR(NAME, OPENING_SYMBOL, CLOSING_SYMBOL, SHIFTED_TAP_SYMBOL) \
-MACRO(NAME ## _ap, <&kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
-MACRO(NAME ## _ap_space, <&kp OPENING_SYMBOL &kp SPACE &kp SPACE &kp CLOSING_SYMBOL &kp LEFT &kp LEFT>); \
-MACRO(NAME ## _ap_enter, <&kp OPENING_SYMBOL &kp RET &kp RET &kp CLOSING_SYMBOL &kp UP>); \
-SHIFTED(NAME ## _shifted, & ## NAME ## _ap, & ## NAME ## _ap_space); \
-MOD_MORPH(NAME ## _mod_morph, MOD_LCTL|MOD_RCTL, & ## NAME ## _shifted, & ## NAME ## _ap_enter); \
-SHIFTED(NAME ## _shifted_tap_symbols, &kp OPENING_SYMBOL, &kp SHIFTED_TAP_SYMBOL); \
-HOLD_TAP(NAME ## _hold_tap, & ## NAME ## _mod_morph, & ## NAME ## _shifted_tap_symbols); \
+MACRO(NAME ## _ap, <&kp OPENING_SYMBOL &kp CLOSING_SYMBOL>); \
+MACRO(NAME ## _ap_shift, <&kp OPENING_SYMBOL &kp CLOSING_SYMBOL &kp LEFT>); \
+MACRO(NAME ## _ap_control, <&kp OPENING_SYMBOL &kp RET &kp CLOSING_SYMBOL &kp UP &kp END &kp RET>); \
+\
+MOD_MORPH(NAME ## _hold_shift, MOD_LSFT, & ## NAME ## _ap, & ## NAME ## _ap_shift); \
+MOD_MORPH(NAME ## _hold, MOD_LCTL, & ## NAME ## _hold_shift, & ## NAME ## _ap_control); \
+\
+SHIFTED(NAME ## _tap, &kp OPENING_SYMBOL, &kp SHIFTED_TAP_SYMBOL); \
+\
+HOLD_TAP(NAME ## _hold_tap, & ## NAME ## _hold, & ## NAME ## _tap); \
 BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _hold_tap, 0, 0)
+
 
 #define AUTO_SENTENCE_CASE(NAME, SENTENCE_ENDING_SYMBOL, SHIFTED_TAP_SYMBOL) \
 MACRO(NAME ## _sc, <&kp SENTENCE_ENDING_SYMBOL &kp SPACE &sk LSHIFT>); \

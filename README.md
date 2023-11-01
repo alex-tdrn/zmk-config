@@ -30,14 +30,13 @@ Symbols are changed form the original `hands-down gold`, mostly to group and ara
 
 ### Autopair
 Bracket and quotation symbols have `autopair` functionality on hold with the following behaviors:
- - hold without any modifier -> types a pair of such symbols (opening and closing symbol for brackets, or the same symbol doubled, for quotation symbols), then steps back in between them using the left arrow key
- - hold + `shift` -> additional `space` padding is added inside. The cursor ends up in between the spaces
- - hold + `control` -> the inside is padded with `return` instead. This is extremely convenient for quickly opening scopes using `{}`, or markdown code blocks. The cursor will end up on a new line, with the opening symbol above it, and the closing symbol below it
+ - hold without any modifier -> `opening symbol`, `closing symbol`
+ - hold + `shift` -> `opening symbol`, `closing symbol`, `left arrow`
+ - hold + `control` -> `opening symbol`, `return`, `closing symbol`, `up arrow`, `end`, `return`
 
 This kind of functionality is normally available through text editor plugins but I never used it personally because I find that I often run into cases where I **don't** want this functionality to kick in.
 So having it optional, and activated manually is more convenient to me.
 Also, this makes this feature available anywhere arrow key navigation works.
-What's a bit annoying is having to step out of the pair created (have to type right arrow key). That might be fixed by making the arrow keys available on comfortable base layer combos.
 
 ### Sentence case
 The sentence ending symbols (`.`, `!`, and `?`) can be held to trigger sentence case: the symbol itself will be emitted, then a space, and finally sticky shift will be activated, automatically turning the next letter uppercase.
