@@ -45,6 +45,9 @@ The sticky shift is set to only deactivate after 10s if no input is received, to
 ## Numbers & Navigation
 I hate switching layers, so I am currently experimenting with numbers and navigation keys on vertical (same finger) base layer combos. The stronger fingers get smaller digits, since, according to [Benford's Law](https://en.m.wikipedia.org/wiki/Benford%27s_law) they tend to appear more often in real-life numerical data (also in vim relative line jumps). Idea taken from the [T34 layout](https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#where-are-the-digits). The navigation keys are arranged on the lower combo rows, in the same order as vim navigation, but offset to include the pinky. This loses the vim muscle memory and makes more use of the pinky, but migt be worth it to be able to press all arrow combinations simultaneously, which can be useful when scrolling in certain programs.
 
+# Newline
+Inspired by vim's `o`/`O`, hitting `enter` and `space` at the same time inserts a new line below the current one. Holding down `shift` additionally, inserts the new line above the current one instead.
+
 # Lock Layer
 The `LOCK` layer is used when travelling to prevent accidental keytaps, since ZMK does not have a power on/off behavior. Since it's (de)activated using 8 fingers, it should be very unlikely to go back to the base layer and send random keytaps, while in a bag.
 

@@ -279,6 +279,10 @@ BIGRAM(ph, P, H);
 BIGRAM(ch, C, H);
 BIGRAM(th, T, H);
 
+MACRO(newline_above, <&kp HOME &kp RET &kp UP>);
+MACRO(newline_below, <&kp END &kp RET>);
+SHIFTED(newline, &newline_below, &newline_above);
+
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // COMBO BINDINGS
 
@@ -335,6 +339,9 @@ COMBO(end, BASE, LIH LIL, &kp END);
 // layer and word combos
 COMBO(oneshot_fn_layer, BASE, LPU LRU LMU LIU, &sl FUNCTION);
 COMBO(caps_word, BASE, LIH RIH, &caps_word);
+
+// combo for inserting newlines above or below the current line
+COMBO(newline, BASE, RTI RTH, &newline);
 
 COMBO(lock, BASE, LPU LRU LMU LIU RIU RMU RRU RPU, &to LOCK);
 
