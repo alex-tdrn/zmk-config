@@ -283,8 +283,10 @@ MACRO(newline_above, <&kp HOME &kp RET &kp UP>);
 MACRO(newline_below, <&kp END &kp RET>);
 SHIFTED(newline, &newline_below, &newline_above);
 
+// MACRO(delete_surrounding_characters, <&kp BACKSPACE &kp DELETE>);
+// MACRO(delete_surrounding_word, <&macro_press LCTRL>, <&kp LEFT &kp DELETE>, <&macro_release LCTRL>);
 MACRO(delete_surrounding_characters, <&kp BACKSPACE &kp DELETE>);
-MACRO(delete_surrounding_word, <&macro_press LCTRL>, <&kp LEFT &kp DELETE>, <&macro_release LCTRL>);
+MACRO(delete_surrounding_word, <&kp BACKSPACE &kp DELETE>);
 MOD_MORPH(delete_hold, MOD_LCTL, &delete_surrounding_characters, &delete_surrounding_word);
 HOLD_TAP(delete_hold_tap_unbound, &delete_hold, &backspace_delete);
 BIND_HOLD_TAP_ARGUMENTS(delete_hold_tap, delete_hold_tap_unbound, 0, 0);
