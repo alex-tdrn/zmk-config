@@ -285,7 +285,9 @@ SHIFTED(newline, &newline_below, &newline_above);
 
 MACRO(delete_surrounding_characters, <&kp BACKSPACE &kp DELETE>);
 MACRO(delete_surrounding_word, <&macro_press LCTRL>, <&kp LEFT &kp DELETE>, <&macro_release LCTRL>);
-MOD_MORPH(delete_hold, MOD_LCTL, &delete_surrounding_characters, &delete_surrounding_word);
+MACRO(delete_surrounding_line, <&kp HOME>, <&macro_press LSFT>, <&kp END>, <&macro_release LSFT>, <&kp DELETE>);
+MOD_MORPH(delete_hold_1, MOD_LSFT, &delete_surrounding_characters, &delete_surrounding_line);
+MOD_MORPH(delete_hold_2, MOD_LCTL, &delete_hold_1, &delete_surrounding_word);
 HOLD_TAP(delete_hold_tap_unbound, &delete_hold, &backspace_delete);
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
