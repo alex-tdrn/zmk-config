@@ -33,7 +33,7 @@ layers:
   - K
   - Esc
   - T
-  - {t: $$backspace$$, s: $$delete$$}
+  - {t: $$backspace$$, h: '&delete_surrounding_characters', s: $$delete$$}
   - $$return$$
   - ‿
   - Tab
@@ -214,6 +214,9 @@ combos:
   a: bottom
   o: 0.04
   arc_scale: 0.97
+- p: [33, 34]
+  k: {t: $$newline_below$$, s: $$newline_above$$}
+  l: [BASE]
 - p: [0, 1, 2, 3, 6, 7, 8, 9]
   k: LOCK
   l: [BASE]
