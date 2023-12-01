@@ -104,22 +104,22 @@ combos:
   k: Ch
   l: [BASE]
 - p: [6, 7]
-  k: {t: <, h: <⌄>, s: '>'}
+  k: {t: '>', h: <⌄>, s: <}
   l: [BASE]
 - p: [16, 17]
   k: {t: _, s: \}
   l: [BASE]
 - p: [26, 27]
-  k: {t: '[', h: '[⌄]', s: ']'}
+  k: {t: ']', h: '[⌄]', s: '['}
   l: [BASE]
 - p: [7, 8]
-  k: {t: (, h: (⌄), s: )}
+  k: {t: ), h: (⌄), s: (}
   l: [BASE]
 - p: [17, 18]
   k: {t: '=', s: '~'}
   l: [BASE]
 - p: [27, 28]
-  k: {t: '{', h: '{⌄}', s: '}'}
+  k: {t: '}', h: '{⌄}', s: '{'}
   l: [BASE]
 - p: [8, 9]
   k: {t: '`', h: '`⌄`', s: ^}
@@ -214,6 +214,9 @@ combos:
   a: bottom
   o: 0.04
   arc_scale: 0.97
+- p: [33, 34]
+  k: {t: $$newline_below$$, s: $$newline_above$$}
+  l: [BASE]
 - p: [0, 1, 2, 3, 6, 7, 8, 9]
   k: LOCK
   l: [BASE]
