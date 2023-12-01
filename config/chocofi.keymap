@@ -167,7 +167,7 @@ MACRO(NAME ## _ap_control, <&kp OPENING_SYMBOL &kp RET &kp CLOSING_SYMBOL &kp UP
 MOD_MORPH(NAME ## _hold_shift, MOD_LSFT, & ## NAME ## _ap, & ## NAME ## _ap_shift); \
 MOD_MORPH(NAME ## _hold, MOD_LCTL, & ## NAME ## _hold_shift, & ## NAME ## _ap_control); \
 \
-SHIFTED(NAME ## _tap, &kp OPENING_SYMBOL, &kp SHIFTED_TAP_SYMBOL); \
+SHIFTED(NAME ## _tap, &kp CLOSING_SYMBOL, &kp SHIFTED_TAP_SYMBOL); \
 \
 HOLD_TAP(NAME ## _hold_tap, & ## NAME ## _hold, & ## NAME ## _tap); \
 BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _hold_tap, 0, 0)
@@ -263,10 +263,10 @@ AUTO_SENTENCE_CASE(period_comma, PERIOD, COMMA);
 AUTO_SENTENCE_CASE(question_percent, QUESTION, PERCENT);
 AUTO_SENTENCE_CASE(exclamation_at, EXCLAMATION, AT_SIGN);
 
-AUTOPAIR(angled_brackets, LESS_THAN, GREATER_THAN, GREATER_THAN);
-AUTOPAIR(round_brackets, LPAR, RPAR, RPAR);
-AUTOPAIR(curly_brackets, LEFT_BRACE, RIGHT_BRACE, RIGHT_BRACE);
-AUTOPAIR(square_brackets, LEFT_BRACKET, RIGHT_BRACKET, RIGHT_BRACKET);
+AUTOPAIR(angled_brackets, LESS_THAN, GREATER_THAN, LESS_THAN);
+AUTOPAIR(round_brackets, LPAR, RPAR, LPAR);
+AUTOPAIR(curly_brackets, LEFT_BRACE, RIGHT_BRACE, LEFT_BRACE);
+AUTOPAIR(square_brackets, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACKET);
 AUTOPAIR(backtick_caret, GRAVE, GRAVE, CARET);
 AUTOPAIR(double_quotes_hash, DOUBLE_QUOTES, DOUBLE_QUOTES, HASH);
 AUTOPAIR(single_quote_dollar, SINGLE_QUOTE, SINGLE_QUOTE, DOLLAR);
