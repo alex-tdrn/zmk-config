@@ -1,3 +1,5 @@
+name: "Draw Keymaps"
+
 permissions: write-all
 
 on:

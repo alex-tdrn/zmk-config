@@ -1,3 +1,5 @@
+name: "Check Typos"
+
 on: [push]
 jobs:
     typos:
