@@ -7,7 +7,7 @@ SVG keymap is auto-generated using [keymap-drawer](https://github.com/caksoylar/
 # Base Layer
 ## Alphas
 Alpha layout is [hands-down gold](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.8i2msuo3butx), with slight tweaks to the locations of the letter and bigram combos:
- - All bigrams are on the left side of the keyboard since they are all either surrounded by, or preceeded by vowels, and typing a combo in rapid succesion with a vowel is hard for me.
+ - All bigrams are on the left side of the keyboard since they are all either surrounded by, or preceded by vowels, and typing a combo in rapid succession with a vowel is hard for me.
  This also makes room for all symbol combos on the right side
  - The `Qu` combo was initially a hold-tap with `Qu` on tap and `Q` on hold. This is perfect when typing prose, I found that I only needed `Q` for initialisms, and the hold-delay was not a problem for me.
  However, `Q` is a very common key in vim/nvim and it quickly became annoying having to hold the combo every time I needed to exit a dialog or close a window.
@@ -24,9 +24,9 @@ Symbols are changed form the original `hands-down gold`, mostly to group and ara
  - most math symbols are on the inner index column of keys, with the equal sign being on the homerow middle + ring finger combo. this makes common `*=`, `-=`, `/=` etc bigrams more comfortable to type when programming, by avoiding using the same finger for both symbols. the only symbols from this category that are not on the inner column are the logical operators `~`, and `^`
  - sentence/statement ending punctuation symbols are all on the top row
  - quotation symbols that normally appear in pairs are all (except for `'` in prose) on the ring + pinky column of combos
- - the 4 bracket types are arranged in a rectangle, typed with the 3 strongest fingers: index, middle, and ring. The angle brackets and the square brackets are placed on the two stronger combos of the four (index + middle finger), since the square brackets are regulary used in vim for 'prev/next' jumps, and the angle brackets double as mathematical operators as well. Also, the `->` bigram is extremely common in C++
+ - the 4 bracket types are arranged in a rectangle, typed with the 3 strongest fingers: index, middle, and ring. The angle brackets and the square brackets are placed on the two stronger combos of the four (index + middle finger), since the square brackets are regularly used in vim for 'prev/next' jumps, and the angle brackets double as mathematical operators as well. Also, the `->` bigram is extremely common in C++
  .
- - `_` and `\` receive the most comfortable combo position, since they are among the most common symbols accross all the programming languages I use. The need to manually type `_` may be reduced in the future by implementing something like [x-case with `_` replacing `space`](https://github.com/andrewjrae/kyria-keymap/tree/e3ad77dc4d48b8e6a842c9136c76c1021ab5976b#x-case). If that proves viable I'll reconsider this symbol arrangement
+ - `_` and `\` receive the most comfortable combo position, since they are among the most common symbols across all the programming languages I use. The need to manually type `_` may be reduced in the future by implementing something like [x-case with `_` replacing `space`](https://github.com/andrewjrae/kyria-keymap/tree/e3ad77dc4d48b8e6a842c9136c76c1021ab5976b#x-case). If that proves viable I'll reconsider this symbol arrangement
 
 ### Autopair
 Bracket and quotation symbols have `autopair` functionality on hold with the following behaviors:
@@ -43,7 +43,7 @@ The sentence ending symbols (`.`, `!`, and `?`) can be held to trigger sentence 
 The sticky shift is set to only deactivate after 10s if no input is received, to allow for a slight pause before the next sentence, if needed.
 
 ## Numbers & Navigation
-I hate switching layers, so I am currently experimenting with numbers and navigation keys on vertical (same finger) base layer combos. The stronger fingers get smaller digits, since, according to [Benford's Law](https://en.m.wikipedia.org/wiki/Benford%27s_law) they tend to appear more often in real-life numerical data (also in vim relative line jumps). Idea taken from the [T34 layout](https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#where-are-the-digits). The navigation keys are arranged on the lower combo rows, in the same order as vim navigation, but offset to include the pinky. This loses the vim muscle memory and makes more use of the pinky, but migt be worth it to be able to press all arrow combinations simultaneously, which can be useful when scrolling in certain programs.
+I hate switching layers, so I am currently experimenting with numbers and navigation keys on vertical (same finger) base layer combos. The stronger fingers get smaller digits, since, according to [Benford's Law](https://en.m.wikipedia.org/wiki/Benford%27s_law) they tend to appear more often in real-life numerical data (also in vim relative line jumps). Idea taken from the [T34 layout](https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#where-are-the-digits). The navigation keys are arranged on the lower combo rows, in the same order as vim navigation, but offset to include the pinky. This loses the vim muscle memory and makes more use of the pinky, but might be worth it to be able to press all arrow combinations simultaneously, which can be useful when scrolling in certain programs.
 
 # Newline
 Inspired by vim's `o`/`O`, hitting `enter` and `space` at the same time inserts a new line below the current one. Holding down `shift` additionally, inserts the new line above the current one instead.

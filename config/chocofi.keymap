@@ -8,9 +8,9 @@
 // - first Letter is the hand: (L)eft or (R)ight
 // - second letter is the finger (P)inky; (R)ing; (M)iddle; (I)ndex; (T)humb
 // - third letter is either
-//      - the column for the thumb finger (O)uter; (H)ome; (I)nner
+//      - the column for the thumb finger (O)uter; (H)ome; (I)inner
 //      - the row for all the other fingers (U)pper; (H)ome; (L)ower
-// - for the index fingers, the (I)nner column with another 'I' at the end
+// - for the index fingers, the (I)inner column with another 'I' at the end
 //  ╭──────────────────────────────────────────────╮ ╭──────────────────────────────────────────────╮
 //  │ LPU (0)  LRU (1)  LMU (2)  LIU (3)  LIUI (4) │ │ RIUI (5)  RIU (6)  RMU (7)  RRU (8)  RPU (9) │
 //  │ LPH(10)  LRH(11)  LMH(12)  LIH(13)  LIHI(14) │ │ RIHI(15)  RIH(16)  RMH(17)  RRH(18)  RPH(19) │
