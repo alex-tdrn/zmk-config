@@ -291,6 +291,11 @@ COMPOSE_UNICODE(sharp_s_lowercase, N0, N0, D, F);
 COMPOSE_UNICODE(sharp_s_uppercase, N1, E, N9, E);
 SHIFTED(sharp_s, &sharp_s_lowercase, &sharp_s_uppercase);
 
+COMPOSE_UNICODE(diacritic_umlaut, N0, N3, N0, N8);
+COMPOSE_UNICODE(diacritic_breve, N0, N3, N0, N6);
+COMPOSE_UNICODE(diacritic_circumflex, N0, N3, N0, N2);
+COMPOSE_UNICODE(diacritic_comma, N0, N3, N2, N6);
+
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // COMBO BINDINGS
 
@@ -353,6 +358,12 @@ COMBO(caps_word, BASE, LIH RIH, &caps_word);
 COMBO(newline, BASE, RTI RTH, &newline);
 
 COMBO(lock, BASE, LPU LRU LMU LIU RIU RMU RRU RPU, &to LOCK);
+
+// combining diacritial mark combos
+COMBO(diacritic_umlaut, BASE, LMH LIL, &diacritic_umlaut);
+COMBO(diacritic_breve, BASE, LRH LML, &diacritic_breve);
+COMBO(diacritic_circumflex, BASE, LRL LMH, &diacritic_circumflex);
+COMBO(diacritic_comma, BASE, RIL RMH, &diacritic_comma);
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // KEY BINDINGS
