@@ -286,6 +286,11 @@ MACRO(newline_above, <&kp HOME &kp RET &kp UP>);
 MACRO(newline_below, <&kp END &kp RET>);
 SHIFTED(newline, &newline_below, &newline_above);
 
+// unicode symbols
+COMPOSE_UNICODE(sharp_s_lowercase, N0, N0, D, F);
+COMPOSE_UNICODE(sharp_s_uppercase, N1, E, N9, E);
+SHIFTED(sharp_s, &sharp_s_lowercase, &sharp_s_uppercase);
+
 // ----------------------------------------------------------------------------------------------------------------------------------------
 // COMBO BINDINGS
 
@@ -293,6 +298,7 @@ SHIFTED(newline, &newline_below, &newline_above);
 COMBO(z, BASE, LPU LRU, &kp Z);
 COMBO(qu, BASE, LPH LRH, &qu);
 COMBO(q, BASE, LPL LRL, &kp Q);
+COMBO(sharp_s, BASE, LPL LRH, &sharp_s);
 
 COMBO(gh, BASE, LRU LMU, &gh);
 COMBO(sh, BASE, LRH LMH, &sh);

@@ -60,6 +60,10 @@ parse_config:
     combo_qu:
        key:
          tap: Qu
+    combo_sharp_s:
+       key:
+         tap: ẞ
+       draw_separate: true
     combo_th:
        key:
          tap: Th
