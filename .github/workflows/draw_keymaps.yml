@@ -12,8 +12,14 @@ on:
 
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
-    with:
-      keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer_config.yaml"
-      output_folder: "."
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install keymap-drawer
+      - run: keymap --config "keymap_drawer_config.yaml" parse --zmk-keymap "config/chocofi.keymap" > parsed_chocofi.yaml
+      - run: keymap --config "keymap_drawer_config.yaml" draw --select-layers BASE -- "parsed_chocofi.yaml" > base_layer.svg
+      - run: keymap --config "keymap_drawer_config.yaml" draw --keys-only --select-layers FN -- "parsed_chocofi.yaml" > function_layer.svg
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+         file_pattern: "base_layer.svg function_layer.svg"
+         commit_message: "chore: update diagrams"

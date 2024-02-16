@@ -57,65 +57,65 @@ parse_config:
        type: 'vertical_combo'
     combo_end:
        type: 'vertical_combo'
-    combo_qu: 
-       key: 
+    combo_qu:
+       key:
          tap: Qu
-    combo_th: 
-       key: 
+    combo_th:
+       key:
          tap: Th
-    combo_ch: 
-       key: 
+    combo_ch:
+       key:
          tap: Ch
-    combo_sh: 
-       key: 
+    combo_sh:
+       key:
          tap: Sh
-    combo_wh: 
-       key: 
+    combo_wh:
+       key:
          tap: Wh
-    combo_gh: 
-       key: 
+    combo_gh:
+       key:
          tap: Gh
-    combo_ph: 
-       key: 
+    combo_ph:
+       key:
          tap: Ph
-    combo_caps_word: 
-       key: 
+    combo_caps_word:
+       key:
          tap: 'caps word'
        align: bottom
        offset: 0.04
        arc_scale: 0.97
-    combo_round_brackets: 
-       key: 
+    combo_round_brackets:
+       key:
          tap: ')'
          shifted: '('
          hold: '(⌄)'
-    combo_square_brackets: 
-       key: 
+    combo_square_brackets:
+       key:
          tap: ']'
          shifted: '['
          hold: '[⌄]'
-    combo_curly_brackets: 
-       key: 
+    combo_curly_brackets:
+       key:
          tap: '}'
          shifted: '{'
          hold: '{⌄}'
-    combo_angled_brackets: 
-       key: 
+    combo_angled_brackets:
+       key:
          tap: '>'
          shifted: '<'
-         hold: '<⌄>'    
+         hold: '<⌄>'
     combo_backtick_caret:
-       key: 
+       key:
          tap: '`'
          shifted: '^'
          hold: '`⌄`'
     combo_double_quotes_hash:
-       key: 
+       key:
          tap: '"'
          shifted: '#'
          hold: '"⌄"'
     combo_single_quote_dollar:
-       key: 
+       key:
          tap: ''''
          shifted: '$'
          hold: '''⌄'''
@@ -243,10 +243,11 @@ draw_config:
   arc_radius: 20.0
   arc_scale: 1
   append_colon_to_layer_header: false
-  small_pad: 7.0 
+  small_pad: 7.0
   glyph_tap_size: 12
   glyph_hold_size: 10
   glyph_shifted_size: 10
+  combo_diagrams_scale: 4
   svg_style: |
     /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
     :root {
@@ -257,6 +258,7 @@ draw_config:
         --layer-color: #C34043;
         --combo-color: #938AA9;
         --keycap-color: #727169;
+        --hold-fill-color: var(--background-color);
 
         fill: var(--foreground-color);
         background-color: var(--background-color);
@@ -295,13 +297,22 @@ draw_config:
         dominant-baseline: auto;
     }
 
-    path.combo {
+    [class*="layer-combopos"] {
+        --hold-fill-color: var(--combo-color);
+    }
+
+    rect.held {
+        fill: var(--hold-fill-color);
+        stroke: var(--held-color);
+    }
+
+    path.combo, path.combo-separate {
         stroke-width: 0.5;
         stroke: var(--combo-color);
         fill: none;
     }
 
-    rect.combo {
+    rect.combo, rect.combo-separate {
         stroke: var(--combo-color);
         stroke-width: 1.0;
     }
@@ -310,7 +321,7 @@ draw_config:
         stroke: none;
         fill: none;
     }
-    
+
     text.vertical_combo {
         font-size: 14px;
         text-anchor: middle;
