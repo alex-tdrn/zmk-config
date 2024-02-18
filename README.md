@@ -1,7 +1,7 @@
 My personal ZMK config for the [chocofi](https://github.com/pashutk/chocofi)
 
 # Base Layer
-![Base layer](./base_layer.svg)
+![Base layer](./BASE.svg)
 
 ## Alphas
 Alpha layout is [hands-down gold](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.8i2msuo3butx), with slight tweaks
@@ -73,7 +73,7 @@ Inspired by vim's `o`/`O`, hitting `enter` and `space` at the same time inserts 
 Holding down `shift` additionally, inserts the new line above the current one instead.
 
 # Function Layer (WIP)
-![Function Layer](./function_layer.svg)
+![Function Layer](./FN.svg)
 
 # Lock Layer
 The `LOCK` layer is used when travelling to prevent accidental key taps, since ZMK does not have a power on/off behavior.

@@ -9,17 +9,19 @@ on:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer_config.yaml"
+      - "scripts/update_keymaps.nu"
 
 jobs:
   draw:
     runs-on: ubuntu-latest
     steps:
+      - uses: hustcer/setup-nu@v3.9
+        with:
+          version: "0.90.1"
       - uses: actions/checkout@v4
       - run: pip install keymap-drawer
-      - run: keymap --config "keymap_drawer_config.yaml" parse --zmk-keymap "config/chocofi.keymap" > parsed_chocofi.yaml
-      - run: keymap --config "keymap_drawer_config.yaml" draw --select-layers BASE -- "parsed_chocofi.yaml" > base_layer.svg
-      - run: keymap --config "keymap_drawer_config.yaml" draw --keys-only --select-layers FN -- "parsed_chocofi.yaml" > function_layer.svg
+      - run: nu scripts/update_keymaps.nu
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-         file_pattern: "base_layer.svg function_layer.svg"
+         file_pattern: "*.svg"
          commit_message: "chore: update diagrams"
