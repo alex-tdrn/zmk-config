@@ -502,9 +502,7 @@ rect.vertical_combo, rect.diagonal_combo {
 <path d="M562,197 h-238 a20.0,20.0 0 0 1 -20.0,-20.0 v1" class="combo"/>
 <path d="M562,197 h238 a20.0,20.0 0 0 0 20.0,-20.0 v1" class="combo"/>
 <rect rx="6" ry="6" x="542" y="162" width="40" height="70" class="combo"/>
-<text x="562" y="197" class="combo tap">
-<tspan x="562" dy="-0.6em">caps</tspan><tspan x="562" dy="1.2em">word</tspan>
-</text>
+<text x="562" y="197" class="combo tap">󰘶</text>
 </g>
 <g class="combo combopos-38">
 <rect rx="6" ry="6" x="692" y="309" width="40" height="70" class="combo"/>

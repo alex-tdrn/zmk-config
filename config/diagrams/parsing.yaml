@@ -117,7 +117,7 @@ parse_config:
         shifted: Ph
     combo_caps_word:
       key:
-        tap: 'caps word'
+        tap: 󰘶
       align: bottom
       offset: 0.04
       arc_scale: 0.97
