@@ -272,7 +272,22 @@ draw_config:
   glyph_shifted_size: 10
   combo_diagrams_scale: 4
   svg_style: | # css
-    /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
+    @font-face {
+        font-family: 'NerdFontsSymbols Nerd Font';
+        src: url("https://www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal
+    }
+
+    @font-face{
+      font-family: 'JetBrainsMono';
+      src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/ttf/JetBrainsMono-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+      /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
     :root {
         --background-color: #1F1F28;
         --foreground-color: #E6C384;
@@ -285,12 +300,10 @@ draw_config:
 
         fill: var(--foreground-color);
         background-color: var(--background-color);
-        font-family: JetBrainsMono NFM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-family: JetBrainsMono,NerdFontsSymbols Nerd Font;
         font-size: 14px;
-        font-weight: bold;
         text-anchor: middle;
         dominant-baseline: middle;
-        font-weight: bold;
     }
 
     rect {

@@ -79,7 +79,22 @@
 <svg viewBox="0 0 21.632 17.368" xmlns="http://www.w3.org/2000/svg"><path d="M 0 10.868 L 10.816 0 L 21.632 10.868 L 16.25 10.868 L 16.25 17.368 L 5.382 17.368 L 5.382 10.868 L 0 10.868 Z M 7.566 15.184 L 14.066 15.184 L 14.066 8.684 L 16.406 8.684 L 10.816 3.094 L 5.226 8.684 L 7.566 8.684 L 7.566 15.184 Z"/></svg>
 </svg>
 </defs>/* end glyphs */
-<style>/* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
+<style>@font-face {
+    font-family: 'NerdFontsSymbols Nerd Font';
+    src: url("https://www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face{
+  font-family: 'JetBrainsMono';
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/ttf/JetBrainsMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+  /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
 :root {
     --background-color: #1F1F28;
     --foreground-color: #E6C384;
@@ -92,12 +107,10 @@
 
     fill: var(--foreground-color);
     background-color: var(--background-color);
-    font-family: JetBrainsMono NFM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: JetBrainsMono,NerdFontsSymbols Nerd Font;
     font-size: 14px;
-    font-weight: bold;
     text-anchor: middle;
     dominant-baseline: middle;
-    font-weight: bold;
 }
 
 rect {
