@@ -4,11 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "config/*.keymap"
-      - "config/*.dtsi"
-      - "keymap_drawer_parsing_config.yaml"
-      - "keymap_drawer_drawing_config.yaml"
-      - "scripts/update_keymaps.nu"
+      - "config/*"
 jobs:
   draw:
     runs-on: ubuntu-latest

@@ -1,11 +1,11 @@
 def main [] {
     echo $"(ansi yellow)Updating keymaps...(ansi reset)"
-    let parsed_keymap = (keymap --config "keymap_drawer_parsing_config.yaml" parse --zmk-keymap "config/chocofi.keymap")
+    let parsed_keymap = (keymap --config config/diagrams/parsing.yaml parse --zmk-keymap config/chocofi.keymap)
     echo $"Parsing keymap done ✅"
 
     let drawing_config_with_embedded_fonts = "drawing_config_with_embedded_fonts.yaml"
-    open keymap_drawer_drawing_config.yaml
-        | upsert draw_config.svg_extra_style (open --raw font_embed.css)
+    open config/diagrams/drawing.yaml
+        | upsert draw_config.svg_extra_style (open --raw config/diagrams/font_embed.css)
         | save --force $drawing_config_with_embedded_fonts
 
     [BASE, FN] | par-each {|layer|
@@ -17,7 +17,7 @@ def main [] {
             $flags = ($flags ++ '--keys-only')
         }
 
-        $parsed_keymap | keymap --config $drawing_config_with_embedded_fonts draw ...$flags -- - | str replace --all "\r" "" | save --raw --force $"($layer).svg"
+        $parsed_keymap | keymap --config $drawing_config_with_embedded_fonts draw ...$flags -- - | str replace --all "\r" "" | save --raw --force $"diagrams/($layer).svg"
         echo $"Finished layer (ansi purple)($layer)(ansi reset)✅"
     }
     rm $drawing_config_with_embedded_fonts
