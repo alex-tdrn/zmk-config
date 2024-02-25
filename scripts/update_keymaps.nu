@@ -11,7 +11,7 @@ def main [] {
             $flags = ($flags ++ '--keys-only')
         }
 
-        $parsed_keymap | keymap --config "keymap_drawer_config.yaml" draw ...$flags -- - | save --raw --force $"($layer).svg"
+        $parsed_keymap | keymap --config "keymap_drawer_config.yaml" draw ...$flags -- - | str replace --all "\r" "" | save --raw --force $"($layer).svg"
         echo $"Finished layer (ansi purple)($layer)(ansi reset)✅"
     }
     echo $"(ansi green)Keymaps updated ✅(ansi reset)"
