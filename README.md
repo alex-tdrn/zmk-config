@@ -108,9 +108,7 @@ SVG keymaps are auto-generated using [keymap-drawer](https://github.com/caksoyla
 Uses `urob`'s parameters for [timer-less home row mods](https://github.com/urob/zmk-config#timeless-homerow-mods)
 
 The keymap diagrams contain SVGs using `nerdfont` icons.
-These SVGs have been generated using this [text to SVG converter](https://danmarshall.github.io/google-font-to-svg-path/) with the
-[JetBrainsMonoNerdFont-Medium.ttf](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip) uploaded.
-A stroke width of 0.1mm seems to provide good results.
-After you have your SVG, remove the added `<g id="svgGroup"...` element, to allow the glyphs to take on the config's colors.
+They embed the nerd font symbols and the `JetBrainsMono` font.
+See `config/diagrams/update.nu` and `config/diagrams/font_embed.css` for more details.
 
-Color palette used in the keymap SVGs is [kanagawa](https://github.com/rebelot/kanagawa.nvim/)
+Color palette used in the keymap SVGs is [Kanagawa](https://github.com/rebelot/kanagawa.nvim/)

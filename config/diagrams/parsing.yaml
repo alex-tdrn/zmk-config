@@ -3,19 +3,19 @@ parse_config:
   skip_binding_parsing: false
   mark_alternate_layer_activators: true
   raw_binding_map:
-    '&ext_power EP_OFF': $$led_off$$
-    '&ext_power EP_ON ': $$led_on$$
-    '&out OUT_USB': $$send_keypresses_usb$$
-    '&out OUT_BLE': $$send_keypresses_bluetooth$$
-    '&bt BT_CLR': $$bluetooth_clear$$
-    '&bt BT_SEL 0': $$bluetooth_1$$
-    '&bt BT_SEL 1': $$bluetooth_2$$
-    '&bt BT_SEL 2': $$bluetooth_3$$
-    '&bt BT_SEL 3': $$bluetooth_4$$
-    '&bt BT_SEL 4': $$bluetooth_5$$
-    '&period_comma': {t: '.', s: ',', h: $$dot_sentence_case$$}
-    '&question_percent': {t: '?', s: '%', h: $$question_sentence_case$$}
-    '&exclamation_at': {t: '!', s: '@', h: $$exclamation_sentence_case$$}
+    '&ext_power EP_OFF': 󰌭
+    '&ext_power EP_ON ': 󰌬
+    '&out OUT_USB': 󰌌󰕓
+    '&out OUT_BLE': 󰌌󰂯
+    '&bt BT_CLR': 󰂲
+    '&bt BT_SEL 0': 󰂯1
+    '&bt BT_SEL 1': 󰂯2
+    '&bt BT_SEL 2': 󰂯3
+    '&bt BT_SEL 3': 󰂯4
+    '&bt BT_SEL 4': 󰂯5
+    '&period_comma': {t: '.', s: ',', h: '.󰘶'}
+    '&question_percent': {t: '?', s: '%', h: '?󰘶'}
+    '&exclamation_at': {t: '!', s: '@', h: '!󰘶'}
   zmk_combos:
     combo_vertical_0:
       type: 'vertical_combo'
@@ -125,8 +125,8 @@ parse_config:
         hold: '''⌄'''
     combo_newline:
       key:
-        tap: $$newline_below$$
-        shifted: $$newline_above$$
+        tap: 󱞤
+        shifted: 󱞾
     combo_diacritic_umlaut:
       draw_separate: true
       key:
@@ -228,24 +228,24 @@ parse_config:
     NON_US_HASH: '#'
     NUHS: '#'
     TILDE2: '~'
-    DELETE: $$delete$$
-    BACKSPACE: $$backspace$$
-    RET: $$return$$
-    SPACE: '‿'
+    DELETE: 󰹾
+    BACKSPACE: 󰁮
+    RET: 󱞦
+    SPACE: '󱁐'
     TAB: 'Tab'
-    LSHIFT: $$shift$$
-    RSHIFT: $$shift$$
-    LALT: $$alt$$
-    RALT: $$alt$$
-    LCTRL: $$control$$
-    RCTRL: $$control$$
-    LMETA: $$meta$$
-    RMETA: $$meta$$
+    LSHIFT: 󰘶
+    RSHIFT: 󰘶
+    LALT: 󰘵
+    RALT: 󰘵
+    LCTRL: 󰘴
+    RCTRL: 󰘴
+    LMETA: 󰘳
+    RMETA: 󰘳
     ESC: 'Esc'
-    UP: $$arrow_up$$
-    DOWN: $$arrow_down$$
-    LEFT: $$arrow_left$$
-    RIGHT: $$arrow_right$$
+    UP: 
+    DOWN: 
+    LEFT: 
+    RIGHT: 
     PAGE_DOWN: 'Page Down'
     PAGE_UP: 'Page Up'
     HOME: 'Home'
