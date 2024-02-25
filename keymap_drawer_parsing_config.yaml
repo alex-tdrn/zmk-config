@@ -1,0 +1,253 @@
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  mark_alternate_layer_activators: true
+  raw_binding_map:
+    '&ext_power EP_OFF': $$led_off$$
+    '&ext_power EP_ON ': $$led_on$$
+    '&out OUT_USB': $$send_keypresses_usb$$
+    '&out OUT_BLE': $$send_keypresses_bluetooth$$
+    '&bt BT_CLR': $$bluetooth_clear$$
+    '&bt BT_SEL 0': $$bluetooth_1$$
+    '&bt BT_SEL 1': $$bluetooth_2$$
+    '&bt BT_SEL 2': $$bluetooth_3$$
+    '&bt BT_SEL 3': $$bluetooth_4$$
+    '&bt BT_SEL 4': $$bluetooth_5$$
+    '&period_comma': {t: '.', s: ',', h: $$dot_sentence_case$$}
+    '&question_percent': {t: '?', s: '%', h: $$question_sentence_case$$}
+    '&exclamation_at': {t: '!', s: '@', h: $$exclamation_sentence_case$$}
+  zmk_combos:
+    combo_vertical_0:
+      type: 'vertical_combo'
+    combo_vertical_1:
+      type: 'vertical_combo'
+    combo_vertical_2:
+      type: 'vertical_combo'
+    combo_vertical_3:
+      type: 'vertical_combo'
+    combo_vertical_4:
+      type: 'vertical_combo'
+    combo_vertical_5:
+      type: 'vertical_combo'
+    combo_vertical_6:
+      type: 'vertical_combo'
+    combo_vertical_7:
+      type: 'vertical_combo'
+    combo_vertical_8:
+      type: 'vertical_combo'
+    combo_vertical_9:
+      type: 'vertical_combo'
+    combo_up:
+      type: 'vertical_combo'
+    combo_down:
+      type: 'vertical_combo'
+    combo_left:
+      type: 'vertical_combo'
+    combo_right:
+      type: 'vertical_combo'
+    combo_page_up:
+      type: 'vertical_combo'
+      key:
+        tap: "PgUp"
+    combo_page_down:
+      type: 'vertical_combo'
+      key:
+        tap: "PgDn"
+    combo_home:
+      type: 'vertical_combo'
+    combo_end:
+      type: 'vertical_combo'
+    combo_qu:
+      key:
+        tap: Qu
+    combo_sharp_s:
+      key:
+        tap: ẞ
+      draw_separate: true
+    combo_th:
+      key:
+        tap: Th
+    combo_ch:
+      key:
+        tap: Ch
+    combo_sh:
+      key:
+        tap: Sh
+    combo_wh:
+      key:
+        tap: Wh
+    combo_gh:
+      key:
+        tap: Gh
+    combo_ph:
+      key:
+        tap: Ph
+    combo_caps_word:
+      key:
+        tap: 'caps word'
+      align: bottom
+      offset: 0.04
+      arc_scale: 0.97
+    combo_round_brackets:
+      key:
+        tap: ')'
+        shifted: '('
+        hold: '(⌄)'
+    combo_square_brackets:
+      key:
+        tap: ']'
+        shifted: '['
+        hold: '[⌄]'
+    combo_curly_brackets:
+      key:
+        tap: '}'
+        shifted: '{'
+        hold: '{⌄}'
+    combo_angled_brackets:
+      key:
+        tap: '>'
+        shifted: '<'
+        hold: '<⌄>'
+    combo_backtick_caret:
+      key:
+        tap: '`'
+        shifted: '^'
+        hold: '`⌄`'
+    combo_double_quotes_hash:
+      key:
+        tap: '"'
+        shifted: '#'
+        hold: '"⌄"'
+    combo_single_quote_dollar:
+      key:
+        tap: ''''
+        shifted: '$'
+        hold: '''⌄'''
+    combo_newline:
+      key:
+        tap: $$newline_below$$
+        shifted: $$newline_above$$
+    combo_diacritic_umlaut:
+      draw_separate: true
+      key:
+        tap: ◌̈
+        hold: (umlaut)
+    combo_diacritic_breve:
+      draw_separate: true
+      key:
+        tap: ◌̆
+        hold: (breve)
+    combo_diacritic_circumflex:
+      draw_separate: true
+      key:
+        tap: ◌̂
+        hold: (circumflex)
+    combo_diacritic_comma:
+      draw_separate: true
+      key:
+        tap: ◌̦
+        hold: (comma)
+    combo_oneshot_fn_layer:
+      key: 'FN one shot'
+      align: top
+      offset: 0.2
+      slide: -0.6
+    combo_lock:
+      align: top
+      offset: 0.7
+    combo_unlock:
+      align: top
+      offset: 0.7
+  sticky_label: sticky
+  trans_legend:
+    t: ▽
+    type: trans
+  zmk_keycode_map:
+    # For true 'bold', prefer JetBrainsMono natively supported glyphs: https://www.jetbrains.com/lp/mono/
+    EXCLAMATION: '!'
+    EXCL: '!'
+    AT_SIGN: '@'
+    AT: '@'
+    HASH: '#'
+    POUND: '#'
+    DOLLAR: $
+    DLLR: $
+    PERCENT: '%'
+    PRCNT: '%'
+    CARET: ^
+    AMPERSAND: '&'
+    AMPS: '&'
+    ASTERISK: '*'
+    ASTRK: '*'
+    STAR: '*'
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    EQUAL: '='
+    PLUS: +
+    MINUS: '-'
+    UNDERSCORE: _
+    UNDER: _
+    SLASH: /
+    FSLH: /
+    QUESTION: '?'
+    QMARK: '?'
+    BACKSLASH: \
+    BSLH: \
+    PIPE: '|'
+    NON_US_BACKSLASH: \
+    PIPE2: '|'
+    NON_US_BSLH: '|'
+    SEMICOLON: ;
+    SEMI: ;
+    COLON: ':'
+    SINGLE_QUOTE: ''''
+    SQT: ''''
+    APOSTROPHE: <
+    APOS: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    COMMA: ','
+    LESS_THAN: <
+    LT: <
+    PERIOD: .
+    DOT: .
+    GREATER_THAN: '>'
+    GT: '>'
+    LEFT_BRACKET: '['
+    LBKT: '['
+    LEFT_BRACE: '{'
+    LBRC: '{'
+    RIGHT_BRACKET: ']'
+    RBKT: ']'
+    RIGHT_BRACE: '}'
+    RBRC: '}'
+    GRAVE: '`'
+    TILDE: '~'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    TILDE2: '~'
+    DELETE: $$delete$$
+    BACKSPACE: $$backspace$$
+    RET: $$return$$
+    SPACE: '‿'
+    TAB: 'Tab'
+    LSHIFT: $$shift$$
+    RSHIFT: $$shift$$
+    LALT: $$alt$$
+    RALT: $$alt$$
+    LCTRL: $$control$$
+    RCTRL: $$control$$
+    LMETA: $$meta$$
+    RMETA: $$meta$$
+    ESC: 'Esc'
+    UP: $$arrow_up$$
+    DOWN: $$arrow_down$$
+    LEFT: $$arrow_left$$
+    RIGHT: $$arrow_right$$
+    PAGE_DOWN: 'Page Down'
+    PAGE_UP: 'Page Up'
+    HOME: 'Home'
+    END: 'End'
+
