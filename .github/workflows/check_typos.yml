@@ -1,22 +1,22 @@
 name: "Check Typos"
-
 on: [push]
 jobs:
-    typos:
-        runs-on: ubuntu-latest
-        steps:
-            - run: cargo install typos-cli
-            - uses: actions/checkout@v3
-            - run: typos
-            - name: "Create fix patch"
-              if: failure()
-              run: |
-                  set +e
-                  typos --write-changes
-                  git diff > typo_fixes.ptch
-            - name: "Upload fix patch"
-              if: failure()
-              uses: actions/upload-artifact@v3
-              with:
-                  name: fixes
-                  path: typo_fixes.ptch
+  typos:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cargo install typos-cli
+      - uses: actions/checkout@v3
+      - run: typos
+      - name: "Create fix patch"
+        if: failure()
+        run: |
+          set +e
+          typos --write-changes
+          git diff > typo_fixes.ptch
+      - name: "Upload fix patch"
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: fixes
+          path: typo_fixes.ptch
+
