@@ -92,37 +92,37 @@ parse_config:
       key:
         tap: ')'
         shifted: '('
-        hold: '(⌄)'
+        hold: '(⌶)'
     combo_square_brackets:
       key:
         tap: ']'
         shifted: '['
-        hold: '[⌄]'
+        hold: '[⌶]'
     combo_curly_brackets:
       key:
         tap: '}'
         shifted: '{'
-        hold: '{⌄}'
+        hold: '{⌶}'
     combo_angled_brackets:
       key:
         tap: '>'
         shifted: '<'
-        hold: '<⌄>'
+        hold: '<⌶>'
     combo_backtick_caret:
       key:
         tap: '`'
         shifted: '^'
-        hold: '`⌄`'
+        hold: '`⌶`'
     combo_double_quotes_hash:
       key:
         tap: '"'
         shifted: '#'
-        hold: '"⌄"'
+        hold: '"⌶"'
     combo_single_quote_dollar:
       key:
         tap: ''''
         shifted: '$'
-        hold: '''⌄'''
+        hold: '''⌶'''
     combo_newline:
       key:
         tap: 󱞤
