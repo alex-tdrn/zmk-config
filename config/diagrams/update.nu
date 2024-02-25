@@ -1,7 +1,7 @@
-def main [] {
+def update_keymaps [] {
     echo $"(ansi yellow)Updating keymaps...(ansi reset)"
     let parsed_keymap = (keymap --config config/diagrams/parsing.yaml parse --zmk-keymap config/chocofi.keymap)
-    echo $"Parsing keymap done ✅"
+    echo $"Finished parsing keymap ✅"
 
     let drawing_config_with_embedded_fonts = "drawing_config_with_embedded_fonts.yaml"
     open config/diagrams/drawing.yaml
@@ -22,5 +22,21 @@ def main [] {
     }
     rm $drawing_config_with_embedded_fonts
     echo $"(ansi green)Keymaps updated ✅(ansi reset)"
+
+}
+
+def main [
+    --watch # continuously update keymaps as soon as any relevant source file changes
+] {
+    if ($watch) {
+        watch --verbose ./config {|op path new_path|
+            echo $"(ansi purple)($path)(ansi reset) has been modified";
+            # invoke the script without the --watch flag, instead of directly calling the update function
+            # this way, we can get feedback while editing the update function itself
+            nu config/diagrams/update.nu;
+        }
+    } else {
+        update_keymaps
+    }
 }
 
