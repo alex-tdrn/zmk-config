@@ -45,6 +45,10 @@ draw_config:
         font-size: 15px;
     }
 
+    .layer_switch.tap {
+        fill: var(--layer-color);
+    }
+
     rect {
         fill: var(--background-color);
         stroke: var(--keycap-color);

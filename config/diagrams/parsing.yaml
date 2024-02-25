@@ -177,17 +177,21 @@ parse_config:
       key:
         tap: ◌̦
     combo_oneshot_fn_layer:
-      key: 'FN one shot'
+      type: layer_switch
+      key: FN
       align: top
       offset: 0.2
       slide: -0.6
     combo_lock:
+      type: layer_switch
       align: top
       offset: 0.7
     combo_unlock:
+      type: layer_switch
       align: top
       offset: 0.7
-  sticky_label: sticky
+  sticky_label: ''
+  toggle_label: ''
   trans_legend:
     t: ▽
     type: trans

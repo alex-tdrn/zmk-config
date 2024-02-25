@@ -26,6 +26,10 @@
     font-size: 15px;
 }
 
+.layer_switch.tap {
+    fill: var(--layer-color);
+}
+
 rect {
     fill: var(--background-color);
     stroke: var(--keycap-color);
@@ -486,16 +490,13 @@ rect.vertical_combo, rect.diagonal_combo {
 <rect rx="6" ry="6" x="277" y="156" width="40" height="70" class="combo vertical_combo"/>
 <text x="297" y="191" class="combo vertical_combo tap">End</text>
 </g>
-<g class="combo combopos-36">
+<g class="combo layer_switch combopos-36">
 <path d="M93,-18 h-31 a20.0,20.0 0 0 0 -20.0,20.0 v97" class="combo"/>
 <path d="M93,-18 h14 a20.0,20.0 0 0 1 20.0,20.0 v40" class="combo"/>
 <path d="M93,-18 h99 a20.0,20.0 0 0 1 20.0,20.0 v12" class="combo"/>
 <path d="M93,-18 h183 a20.0,20.0 0 0 1 20.0,20.0 v43" class="combo"/>
-<rect rx="6" ry="6" x="73" y="-54" width="40" height="70" class="combo"/>
-<text x="93" y="-18" class="combo tap">
-<tspan x="93" dy="-1.2em">FN</tspan><tspan x="93" dy="1.2em">one</tspan>
-<tspan x="93" dy="1.2em">shot</tspan>
-</text>
+<rect rx="6" ry="6" x="73" y="-54" width="40" height="70" class="combo layer_switch"/>
+<text x="93" y="-18" class="combo layer_switch tap">FN</text>
 </g>
 <g class="combo combopos-37">
 <path d="M562,197 h-238 a20.0,20.0 0 0 1 -20.0,-20.0 v1" class="combo"/>
@@ -510,7 +511,7 @@ rect.vertical_combo, rect.diagonal_combo {
 <text x="712" y="344" class="combo tap">󱞤</text>
 <text x="712" y="326" class="combo shifted">󱞾</text>
 </g>
-<g class="combo combopos-39">
+<g class="combo layer_switch combopos-39">
 <path d="M562,-58 h-500 a20.0,20.0 0 0 0 -20.0,20.0 v137" class="combo"/>
 <path d="M562,-58 h-415 a20.0,20.0 0 0 0 -20.0,20.0 v80" class="combo"/>
 <path d="M562,-58 h-331 a20.0,20.0 0 0 0 -20.0,20.0 v52" class="combo"/>
@@ -519,9 +520,8 @@ rect.vertical_combo, rect.diagonal_combo {
 <path d="M562,-58 h331 a20.0,20.0 0 0 1 20.0,20.0 v52" class="combo"/>
 <path d="M562,-58 h415 a20.0,20.0 0 0 1 20.0,20.0 v80" class="combo"/>
 <path d="M562,-58 h500 a20.0,20.0 0 0 1 20.0,20.0 v137" class="combo"/>
-<rect rx="6" ry="6" x="542" y="-94" width="40" height="70" class="combo"/>
-<text x="562" y="-58" class="combo tap">LOCK</text>
-<text x="562" y="-40" class="combo hold">toggle</text>
+<rect rx="6" ry="6" x="542" y="-94" width="40" height="70" class="combo layer_switch"/>
+<text x="562" y="-58" class="combo layer_switch tap">LOCK</text>
 </g>
 </g>
 </g>
