@@ -1,5 +1,5 @@
 draw_config:
-  key_h: 70.0
+  key_h: 80
   combo_w: 40.0
   combo_h: 60.0
   key_rx: 6.0
@@ -12,8 +12,11 @@ draw_config:
   arc_radius: 20.0
   arc_scale: 1
   append_colon_to_layer_header: false
-  small_pad: 7.0
+  small_pad: 16.0
   combo_diagrams_scale: 4
+  draw_key_sides: true
+  key_side_pars:
+    rel_h: 10
   svg_style: | # css
     /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
     :root {
@@ -56,15 +59,12 @@ draw_config:
     }
 
     .shifted {
-        text-anchor: middle;
-        dominant-baseline: hanging;
+        dominant-baseline: auto;
         fill: var(--shifted-color);
     }
 
     .hold {
         fill: var(--held-color);
-        text-anchor: middle;
-        dominant-baseline: auto;
     }
 
     [class*="layer-combopos"] {
