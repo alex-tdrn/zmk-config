@@ -131,22 +131,18 @@ parse_config:
       draw_separate: true
       key:
         tap: ◌̈
-        hold: (umlaut)
     combo_diacritic_breve:
       draw_separate: true
       key:
         tap: ◌̆
-        hold: (breve)
     combo_diacritic_circumflex:
       draw_separate: true
       key:
         tap: ◌̂
-        hold: (circumflex)
     combo_diacritic_comma:
       draw_separate: true
       key:
         tap: ◌̦
-        hold: (comma)
     combo_oneshot_fn_layer:
       key: 'FN one shot'
       align: top

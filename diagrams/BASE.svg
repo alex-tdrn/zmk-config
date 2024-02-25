@@ -13,9 +13,17 @@
     fill: var(--foreground-color);
     background-color: var(--background-color);
     font-family: JetBrainsMono,NerdFontsSymbols Nerd Font;
-    font-size: 14px;
+    font-size: 13px;
     text-anchor: middle;
     dominant-baseline: middle;
+}
+
+.combo-separate {
+    font-size: 36px;
+}
+
+.vertical_combo {
+    font-size: 15px;
 }
 
 rect {
@@ -32,14 +40,12 @@ rect {
 }
 
 .shifted {
-    font-size: 12px;
     text-anchor: middle;
     dominant-baseline: hanging;
     fill: var(--shifted-color);
 }
 
 .hold {
-    font-size: 12px;
     fill: var(--held-color);
     text-anchor: middle;
     dominant-baseline: auto;
@@ -68,18 +74,6 @@ rect.combo, rect.combo-separate {
 rect.vertical_combo, rect.diagonal_combo {
     stroke: none;
     fill: none;
-}
-
-text.vertical_combo {
-    font-size: 14px;
-    text-anchor: middle;
-    dominant-baseline: middle;
-}
-
-text.diagonal_combo {
-    font-size: 12px;
-    text-anchor: middle;
-    dominant-baseline: middle;
 }
 
 /* HACK: embed used fonts encoded as base64. This way the svgs look exactly the same on all browsers. Downside is that this adds ~1mb per svg */
@@ -587,7 +581,6 @@ text.diagonal_combo {
 <g transform="translate(35, 35)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-30" y="-30" width="60" height="60" class="key  combo-separate"/>
 <text x="0" y="0" class="key  combo-separate tap">◌̈</text>
-<text x="0" y="23" class="key  combo-separate hold"><tspan style="font-size: 88%">(umlaut)</tspan></text>
 </g>
 <g transform="translate(9, 102)" class="key keypos-1">
 <rect rx="6" ry="6" x="-4" y="-4" width="9" height="8" class="key"/>
@@ -704,7 +697,6 @@ text.diagonal_combo {
 <g transform="translate(35, 35)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-30" y="-30" width="60" height="60" class="key  combo-separate"/>
 <text x="0" y="0" class="key  combo-separate tap">◌̆</text>
-<text x="0" y="23" class="key  combo-separate hold">(breve)</text>
 </g>
 <g transform="translate(9, 102)" class="key keypos-1">
 <rect rx="6" ry="6" x="-4" y="-4" width="9" height="8" class="key"/>
@@ -821,7 +813,6 @@ text.diagonal_combo {
 <g transform="translate(35, 35)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-30" y="-30" width="60" height="60" class="key  combo-separate"/>
 <text x="0" y="0" class="key  combo-separate tap">◌̂</text>
-<text x="0" y="23" class="key  combo-separate hold"><tspan style="font-size: 60%">(circumflex)</tspan></text>
 </g>
 <g transform="translate(9, 102)" class="key keypos-1">
 <rect rx="6" ry="6" x="-4" y="-4" width="9" height="8" class="key"/>
@@ -938,7 +929,6 @@ text.diagonal_combo {
 <g transform="translate(35, 35)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-30" y="-30" width="60" height="60" class="key  combo-separate"/>
 <text x="0" y="0" class="key  combo-separate tap">◌̦</text>
-<text x="0" y="23" class="key  combo-separate hold">(comma)</text>
 </g>
 <g transform="translate(9, 102)" class="key keypos-1">
 <rect rx="6" ry="6" x="-4" y="-4" width="9" height="8" class="key"/>

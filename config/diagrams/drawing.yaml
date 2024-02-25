@@ -13,9 +13,6 @@ draw_config:
   arc_scale: 1
   append_colon_to_layer_header: false
   small_pad: 7.0
-  glyph_tap_size: 12
-  glyph_hold_size: 10
-  glyph_shifted_size: 10
   combo_diagrams_scale: 4
   svg_style: | # css
     /* reusable color variables. palette taken from https://github.com/rebelot/kanagawa.nvim */
@@ -32,9 +29,17 @@ draw_config:
         fill: var(--foreground-color);
         background-color: var(--background-color);
         font-family: JetBrainsMono,NerdFontsSymbols Nerd Font;
-        font-size: 14px;
+        font-size: 13px;
         text-anchor: middle;
         dominant-baseline: middle;
+    }
+
+    .combo-separate {
+        font-size: 36px;
+    }
+
+    .vertical_combo {
+        font-size: 15px;
     }
 
     rect {
@@ -51,14 +56,12 @@ draw_config:
     }
 
     .shifted {
-        font-size: 12px;
         text-anchor: middle;
         dominant-baseline: hanging;
         fill: var(--shifted-color);
     }
 
     .hold {
-        font-size: 12px;
         fill: var(--held-color);
         text-anchor: middle;
         dominant-baseline: auto;
@@ -87,17 +90,5 @@ draw_config:
     rect.vertical_combo, rect.diagonal_combo {
         stroke: none;
         fill: none;
-    }
-
-    text.vertical_combo {
-        font-size: 14px;
-        text-anchor: middle;
-        dominant-baseline: middle;
-    }
-
-    text.diagonal_combo {
-        font-size: 12px;
-        text-anchor: middle;
-        dominant-baseline: middle;
     }
 
