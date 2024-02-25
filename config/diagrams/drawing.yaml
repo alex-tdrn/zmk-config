@@ -12,7 +12,7 @@ draw_config:
   arc_radius: 20.0
   arc_scale: 1
   append_colon_to_layer_header: false
-  small_pad: 16.0
+  small_pad: 17.0
   combo_diagrams_scale: 4
   draw_key_sides: true
   key_side_pars:

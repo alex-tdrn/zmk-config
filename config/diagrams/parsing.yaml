@@ -3,6 +3,32 @@ parse_config:
   skip_binding_parsing: false
   mark_alternate_layer_activators: true
   raw_binding_map:
+    '&kp A': {t: 'a', s: 'A'}
+    '&kp B': {t: 'b', s: 'B'}
+    '&kp C': {t: 'c', s: 'C'}
+    '&kp D': {t: 'd', s: 'D'}
+    '&kp E': {t: 'e', s: 'E'}
+    '&kp F': {t: 'f', s: 'F'}
+    '&kp G': {t: 'g', s: 'G'}
+    '&kp H': {t: 'h', s: 'H'}
+    '&kp I': {t: 'i', s: 'I'}
+    '&kp J': {t: 'j', s: 'J'}
+    '&kp K': {t: 'k', s: 'K'}
+    '&kp L': {t: 'l', s: 'L'}
+    '&kp M': {t: 'm', s: 'M'}
+    '&kp N': {t: 'n', s: 'N'}
+    '&kp O': {t: 'o', s: 'O'}
+    '&kp P': {t: 'p', s: 'P'}
+    '&kp Q': {t: 'q', s: 'Q'}
+    '&kp R': {t: 'r', s: 'R'}
+    '&kp S': {t: 's', s: 'S'}
+    '&kp T': {t: 't', s: 'T'}
+    '&kp U': {t: 'u', s: 'U'}
+    '&kp V': {t: 'v', s: 'V'}
+    '&kp W': {t: 'w', s: 'W'}
+    '&kp X': {t: 'x', s: 'X'}
+    '&kp Y': {t: 'y', s: 'Y'}
+    '&kp Z': {t: 'z', s: 'Z'}
     '&ext_power EP_OFF': 󰌭
     '&ext_power EP_ON ': 󰌬
     '&out OUT_USB': 󰌌󰕓
@@ -59,29 +85,36 @@ parse_config:
       type: 'vertical_combo'
     combo_qu:
       key:
-        tap: Qu
+        tap: qu
+        shifted: Qu
     combo_sharp_s:
       key:
         tap: ẞ
       draw_separate: true
     combo_th:
       key:
-        tap: Th
+        tap: th
+        shifted: Th
     combo_ch:
       key:
-        tap: Ch
+        tap: ch
+        shifted: Ch
     combo_sh:
       key:
-        tap: Sh
+        tap: sh
+        shifted: Sh
     combo_wh:
       key:
-        tap: Wh
+        tap: wh
+        shifted: Wh
     combo_gh:
       key:
-        tap: Gh
+        tap: gh
+        shifted: Gh
     combo_ph:
       key:
-        tap: Ph
+        tap: ph
+        shifted: Ph
     combo_caps_word:
       key:
         tap: 'caps word'
