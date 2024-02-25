@@ -31,7 +31,7 @@ draw_config:
 
         fill: var(--foreground-color);
         background-color: var(--background-color);
-        font-family: JetBrainsMono,NerdFontsSymbols Nerd Font,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-family: JetBrainsMono,NerdFontsSymbols Nerd Font;
         font-size: 14px;
         text-anchor: middle;
         dominant-baseline: middle;
