@@ -1,6 +1,6 @@
 draw_config:
   key_h: 80
-  combo_w: 40.0
+  combo_w: 48
   combo_h: 70.0
   key_rx: 6.0
   key_ry: 6.0

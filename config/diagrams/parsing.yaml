@@ -160,6 +160,10 @@ parse_config:
       key:
         tap: 󱞤
         shifted: 󱞾
+    combo_delete_word_or_line:
+      key:
+        tap: 󰹾󰁮
+        shifted: 󰹾󰁮
     combo_diacritic_umlaut:
       draw_separate: true
       key:
