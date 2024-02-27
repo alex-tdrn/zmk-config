@@ -109,7 +109,6 @@
     behaviors { \
         NAME##: NAME { \
             compatible = "zmk,behavior-mod-morph"; \
-            label = #NAME; \
             #binding-cells = <0>; \
             bindings = <WITHOUT_MODS>, <WITH_MODS>; \
             mods = <(MODS)>; \
@@ -124,7 +123,6 @@ MOD_MORPH(NAME, MOD_LSFT|MOD_RSFT, WITHOUT_SHIFT, WITH_SHIFT)
 / { \
     macros { \
         NAME##: NAME { \
-            label = #NAME; \
             compatible = "zmk,behavior-macro"; \
             #binding-cells = <0>; \
             wait-ms = <0>; \
@@ -142,7 +140,6 @@ MACRO(NAME, <&kp RALT &kp U &kp FIRST &kp SECOND &kp THIRD &kp FOURTH &kp RET>)
     behaviors { \
         NAME##: NAME { \
             compatible = "zmk,behavior-hold-tap"; \
-            label = #NAME; \
             #binding-cells = <2>; \
             flavor = "tap-preferred"; \
             tapping-term-ms = <200>; \
@@ -196,7 +193,7 @@ BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _sc_ht, 0, 0)
     keymap { \
         compatible = "zmk,keymap"; \
         LAYER ## _layer { \
-            label = #LAYER; \
+            display-name = #LAYER; \
             bindings = <\
                 LEFT_UPPER_ROW \
                 RIGHT_UPPER_ROW \
@@ -228,7 +225,6 @@ BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _sc_ht, 0, 0)
     behaviors {
         lmt: lmt {
             compatible = "zmk,behavior-hold-tap";
-            label = "lmt";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
@@ -241,7 +237,6 @@ BIND_HOLD_TAP_ARGUMENTS(NAME, NAME ## _sc_ht, 0, 0)
 
         rmt: rmt {
             compatible = "zmk,behavior-hold-tap";
-            label = "rmt";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
