@@ -72,6 +72,17 @@ simultaneously, which can be useful when scrolling in certain programs.
 Inspired by vim's `o`/`O`, hitting `enter` and `space` at the same time inserts a new line below the current one.
 Holding down `shift` additionally, inserts the new line above the current one instead.
 
+## Delete Word/Line
+Tapping `t` and `backspace` together deletes the word under the cursor by executing `ctrl+left, ctrl+shift+right, backspace`.
+Holding `shift` while tapping deletes the entire line by executing `home, shift+end, backspace`.
+Line deletion works pretty consistently across editors.
+Word deletion varies, however, since some editors interpret `ctrl+left/right` to mean "jump to the beginning/end of the current word", while
+others interpret it as "jump to the beginning/end of the next word".
+The difference is that the former will only delete the word under the cursor, while the latter will also delete whitespace/symbol until the
+next word.
+Additionally, because of the keys executed, the macro does not work if the cursor lies on the first letter of a word (it will jump back and
+delete the previous word instead).
+
 # Function Layer (WIP)
 ![Function Layer](./diagrams/FN.svg)
 
