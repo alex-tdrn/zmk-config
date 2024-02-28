@@ -73,8 +73,8 @@ Inspired by vim's `o`/`O`, hitting `enter` and `space` at the same time inserts 
 Holding down `shift` additionally, inserts the new line above the current one instead.
 
 ## Delete Word/Line
-Tapping `t` and `backspace` together deletes the word under the cursor by executing `ctrl+left, ctrl+shift+right, backspace`.
-Holding `shift` while tapping deletes the entire line by executing `home, shift+end, backspace`.
+Tapping `t` and `backspace` together deletes the entire line by executing `home, shift+end, backspace`.
+Holding `shift` while tapping deletes the word under the cursor by executing `ctrl+left, ctrl+shift+right, backspace`.
 Line deletion works pretty consistently across editors.
 Word deletion varies, however, since some editors interpret `ctrl+left/right` to mean "jump to the beginning/end of the current word", while
 others interpret it as "jump to the beginning/end of the next word".

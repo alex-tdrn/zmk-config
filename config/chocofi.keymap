@@ -283,7 +283,7 @@ SHIFTED(newline, &newline_below, &newline_above);
 
 MACRO(delete_word, <&kp LC(LEFT) &kp LC(LS(RIGHT)) &kp BACKSPACE>);
 MACRO(delete_line, <&kp HOME &kp LS(END) &kp BACKSPACE>);
-SHIFTED(delete_word_or_line, &delete_word, &delete_line);
+SHIFTED(delete_word_or_line, &delete_line, &delete_word);
 
 // unicode symbols
 COMPOSE_UNICODE(sharp_s_lowercase, N0, N0, D, F);

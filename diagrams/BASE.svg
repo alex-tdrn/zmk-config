@@ -506,8 +506,8 @@ rect.vertical_combo, rect.diagonal_combo {
 </g>
 <g class="combo combopos-38">
 <rect rx="6" ry="6" x="387" y="309" width="48" height="70" class="combo"/>
-<text x="411" y="344" class="combo tap">󰹾󰁮</text>
-<text x="411" y="326" class="combo shifted">󰹾󰁮</text>
+<text x="411" y="344" class="combo tap">󰹾󰁮</text>
+<text x="411" y="326" class="combo shifted">󰹾󰁮</text>
 </g>
 <g class="combo combopos-39">
 <rect rx="6" ry="6" x="688" y="309" width="48" height="70" class="combo"/>
