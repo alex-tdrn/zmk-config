@@ -281,6 +281,10 @@ MACRO(newline_above, <&kp HOME &kp RET &kp UP>);
 MACRO(newline_below, <&kp END &kp RET>);
 SHIFTED(newline, &newline_below, &newline_above);
 
+MACRO(join_with_line_above, <&kp HOME &kp BACKSPACE>);
+MACRO(join_with_line_below, <&kp END &kp DELETE>);
+SHIFTED(join_with_line, &join_with_line_below, &join_with_line_above);
+
 MACRO(delete_word, <&kp LC(LEFT) &kp LC(LS(RIGHT)) &kp BACKSPACE>);
 MACRO(delete_line, <&kp HOME &kp LS(END) &kp BACKSPACE>);
 SHIFTED(delete_word_or_line, &delete_line, &delete_word);
@@ -358,6 +362,9 @@ COMBO(delete_word_or_line, BASE, LTI LTH, &delete_word_or_line);
 
 // combo for inserting newlines above or below the current line
 COMBO(newline, BASE, RTI RTH, &newline);
+
+// combo for joining the current line with the one above or below
+COMBO(join_with_line, BASE, RTH RTO, &join_with_line);
 
 
 COMBO(lock, BASE, LPU LRU LMU LIU RIU RMU RRU RPU, &to LOCK);
