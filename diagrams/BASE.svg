@@ -514,7 +514,12 @@ rect.vertical_combo, rect.diagonal_combo {
 <text x="712" y="344" class="combo tap">󱞤</text>
 <text x="712" y="326" class="combo shifted">󱞾</text>
 </g>
-<g class="combo layer_switch combopos-40">
+<g class="combo combopos-40">
+<rect rx="6" ry="6" x="785" y="296" width="48" height="70" class="combo"/>
+<text x="809" y="331" class="combo tap">󰕎</text>
+<text x="809" y="313" class="combo shifted">󰕎</text>
+</g>
+<g class="combo layer_switch combopos-41">
 <path d="M562,-58 h-500 a20.0,20.0 0 0 0 -20.0,20.0 v137" class="combo"/>
 <path d="M562,-58 h-415 a20.0,20.0 0 0 0 -20.0,20.0 v80" class="combo"/>
 <path d="M562,-58 h-331 a20.0,20.0 0 0 0 -20.0,20.0 v52" class="combo"/>

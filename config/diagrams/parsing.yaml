@@ -160,6 +160,10 @@ parse_config:
       key:
         tap: 󱞤
         shifted: 󱞾
+    combo_join_with_line:
+      key:
+        tap: 󰕎
+        shifted: 󰕎
     combo_delete_word_or_line:
       key:
         shifted: 󰹾󰁮

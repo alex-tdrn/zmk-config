@@ -72,6 +72,10 @@ simultaneously, which can be useful when scrolling in certain programs.
 Inspired by vim's `o`/`O`, hitting `enter` and `space` at the same time inserts a new line below the current one.
 Holding down `shift` additionally, inserts the new line above the current one instead.
 
+## Join Line
+Tapping `space` and `tab` at the same time joins the current line with the one below.
+Holding down `shift` while tapping, joins it up with the line above, instead.
+
 ## Delete Word/Line
 Tapping `t` and `backspace` together deletes the entire line by executing `home, shift+end, backspace`.
 Holding `shift` while tapping deletes the word under the cursor by executing `ctrl+left, ctrl+shift+right, backspace`.
