@@ -142,7 +142,7 @@ MACRO(NAME, <&kp RALT &kp U &kp FIRST &kp SECOND &kp THIRD &kp FOURTH &kp RET>)
             compatible = "zmk,behavior-hold-tap"; \
             #binding-cells = <2>; \
             flavor = "tap-preferred"; \
-            tapping-term-ms = <200>; \
+            tapping-term-ms = <150>; \
             bindings = <HOLD_BINDING>, <TAP_BINDING>; \
         }; \
     }; \
