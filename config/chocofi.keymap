@@ -281,8 +281,8 @@ MACRO(newline_above, <&kp HOME &kp RET &kp UP>);
 MACRO(newline_below, <&kp END &kp RET>);
 SHIFTED(newline, &newline_below, &newline_above);
 
-MACRO(join_with_line_above, <&kp HOME &kp BACKSPACE>);
-MACRO(join_with_line_below, <&kp END &kp DELETE>);
+MACRO(join_with_line_above, <&kp HOME &kp BACKSPACE &kp HOME>);
+MACRO(join_with_line_below, <&kp END &kp DELETE &kp END>);
 SHIFTED(join_with_line, &join_with_line_below, &join_with_line_above);
 
 MACRO(delete_word, <&kp LC(LEFT) &kp LC(LS(RIGHT)) &kp BACKSPACE>);
