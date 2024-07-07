@@ -1,0 +1,4 @@
+[default.extend-words]
+# false positive for `(H)ome` comments
+"ome" = "ome"
+"RTO" = "RTO"
